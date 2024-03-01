@@ -1,5 +1,8 @@
 import './App.css';
+import './styles/bootstrap-5.3.3-dist/css/bootstrap.min.css';
 import logo from './photos/logoWithoutLetters.png';
+import { searchOutline, homeOutline, folderOpenOutline, pieChartOutline, peopleOutline, chatbubblesOutline, settingsOutline  } from 'ionicons/icons';
+import { IonIcon } from '@ionic/react';
 
 const App = () => {
   return (
@@ -14,7 +17,7 @@ const App = () => {
             <li className="navbar-item flexbox-left">
               <a className="navbar-item-inner flexbox-left">
                 <div className="navbar-item-inner-icon-wrapper flexbox">
-                  <ion-icon name="search-outline"></ion-icon>
+                  <IonIcon icon={searchOutline}></IonIcon>
                 </div>
                 <span className="link-text">Search</span>
               </a>
@@ -22,7 +25,7 @@ const App = () => {
             <li className="navbar-item flexbox-left">
               <a className="navbar-item-inner flexbox-left">
                 <div className="navbar-item-inner-icon-wrapper flexbox">
-                  <ion-icon name="home-outline"></ion-icon>
+                  <IonIcon icon={homeOutline}></IonIcon>
                 </div>
                 <span className="link-text">Home</span>
               </a>
@@ -30,7 +33,7 @@ const App = () => {
             <li className="navbar-item flexbox-left">
               <a className="navbar-item-inner flexbox-left">
                 <div className="navbar-item-inner-icon-wrapper flexbox">
-                  <ion-icon name="folder-open-outline"></ion-icon>
+                  <IonIcon icon={folderOpenOutline}></IonIcon>
                 </div>
                 <span className="link-text">Projects</span>
               </a>
@@ -38,7 +41,7 @@ const App = () => {
             <li className="navbar-item flexbox-left">
               <a className="navbar-item-inner flexbox-left">
                 <div className="navbar-item-inner-icon-wrapper flexbox">
-                  <ion-icon name="pie-chart-outline"></ion-icon>
+                  <IonIcon icon={pieChartOutline}></IonIcon>
                 </div>
                 <span className="link-text">Dashboard</span>
               </a>
@@ -46,7 +49,7 @@ const App = () => {
             <li className="navbar-item flexbox-left">
               <a className="navbar-item-inner flexbox-left">
                 <div className="navbar-item-inner-icon-wrapper flexbox">
-                  <ion-icon name="people-outline"></ion-icon>
+                  <IonIcon icon={peopleOutline}></IonIcon>
                 </div>
                 <span className="link-text">Team</span>
               </a>
@@ -54,7 +57,7 @@ const App = () => {
             <li className="navbar-item flexbox-left">
               <a className="navbar-item-inner flexbox-left">
                 <div className="navbar-item-inner-icon-wrapper flexbox">
-                  <ion-icon name="chatbubbles-outline"></ion-icon>
+                  <IonIcon icon={chatbubblesOutline}></IonIcon>
                 </div>
                 <span className="link-text">Support</span>
               </a>
@@ -62,7 +65,7 @@ const App = () => {
             <li className="navbar-item flexbox-left">
               <a className="navbar-item-inner flexbox-left">
                 <div className="navbar-item-inner-icon-wrapper flexbox">
-                  <ion-icon name="settings-outline"></ion-icon>
+                  <IonIcon icon={settingsOutline}></IonIcon>
                 </div>
                 <span className="link-text">Settings</span>
               </a>
