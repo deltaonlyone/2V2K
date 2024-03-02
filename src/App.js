@@ -1,6 +1,6 @@
 import './App.css';
 import './styles/bootstrap-5.3.3-dist/css/bootstrap.min.css';
-import logo from './photos/logoWithoutLetters.png';
+import logo from './photos/Logo.svg';
 import { searchOutline, homeOutline, folderOpenOutline, pieChartOutline, peopleOutline, chatbubblesOutline, settingsOutline  } from 'ionicons/icons';
 import { IonIcon } from '@ionic/react';
 
