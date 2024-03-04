@@ -1,5 +1,6 @@
 import './App.css';
 import './styles/bootstrap-5.3.3-dist/css/bootstrap.min.css';
+import UsersList from './UsersList';
 import logo from './photos/Logo.svg';
 import { searchOutline, homeOutline, folderOpenOutline, pieChartOutline, peopleOutline, chatbubblesOutline, settingsOutline  } from 'ionicons/icons';
 import { IonIcon } from '@ionic/react';
@@ -83,6 +84,9 @@ const App = () => {
             Aut ipsam cumque deleniti error perspiciatis iusto accusamus consequuntur
             assumenda. Obcaecati minima sed natus?
           </p>
+          <div>
+            <UsersList/>
+          </div>
         </main>
       </div>
   );
