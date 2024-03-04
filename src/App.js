@@ -2,6 +2,7 @@ import './App.css';
 import './styles/bootstrap-5.3.3-dist/css/bootstrap.min.css';
 import UsersList from './UsersList';
 import logo from './photos/Logo.svg';
+import randomAvatar from './photos/randomAvatar.jpg';
 import { searchOutline, homeOutline, folderOpenOutline, pieChartOutline, peopleOutline, chatbubblesOutline, settingsOutline  } from 'ionicons/icons';
 import { IonIcon } from '@ionic/react';
 
@@ -9,7 +10,39 @@ const App = () => {
 
 
   return (
+
       <div className="App">
+        <nav className="bg-body-tertiary navbar-top-first">
+          <div className="container-fluid navbar-top-second">
+            <form className="d-flex navbar-search-form" role="search">
+              <input
+                  className="me-2 navbar-top-search"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+              ></input>
+            </form>
+
+            <div className="navbar-top-right">
+              <div className="navbar-item-inner-icon-wrapper flexbox icon-navbar-top d-none d-sm-flex">
+                <IonIcon icon={folderOpenOutline}></IonIcon>
+              </div>
+
+              <div className="navbar-item-inner-icon-wrapper flexbox icon-navbar-top d-none d-sm-flex">
+                <IonIcon icon={settingsOutline}></IonIcon>
+              </div>
+
+
+              <div className="rounded-circle overflow-hidden navbar-mini-avatar">
+                <img src={randomAvatar} alt="User" className="img-fluid"></img>
+              </div>
+            </div>
+
+          </div>
+        </nav>
+
+
+
         <nav id="navbar">
           <ul className="navbar-items flexbox-col">
             <li className="navbar-logo flexbox-left">
@@ -76,9 +109,8 @@ const App = () => {
           </ul>
         </nav>
 
+
         <main id="main" className="flexbox-col">
-
-
 
           <h2>Lorem ipsum!</h2>
           <p>
