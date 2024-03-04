@@ -6,6 +6,15 @@
  */
 :root,
 [data-bs-theme=light] {
+  --bs-main-color1:#10002B;
+  --bs-main-color2:#240046;
+  --bs-main-color3:#3C096C;
+  --bs-main-color4:#5A189A;
+  --bs-main-color5:#7B2CBF;
+  --bs-main-color6:#9D4EDD;
+  --bs-main-color7:#C77DFF;
+  --bs-main-color8:#E0AAFF;
+
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;

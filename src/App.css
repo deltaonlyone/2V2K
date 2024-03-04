@@ -1,3 +1,5 @@
+
+
 .App {
   text-align: center;
 }
@@ -54,17 +56,20 @@ Areal Alien ❥ 雷克斯
 -*-~*~-*-*-~*~-*-*-~*~* |
 - */
 :root {
-  --primary: 237, 94%, 81%;
-  --background: 266, 16%, 92%;
-  --background-secondary: 256, 12%, 12%;
-  --background-secondary-dark: 256, 10%, 10%;
-  --background-secondary-light: 257, 11%, 16%;
-  --text-primary: 0, 0%, 0%;
+
+
   /* Colors */
   --black: 0, 0%, 0%;
   --white: 0, 0%, 100%;
   --quite-gray: 0, 0%, 50%;
   --grooble: 10, 28%, 93%;
+  --main-color-dark: 246, 40%, 10%;
+  --main-color-light: 266, 61%, 51%;
+  --main-color-middle: 242, 42%, 14%;
+  --text-color-grey: 242, 15% 59%;
+  --text-color-white: 243, 65%, 93%;
+  --color-red: 0, 61%, 51%;
+
   /* Sizes */
   --heading-large: 5.6rem;
   --heading-medium: 3.6rem;
@@ -88,12 +93,11 @@ Areal Alien ❥ 雷克斯
 *, *::before, *::after {
   box-sizing: inherit;
 }
-html, body {
+html, body{
   margin: 0;
-  width: 100%;
-  color: hsl(var(--text-primary));
+  color: hsl(var(--text-color-white));
   font-family: var(--font-main);
-  background-color: hsl(var(--background));
+  background-color: hsl(var(--main-color-dark));
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
   box-sizing: border-box;
@@ -140,12 +144,12 @@ p {
 }
 /* Links */
 a {
-  color: hsla(var(--primary), 1);
+  color: hsla(var(--black), 1);
   font-size: var(--paragraph);
   text-decoration: underline;
 }
 a:visited {
-  color: hsla(var(--primary), .5);
+  color: hsla(var(--black), .5);
 }
 
 /* =========
@@ -155,7 +159,7 @@ a:visited {
 button {
   padding: .8em 1.2em;
   border: 1px solid hsl(var(--black));
-  background-color: hsl(var(--background));
+  background-color: hsl(var(--main-color-dark));
   font-size: var(--paragraph);
   cursor: pointer;
   outline: none;
@@ -301,7 +305,7 @@ select {
   width: 5em;
   height: 100vh;
   position: fixed;
-  background-color: hsl(var(--background-secondary));
+  background-color: hsl(var(--main-color-middle));
   transition: width .35s cubic-bezier(var(--transition-main), 1);
   overflow-y: auto;
   overflow-x: hidden;
@@ -310,14 +314,14 @@ select {
   width: 16em;
 }
 #navbar::-webkit-scrollbar-track {
-  background-color: hsl(var(--background-secondary));
+  background-color: hsl(var(--main-color-dark));
 }
 #navbar::-webkit-scrollbar {
   width: 8px;
-  background-color: hsl(var(--background-secondary));
+  background-color: hsl(var(--main-color-dark));
 }
 #navbar::-webkit-scrollbar-thumb {
-  background-color: hsl(var(--primary));
+  background-color: hsl(var(--main-color-light));
 }
 .navbar-items {
   margin: 0;
@@ -329,7 +333,7 @@ select {
   margin: 0 0 2em 0;
   width: 100%;
   height: 6em;
-  background: hsl(var(--background-secondary-dark));
+  background: hsl(var(--main-color-middle));
 }
 .navbar-logo > .navbar-item-inner {
   width: calc(5rem - 8px);
@@ -365,7 +369,7 @@ select {
 }
 .navbar-item-inner:hover {
   color: hsl(var(--white));
-  background: hsl(var(--background-secondary-light));
+  background: hsl(var(--main-color-dark));
   box-shadow: 0 17px 30px -10px hsla(var(--black), .25);
 }
 .navbar-item-inner-icon-wrapper {
@@ -395,8 +399,14 @@ select {
    ====== */
 
 #main {
+  display: flex;
+  height: 100%;
   margin: 0 0 0 5em;
   min-height: 150vh;
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 #main > h2 {
   width: 80%;
@@ -407,6 +417,11 @@ select {
   max-width: 80%;
 }
 
+
+
+
+
+
 /* =============
     ::Selectors
    ============= */
@@ -414,18 +429,18 @@ select {
 /* Selection */
 ::selection {
   color: hsl(var(--white));
-  background: hsla(var(--primary), .33);
+  background: hsla(var(--black), .33);
 }
 /* Scrollbar */
 ::-webkit-scrollbar-track {
-  background-color: hsl(var(--background));
+  background-color: hsl(var(--main-color-middle));
 }
 ::-webkit-scrollbar {
   width: 8px;
-  background-color: hsl(var(--background));
+  background-color: hsl(var(--main-color-middle));
 }
 ::-webkit-scrollbar-thumb {
-  background-color: hsl(var(--primary));
+  background-color: hsl(var(--main-color-light));
 }
 
 /* ===============

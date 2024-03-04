@@ -6,6 +6,8 @@ import { searchOutline, homeOutline, folderOpenOutline, pieChartOutline, peopleO
 import { IonIcon } from '@ionic/react';
 
 const App = () => {
+
+
   return (
       <div className="App">
         <nav id="navbar">
@@ -75,6 +77,9 @@ const App = () => {
         </nav>
 
         <main id="main" className="flexbox-col">
+
+
+
           <h2>Lorem ipsum!</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum corporis,
