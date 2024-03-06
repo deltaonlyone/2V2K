@@ -5,6 +5,7 @@ import logo from './photos/Logo.svg';
 import randomAvatar from './photos/randomAvatar.jpg';
 import { searchOutline, homeOutline, folderOpenOutline, pieChartOutline, peopleOutline, chatbubblesOutline, settingsOutline  } from 'ionicons/icons';
 import { IonIcon } from '@ionic/react';
+import PhotoComponent from "./PhotoComponent";
 
 const App = () => {
 
@@ -123,6 +124,7 @@ const App = () => {
           </p>
           <div>
             <UsersList/>
+            <PhotoComponent/>
           </div>
         </main>
       </div>
