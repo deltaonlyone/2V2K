@@ -17,9 +17,9 @@ function NavbarExpanded(props) {
 
             <div className="nav__collapsable">
 
-                    <a href="#">Locations</a>
-                    <a href="#">Map</a>
-                    <a href="#">Photographers</a>
+                    <a href="#" className="underline-hover">Locations</a>
+                    <a href="#" className="underline-hover">Map</a>
+                    <a href="#" className="underline-hover">Photographers</a>
 
 
                     <div className="toggle-switch">

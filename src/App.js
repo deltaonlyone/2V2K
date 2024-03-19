@@ -1,6 +1,7 @@
 import './App.css';
 import './styles/bootstrap-5.3.3-dist/css/bootstrap.min.css';
 import NavbarExpanded from "./NavbarExpanded";
+import NavbarSecond from "./NavbarSecond";
 import {Helmet} from 'react-helmet';
 import UsersList from './UsersList';
 import AllUsersPhotos from "./AllUsersPhotos";
@@ -17,6 +18,7 @@ const App = () => {
 
             <NavbarExpanded></NavbarExpanded>
 
+            {/*<NavbarSecond></NavbarSecond>*/}
 
             {/*<div>*/}
             {/*    <UsersList/>*/}
