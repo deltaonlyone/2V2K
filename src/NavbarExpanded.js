@@ -29,7 +29,7 @@ function NavbarExpanded(props) {
                         </label>
                     </div>
                     <div className="nav__cta">
-                        <a href="#" className="cta">Sign In</a>
+                        <button className="buttonNavbar">Sign in</button>
                     </div>
 
             </div>

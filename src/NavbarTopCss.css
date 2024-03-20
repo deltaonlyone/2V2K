@@ -85,6 +85,7 @@ a {
 }
 
 
+
 /* Desktop mode styles */
 @media (min-width: 700px) {
     .nav {
@@ -127,9 +128,13 @@ a {
     }
 
 
-
-
 }
+
+
+
+
+
+
 
 @media (min-width: 1000px) {
     .App {
@@ -301,4 +306,195 @@ a {
 .change {
     transition-duration: .5s;
     transform: rotate(180deg);
+}
+
+
+
+
+
+
+
+
+
+.buttonNavbar {
+    height: 50px;
+    width: 105px;
+    padding: 0 20px;
+    border: unset;
+    border-radius: 15px;
+    color: white;
+    z-index: 1;
+    background: black;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    transition: all 250ms;
+    overflow: hidden;
+    border: 1px solid white;
+}
+
+.buttonNavbar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 10px;
+    background-color: white;
+    z-index: -1;
+    transition: all 250ms
+}
+
+.buttonNavbar:hover {
+    color: black;
+    border: 1px solid white;
+}
+
+.buttonNavbar:hover::before {
+    width: 100%;
+}
+
+
+
+
+
+@media (max-width: 1010px) {
+
+    .nav__collapsable a{
+        margin-left:0;
+    }
+
+    a {
+        font-size: 1rem;
+    }
+
+    .nav__brand{
+        width:100px;
+        font-size: 1.4rem;
+        margin-right: 10px;
+    }
+
+    .buttonNavbar{
+        height: 40px;
+        width: 90px;
+        font-size: 12px;
+        border-radius:12px;
+    }
+
+
+
+
+    .toggle-switch {
+        width: 60px;
+        height: 30px;
+    }
+
+    .switch-label {
+        height: 30px;
+        border-radius: 20px;
+        border: 3px solid var(--dark);
+    }
+
+    .slider {
+        border-radius: 20px;
+    }
+
+    .slider::before {
+        top: 5px;
+        left: 6px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        -webkit-box-shadow: inset 9px -3px 0px 0px var(--light);
+        box-shadow: inset 9px -3px 0px 0px var(--light);
+    }
+
+    .checkbox:checked ~ .slider::before {
+        -webkit-transform: translateX(30px);
+        -ms-transform: translateX(30px);
+        transform: translateX(30px);
+    }
+}
+
+@media (max-width: 700px) {
+    a {
+        font-size: 1.4rem;
+    }
+
+    .nav__brand {
+        width: 150px;
+        font-size: 2rem;
+        margin-right: 60px;
+    }
+
+    .buttonNavbar {
+        height: 50px;
+        width: 105px;
+        border-radius: 15px;
+        font-size: 17px;
+    }
+
+
+    .toggle-switch {
+        position: relative;
+        width: 80px;
+        height: 40px;
+        --light: #d8dbe0;
+        --dark: #28292c;
+        --link: rgb(27, 129, 112);
+        --link-hover: rgb(24, 94, 82);
+    }
+
+    .switch-label {
+        position: absolute;
+        width: 100%;
+        height: 40px;
+        background-color: var(--dark);
+        border-radius: 25px;
+        cursor: pointer;
+        border: 3px solid var(--dark);
+    }
+
+    .checkbox {
+        position: absolute;
+        display: none;
+    }
+
+    .slider {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 25px;
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+    }
+
+    .checkbox:checked ~ .slider {
+        background-color: var(--light);
+    }
+
+    .slider::before {
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        -webkit-box-shadow: inset 12px -4px 0px 0px var(--light);
+        box-shadow: inset 12px -4px 0px 0px var(--light);
+        background-color: var(--dark);
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+    }
+
+    .checkbox:checked ~ .slider::before {
+        -webkit-transform: translateX(40px);
+        -ms-transform: translateX(40px);
+        transform: translateX(40px);
+        background-color: var(--dark);
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
 }

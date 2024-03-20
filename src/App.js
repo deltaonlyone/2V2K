@@ -18,7 +18,7 @@ const App = () => {
 
             <NavbarExpanded></NavbarExpanded>
 
-            {/*<NavbarSecond></NavbarSecond>*/}
+            <NavbarSecond></NavbarSecond>
 
             {/*<div>*/}
             {/*    <UsersList/>*/}
