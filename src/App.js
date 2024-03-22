@@ -1,6 +1,6 @@
 import './App.css';
 import './styles/bootstrap-5.3.3-dist/css/bootstrap.min.css';
-import NavbarExpanded from "./NavbarExpanded";
+import {NavbarExpanded} from "./NavBarExpanded/NavbarExpanded";
 import NavbarSecond from "./NavbarSecond";
 import {Helmet} from 'react-helmet';
 import UsersList from './UsersList';
@@ -9,6 +9,7 @@ import faviconLogo from './photos/Snavvy_Logo/favicon.svg';
 import logo from './photos/Snavvy_Logo/Snavvy_logo_White.svg';
 import randomAvatar from './photos/randomAvatar.jpg';
 import PhotoComponent from "./PhotoComponent";
+
 
 
 const App = () => {
