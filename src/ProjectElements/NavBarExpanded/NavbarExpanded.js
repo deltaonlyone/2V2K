@@ -28,6 +28,8 @@ export function NavbarExpanded(props) {
                             <span className={styles.slider}></span>
                         </label>
                     </div>
+
+
                     <div className={styles.nav__cta}>
                         <button className={styles.buttonNavbar}>Sign in</button>
                     </div>
