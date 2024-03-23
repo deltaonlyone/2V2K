@@ -11,6 +11,8 @@ export function NavbarExpanded(props) {
     };
 
 
+
+
     return (
         <nav className={`${styles.nav} ${isExpanded ? styles['nav--expanded'] : ''}`}>
             <a href="/" className={styles.nav__brand}>Snavvy</a>
@@ -31,7 +33,7 @@ export function NavbarExpanded(props) {
 
 
                     <div className={styles.nav__cta}>
-                        <button className={styles.buttonNavbar}>Sign in</button>
+                        <button className={styles.buttonNavbar} onClick = {props.handleToggleSign}>Sign in</button>
                     </div>
 
             </div>

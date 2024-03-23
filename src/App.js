@@ -12,7 +12,7 @@ import {Helmet} from "react-helmet";
 
 const App = () => {
     return (
-        <div className="App">
+        <div id = 'app-root' className="App">
             <Helmet><title>Snavvy</title></Helmet>
             <MainPage></MainPage>
         </div>

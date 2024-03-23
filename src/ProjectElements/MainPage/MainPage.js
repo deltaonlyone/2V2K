@@ -2,17 +2,38 @@ import styles from './MainPage.module.css';
 import {NavbarExpanded} from "../NavBarExpanded/NavbarExpanded";
 import {PhotoSet} from "../PhotoSet/PhotoSet";
 import {MenuSignIn} from "../MenuSignIn/MenuSignIn";
+import {useState} from "react";
 // import UsersList from './UsersList';
 
 
 const MainPage = () => {
+
+    const [isOpened, setIsOpened] = useState(false);
+
+    const handleToggleSingBar = () => {
+        const appRoot = document.getElementById('mainPageContainer');
+
+        if(!isOpened){
+            appRoot.style.filter = 'blur(12px)';
+        }
+        else{
+            appRoot.style.filter = 'blur(0px)';
+        }
+
+        setIsOpened(!isOpened);
+    };
+
+
+
     return (
         <div className = {styles['mainPage']}>
-            <MenuSignIn></MenuSignIn>
+            {isOpened && <MenuSignIn handleToggleSign = {handleToggleSingBar}></MenuSignIn>}
 
-            <NavbarExpanded></NavbarExpanded>
+            <div id = 'mainPageContainer'>
+                <NavbarExpanded handleToggleSign = {handleToggleSingBar}></NavbarExpanded>
 
-            <PhotoSet></PhotoSet>
+                <PhotoSet></PhotoSet>
+            </div>
 
             {/*<div>*/}
             {/*    <UsersList/>*/}
