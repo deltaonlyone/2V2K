@@ -1,7 +1,7 @@
 import './App.css';
 import './styles/bootstrap-5.3.3-dist/css/bootstrap.min.css';
-import {NavbarExpanded} from "./NavBarExpanded/NavbarExpanded";
-import NavbarSecond from "./NavbarSecond";
+import {NavbarExpanded} from "./ProjectElements/NavBarExpanded/NavbarExpanded";
+import {PhotoSet} from "./ProjectElements/PhotoSet/PhotoSet";
 import {Helmet} from 'react-helmet';
 import UsersList from './UsersList';
 import AllUsersPhotos from "./AllUsersPhotos";
@@ -19,7 +19,7 @@ const App = () => {
 
             <NavbarExpanded></NavbarExpanded>
 
-            <NavbarSecond></NavbarSecond>
+            <PhotoSet></PhotoSet>
 
             {/*<div>*/}
             {/*    <UsersList/>*/}

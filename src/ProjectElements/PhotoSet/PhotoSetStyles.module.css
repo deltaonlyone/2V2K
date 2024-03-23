@@ -1,0 +1,46 @@
+.container{
+    background-color: blue;
+    width: 100%;
+    height: 47vw;
+}
+
+.photoSetTop{
+    height:50%;
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 8% 0 8%;
+}
+
+.photoSetDown{
+    height:50%;
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 8% 0 8%;
+}
+
+.photoTop1{
+    margin-top: 3%;
+    height: 85%;
+    width: 19%;
+}
+
+.photoTop2{
+    margin-top: 1.5%;
+    height: 85%;
+    width: 19%;
+}
+
+.photoDown1{
+    margin-top: 1.5%;
+    height: 85%;
+    width: 19%;
+}
+
+
+.photoDown2{
+    margin-top: 3%;
+    height: 85%;
+    width: 19%;
+}

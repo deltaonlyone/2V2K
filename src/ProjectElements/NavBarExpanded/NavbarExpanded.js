@@ -6,8 +6,8 @@ export function NavbarExpanded(props) {
     const handleToggle = () => {
         setIsExpanded(!isExpanded);
 
-        const x = document.getElementsByClassName('container_top')[0];
-        x.classList.toggle("change");
+        const x = document.querySelector(`.${styles.container_top}`);
+        x.classList.toggle(styles.change); // Використовуємо styles.change
     };
 
 
@@ -36,9 +36,9 @@ export function NavbarExpanded(props) {
 
             <button className={styles.nav__collapser} onClick={handleToggle}>
                 <div className={styles.container_top}>
-                    <div id="bar1" className={styles.bars}></div>
-                    <div id="bar2" className={styles.bars}></div>
-                    <div id="bar3" className={styles.bars}></div>
+                    <div id={styles['bar1']} className={styles.bars}></div>
+                    <div id={styles['bar2']} className={styles.bars}></div>
+                    <div id={styles['bar3']} className={styles.bars}></div>
                 </div>
 
             </button>
