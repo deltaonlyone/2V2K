@@ -1,6 +1,90 @@
 .container{
     width:99vw;
     height: 2000px;
-    background-color: blue;
+    background-color: black;
     position: relative;
+}
+
+.downArrowPlace{
+    background-color:black;
+    width:99vw;
+    height:35px;
+    justify-content: center;
+    display: flex;
+}
+
+.downArrowSymbol{
+    font-size:30px;
+}
+
+.firstAboutUs{
+    padding:50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.firstAboutUsLeft{
+    width:30%;
+    z-index: 1;
+}
+
+.firstAboutUsRight{
+    width:60%;
+    z-index: 1;
+}
+
+.textAboutUs{
+    font-size: 50px;
+    margin-bottom: 50px;
+}
+
+.textUnderAboutUs{
+    font-size: 18px;
+}
+
+.exploreAndPage{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    align-items: center;
+}
+
+.pageNumberFirst{
+    font-size: 17px;
+}
+
+.buttonExplore{
+    height:100%;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid white;
+    width: 180px;
+    font-size: 17px;
+}
+
+.buttonExplore:hover {
+    cursor: pointer;
+    border: 1px solid grey;
+}
+
+.photoAboutUsFirst{
+    margin-top: 160px;
+    width:100%;
+    border-radius: 30px;
+    border: 1px solid white;
+}
+
+.greyBackground{
+    width:99vw;
+    position:absolute;
+    height: 300px;
+    background-color: #131316;
+    z-index: 0;
+    margin-top: 500px;
+}
+
+.pageNumberSecond{
+    width: 100%;
+    color: white;
 }

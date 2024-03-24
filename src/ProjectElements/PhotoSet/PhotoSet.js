@@ -35,9 +35,6 @@ export function PhotoSet(props) {
                 <img className = {styles['photoDown1']} src={randomPhoto2} alt="" />
             </div>
 
-            <div className={styles['downArrowPlace']}>
-                <div className={styles['downArrowSymbol']}>&darr;</div>
-            </div>
 
 
 
