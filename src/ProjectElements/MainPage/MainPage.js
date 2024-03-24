@@ -2,6 +2,7 @@ import styles from './MainPage.module.css';
 import {NavbarExpanded} from "../NavBarExpanded/NavbarExpanded";
 import {PhotoSet} from "../PhotoSet/PhotoSet";
 import {MenuSignIn} from "../MenuSignIn/MenuSignIn";
+import {AboutUs} from "../AboutUs/AboutUs";
 import {useState} from "react";
 // import UsersList from './UsersList';
 
@@ -33,6 +34,8 @@ const MainPage = () => {
                 <NavbarExpanded handleToggleSign = {handleToggleSingBar}></NavbarExpanded>
 
                 <PhotoSet></PhotoSet>
+
+                <AboutUs></AboutUs>
             </div>
 
             {/*<div>*/}

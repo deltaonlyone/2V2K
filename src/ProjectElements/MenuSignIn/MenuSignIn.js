@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styles from './MenuSignIn.module.css';
 import logo from "../../photos/Snavvy_Logo/Snavvy_logo_White.svg";
 import {FormInput} from "../FormInput/FormInput";
@@ -12,6 +12,9 @@ export function MenuSignIn(props) {
     return (
         <nav className={styles.container} onClick = {props.handleToggleSign}>
             <div className = {styles.menu} onClick={(e) => e.stopPropagation()}>
+
+                <button className={styles['backButton']} onClick = {props.handleToggleSign}></button>
+
                 <img className = {styles['logo']} src={logo} alt="" />
                 <a className = {styles['signInText']}>Sign in</a>
 
@@ -28,6 +31,10 @@ export function MenuSignIn(props) {
                     >
 
                     </FormInput>
+
+                    <a className = {styles['forgotPasswordText']}>
+                        Forgot password?
+                    </a>
 
                     <button className={styles['submitButton']}>Sign in</button>
                 </div>
