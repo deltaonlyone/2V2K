@@ -3,7 +3,10 @@
 
 .App {
   color: white;
+}
 
+::-webkit-scrollbar {
+  display: none; /* Приховуємо скролбар */
 }
 
 .App-logo {

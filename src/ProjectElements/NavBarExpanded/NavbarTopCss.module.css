@@ -14,7 +14,7 @@
 /* Non-navbar specific stuff moved to bottom of file */
 
 .nav {
-    width: 99vw;
+    width: 100vw;
     display: grid;
     align-items: center;
     padding: 1.5rem 2rem;

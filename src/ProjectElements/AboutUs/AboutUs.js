@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './AboutUs.module.css';
-import examplePhotoExplore from './examplePhotoExplore.jpg';
+import photoAboutUsLoopa from './photoAboutUsLoopa.png';
+import bigLineFirst from "./line-1.svg";
 
 export function AboutUs(props) {
 
@@ -13,10 +14,16 @@ export function AboutUs(props) {
 
             <div className={styles['greyBackground']}></div>
 
+
+            <div className = {styles['bigLineFirstDiv']}>
+                <img className = {styles['bigLineFirst']} src={bigLineFirst} alt="" />
+            </div>
+
+
             <div className={styles['firstAboutUs']}>
                 <div className={styles['firstAboutUsLeft']}>
                     <h1 className={styles['textAboutUs']}>
-                        About US
+                        About Us
                     </h1>
 
 
@@ -33,7 +40,11 @@ export function AboutUs(props) {
 
                     <div className={styles['exploreAndPage']}>
                         <a className={styles['pageNumberFirst']}>
-                            02   -----------   04
+                            02
+                            <a className={styles['lineSymbolLeft']}>&#8212;</a>
+                            <a className={styles['lineSymbol']}>&#8212;</a>
+                            <a className={styles['lineSymbolRight']}>&#8212;</a>
+                            04
                         </a>
 
                         <button className={styles['buttonExplore']}><b>EXPLORE</b></button>
@@ -41,7 +52,7 @@ export function AboutUs(props) {
                 </div>
 
                 <div className={styles['firstAboutUsRight']}>
-                    <img className = {styles['photoAboutUsFirst']} src={examplePhotoExplore} alt="" />
+                    <img className = {styles['photoAboutUsFirst']} src={photoAboutUsLoopa} alt="" />
                 </div>
 
             </div>
