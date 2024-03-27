@@ -111,7 +111,7 @@
 }
 
 .bigLineFirstDiv{
-    overflow-x: hidden;
+    overflow: hidden;
     width: 100vw;
 }
 
@@ -119,7 +119,6 @@
     position: absolute;
     z-index: 1;
     overflow: hidden;
-    margin-top: 220px;
 }
 
 

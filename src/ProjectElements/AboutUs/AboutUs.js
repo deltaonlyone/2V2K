@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './AboutUs.module.css';
 import photoAboutUsLoopa from './photoAboutUsLoopa.png';
-import bigLineFirst from "./line-1.svg";
+import bigLineFirst from "./line-1-cuted.svg";
 
 export function AboutUs(props) {
 
