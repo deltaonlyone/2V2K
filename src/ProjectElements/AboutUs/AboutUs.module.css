@@ -18,15 +18,16 @@
 }
 
 .firstAboutUs{
-    padding:50px;
+    padding:80px;
     display: flex;
     justify-content: space-between;
 }
 
 .firstAboutUsLeft{
     margin-left: 50px;
-    width: 500px;
+    width: 600px;
     z-index: 1;
+    margin-right:50px;
 }
 
 .firstAboutUsRight{
@@ -41,7 +42,6 @@
 
 .textUnderAboutUs{
     font-size: 16px;
-    letter-spacing: 0.4em;
     line-height: 1.5;
 }
 
@@ -92,11 +92,6 @@
     margin-top: 28vw;
 }
 
-.pageNumberSecond{
-    width: 100%;
-    color: white;
-}
-
 
 .lineSymbol{
     margin: 2px;
@@ -120,6 +115,89 @@
     z-index: 1;
     overflow: hidden;
 }
+
+
+
+/*--------------------------------------------*/
+
+.secondAboutUs{
+    margin-top: 150px;
+}
+
+.pageNumberSecond{
+    font-size: 17px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+
+
+}
+
+.textServices{
+    font-size: 50px;
+    display: flex;
+    width:100%;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.textUnderServicesDiv{
+    max-width:100%;
+    display:flex;
+    justify-content: center;
+    margin-top:20px;
+
+}
+
+.textUnderServices{
+    font-size: 16px;
+    line-height: 1.5;
+    max-width:800px;
+    text-align: center;
+}
+
+.servicesList{
+    width:100%;
+    padding:60px 30px 30px 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+.serviceBox{
+    background-color: #131316;
+    width: 450px;
+    height: 600px;
+    margin:20px;
+    border-radius: 30px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.headTextServices{
+    font-size:30px;
+    margin-bottom:30px;
+}
+
+.photoServices{
+    width:320px;
+    height:320px;
+    margin:0 auto;
+}
+
+.textInServices{
+    font-size: 16px;
+    line-height: 1.5;
+    width:320px;
+    margin:auto;
+}
+
+
 
 
 
