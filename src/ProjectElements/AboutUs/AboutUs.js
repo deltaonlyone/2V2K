@@ -7,7 +7,13 @@ import photoServices2 from './photo-2-services.jpg';
 import photoServices3 from './photo-3-services.jpg';
 import bulbLight from './bulb.png';
 
+import { useSelector} from 'react-redux';
+
+
+
 export function AboutUs(props) {
+
+    const currentTheme = useSelector(state => state.currentTheme);
 
     return (
         <nav className={styles.container}>
@@ -51,7 +57,7 @@ export function AboutUs(props) {
                             04
                         </a>
 
-                        <button className={styles['buttonExplore']}><b>EXPLORE</b></button>
+                        <button className={`${styles['buttonExplore']} ${currentTheme.buttonColors}`}><b>EXPLORE</b></button>
                     </div>
                 </div>
 

@@ -1,6 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300');
 @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
 
+:root{
+    --first-color: black;
+    --second-color: #131316;
+    --third-color: #252525;
+    --fourth-color: #7D7D7D;
+    --fiveth-color: white;
+}
+
+[data-theme="dark"] {
+    --first-color: white;
+    --second-color: #7D7D7D;
+    --third-color: #252525;
+    --fourth-color: #131316;
+    --fiveth-color: black;
+}
 
 
 *,
