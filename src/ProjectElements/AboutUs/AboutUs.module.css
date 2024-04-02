@@ -177,6 +177,7 @@
     padding: 25px;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .headTextServices{
@@ -187,15 +188,15 @@
 .photoServices{
     width:320px;
     height:320px;
-    margin:0 auto;
+    margin-bottom:30px;
 }
 
 .textInServices{
     font-size: 16px;
     line-height: 1.5;
     width:320px;
-    margin:auto;
 }
+
 
 
 
@@ -243,4 +244,70 @@
         margin:0;
     }
 
+}
+
+
+/*--------------------------------------------*/
+
+
+
+.thirdAboutUs{
+    width:100vw;
+    height:400px;
+    margin-top:100px;
+}
+
+.joinUsDiv{
+    width:100vw;
+
+}
+
+.signInText{
+    display: flex;
+    justify-content: center;
+}
+
+.signInTextFirst{
+    font-size: 55px;
+    color:white;
+    z-index:2;
+    font-weight: bold;
+    word-spacing: 7px;
+}
+
+.signInTextSecond{
+    font-size: 55px;
+    z-index:2;
+    color:black;
+    font-weight: bold;
+    word-spacing: 7px;
+}
+
+.bulbLight{
+    z-index:1;
+    width:180px;
+    position:absolute;
+    margin-right:375px;
+    margin-top: -51px;
+}
+
+.buttonJoinUsDiv{
+    display:flex;
+    width:100vw;
+    justify-content: center;
+    margin:100px;
+}
+
+.buttonJoinUs{
+    height:40px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid white;
+    width: 250px;
+    font-size: 14px;
+}
+
+.buttonJoinUs:hover {
+    cursor: pointer;
+    border: 1px solid grey;
 }
