@@ -17,7 +17,6 @@ export function NavbarExpanded(props) {
 
 
 
-
     const currentTheme = useSelector(state => state.currentTheme);
     const dispatch = useDispatch();
 
