@@ -20,26 +20,23 @@ export function PhotoSet(props) {
                 </div>
             </div>
 
-            <div className={styles['photoSetTop']}>
-                <img className = {styles['photoTop1']} src={randomPhoto1} alt="" />
-                <img className = {styles['photoTop2']} src={randomPhoto2} alt="" />
-                <img className = {styles['photoTop1']} src={randomPhoto2} alt="" />
-                <img className = {styles['photoTop2']} src={randomPhoto1} alt="" />
-                <img className = {styles['photoTop1']} src={randomPhoto1} alt="" />
+            <div className={`${styles['photoSet']} ${currentTheme.photoSetColor}`}>
+                <div className={styles['photoSetTop']}>
+                    <img className = {styles['photoTop1']} src={randomPhoto1} alt="" />
+                    <img className = {styles['photoTop2']} src={randomPhoto2} alt="" />
+                    <img className = {styles['photoTop1']} src={randomPhoto2} alt="" />
+                    <img className = {styles['photoTop2']} src={randomPhoto1} alt="" />
+                    <img className = {styles['photoTop1']} src={randomPhoto1} alt="" />
+                </div>
+
+                <div className={`${styles['photoSetDown']} ${currentTheme.photoSetDownColor}`}>
+                    <img className = {styles['photoDown1']} src={randomPhoto1} alt="" />
+                    <img className = {styles['photoDown2']} src={randomPhoto2} alt="" />
+                    <img className = {styles['photoDown1']} src={randomPhoto2} alt="" />
+                    <img className = {styles['photoDown2']} src={randomPhoto1} alt="" />
+                    <img className = {styles['photoDown1']} src={randomPhoto2} alt="" />
+                </div>
             </div>
-
-            <div className={`${styles['photoSetDown']} ${currentTheme.photoSetDownColor}`}>
-                <img className = {styles['photoDown1']} src={randomPhoto1} alt="" />
-                <img className = {styles['photoDown2']} src={randomPhoto2} alt="" />
-                <img className = {styles['photoDown1']} src={randomPhoto2} alt="" />
-                <img className = {styles['photoDown2']} src={randomPhoto1} alt="" />
-                <img className = {styles['photoDown1']} src={randomPhoto2} alt="" />
-            </div>
-
-
-
-
-
 
 
 
