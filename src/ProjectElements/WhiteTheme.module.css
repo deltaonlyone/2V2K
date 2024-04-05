@@ -1,4 +1,168 @@
-.buttonColors{
-    background-color: black;
+.textColor{
+    color:black;
+}
+
+.textReverseColor{
     color:white;
+}
+
+.borderColor{
+    border-color:black;
+}
+
+.backgroundColor{
+    background-color:white;
+}
+
+.svgColor{
+    fill: #000000;
+}
+
+.svgLightGreyColor{
+    fill: #444444;
+}
+
+.greyBackgroundColor{
+    background-color: #DFDFDF;
+}
+
+
+
+
+
+
+
+
+
+
+/*--------------------*/
+
+.buttonSignInColor{
+    border-color:  black;
+    color: black;
+    background-color:white;
+}
+
+.buttonSignInColor:hover {
+    border-color: black;
+}
+
+.buttonSignInColor:focus {
+    border-color: black;
+}
+
+/*---------------------------*/
+
+.inputFormColor{
+    border-color: black;
+    background-color: white;
+}
+
+
+/*---------------------------*/
+
+.backButtonColor{
+    background-color:black;
+    border-color: grey;
+    color:black;
+}
+
+.backButtonColor:before, .backButtonColor:after {
+    background-color: white;
+    color:black;
+}
+.backButtonColor:hover {
+    border-color: black;
+}
+
+/*---------------------------*/
+
+.signInMenuBackground{
+    background-color:#E3E3E3;
+    border-color: black;
+}
+
+/*---------------------------*/
+
+
+.fieldInputColor{
+    background-color:white;
+    border-color: #444444;
+    color:black;
+}
+
+
+
+/*---------------------------*/
+
+.buttonJoinUsColor{
+    color:black;
+    background-color: white;
+    border-color: black
+}
+
+.buttonJoinUsColor:hover {
+    border-color: grey;
+}
+
+
+/*----------------------*/
+
+.photoSetDownColor{
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.8),rgba(255,255,255,1));
+}
+
+/*--------------------*/
+
+
+.buttonCenterColor{
+    border-color:  black;
+    color: black;
+}
+
+.buttonCenterColor:hover {
+    border-color: black;
+}
+
+.buttonCenterColor:focus {
+    border-color: black;
+}
+
+/*-----------------------------*/
+
+.inputCenterColor {
+    border-color: black;
+    background-color: rgba(255, 255, 255, 0);
+    color: black;
+}
+
+.inputCenterColor::placeholder {
+    color: black;
+}
+
+.inputCenterColor:hover {
+    border-color: black;
+}
+
+.inputCenterColor:focus {
+    border-color: black;
+}
+
+
+/*----------------------*/
+
+
+.buttonNavbarColor {
+    color: black;
+    background: white;
+    border-color: black;
+}
+
+.buttonNavbarColor::before {
+    background-color: black;
+}
+
+.buttonNavbarColor:hover {
+    color: white;
+    border-color: black;
 }

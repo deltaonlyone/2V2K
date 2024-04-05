@@ -3,9 +3,13 @@ import styles from './MenuSignIn.module.css';
 import logo from "../../photos/Snavvy_Logo/Snavvy_logo_White.svg";
 import {FormInput} from "../FormInput/FormInput";
 
+import { useSelector} from 'react-redux';
+
 export function MenuSignIn(props) {
     const [usernameOrEmail, setUsernameOrEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const currentTheme = useSelector(state => state.currentTheme);
 
     const handleSubmit = () => {
         const formData = {
@@ -36,15 +40,16 @@ export function MenuSignIn(props) {
 
 
     return (
-        <nav className={styles.container} onClick={props.handleToggleSign}>
-            <div className={styles.menu} onClick={(e) => e.stopPropagation()}>
+        <nav className={`${styles['container']} `} onClick={props.handleToggleSign}>
+            <div className={`${styles['menu']} ${currentTheme.signInMenuBackground}`} onClick={(e) => e.stopPropagation()}>
 
-                <button className={styles['backButton']} onClick={props.handleToggleSign}></button>
+                <button className={`${styles['backButton']} ${currentTheme.backButtonColor}`} onClick={props.handleToggleSign}></button>
 
-                <img className={styles['logo']} src={logo} alt=""/>
-                <a className={styles['signInText']}>Sign in</a>
+                <img className={`${styles['logo']} ${currentTheme.svgColor}`} src={logo} alt=""/>
 
-                <div className={styles['inputForm']}>
+                <a className={`${styles['signInText']} ${currentTheme.textColor}`}>Sign in</a>
+
+                <div className={`${styles['inputForm']} ${currentTheme.inputFormColor}`}>
                     <FormInput height={'43px'}
                                width={'100%'}
                                text={'Username or email address'}
@@ -64,10 +69,10 @@ export function MenuSignIn(props) {
                         Forgot password?
                     </a>
 
-                    <button className={styles['submitButton']} onClick={handleSubmit}>Sign in</button>
+                    <button className={`${styles['submitButton']} ${currentTheme.buttonSignInColor}`} onClick={handleSubmit}>Sign in</button>
                 </div>
-                <div className={styles['createAccountText']}>
-                    <a className={styles['textAccountLeft']}>
+                <div className={`${styles['createAccountText']} ${currentTheme.inputFormColor}`}>
+                    <a className={`${styles['textAccountLeft']} ${currentTheme.textColor}`}>
                         New to Snavvy?
                     </a>
 

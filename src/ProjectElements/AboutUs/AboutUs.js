@@ -16,28 +16,28 @@ export function AboutUs(props) {
     const currentTheme = useSelector(state => state.currentTheme);
 
     return (
-        <nav className={styles.container}>
+        <nav className={`${styles['container']} ${currentTheme.backgroundColor}`}>
 
-            <div className={styles['downArrowPlace']}>
-                <div className={styles['downArrowSymbol']}>&darr;</div>
+            <div className={`${styles['downArrowPlace']} ${currentTheme.backgroundColor}`}>
+                <div className={`${styles['downArrowSymbol']} ${currentTheme.textColor}`}>&darr;</div>
             </div>
 
-            <div className={styles['greyBackground']}></div>
+            <div className={`${styles['greyBackground']} ${currentTheme.greyBackgroundColor}`}></div>
 
 
             <div className = {styles['bigLineFirstDiv']}>
-                <img className = {styles['bigLineFirst']} src={bigLineFirst} alt="" />
+                <img className = {`${styles['bigLineFirst']} ${currentTheme.svgLightGreyColor}`} src={bigLineFirst} alt="" />
             </div>
 
 
             <div className={styles['firstAboutUs']}>
                 <div className={styles['firstAboutUsLeft']}>
-                    <h1 className={styles['textAboutUs']}>
+                    <h1 className={`${styles['textAboutUs']} ${currentTheme.textColor}`}>
                         About Us
                     </h1>
 
 
-                    <a className={styles['textUnderAboutUs']}>
+                    <a className={`${styles['textUnderAboutUs']} ${currentTheme.textColor}`}>
                         Nemo enim ipsam voluptatem quia
                         voluptas sit aspernatur aut odit
                         aut fugit, sed quia consequuntur
@@ -49,7 +49,7 @@ export function AboutUs(props) {
                     </a>
 
                     <div className={styles['exploreAndPage']}>
-                        <a className={styles['pageNumberFirst']}>
+                        <a className={`${styles['pageNumberFirst']} ${currentTheme.textColor}`}>
                             02
                             <a className={styles['lineSymbolLeft']}>&#8212;</a>
                             <a className={styles['lineSymbol']}>&#8212;</a>
@@ -57,12 +57,11 @@ export function AboutUs(props) {
                             04
                         </a>
 
-                        <button className={`${styles['buttonExplore']} ${currentTheme.buttonColors}`}><b>EXPLORE</b></button>
                     </div>
                 </div>
 
                 <div className={styles['firstAboutUsRight']}>
-                    <img className = {styles['photoAboutUsFirst']} src={photoAboutUsLoopa} alt="" />
+                    <img className = {`${styles['photoAboutUsFirst']} ${currentTheme.borderColor}`} src={photoAboutUsLoopa} alt="" />
                 </div>
 
             </div>
@@ -78,7 +77,7 @@ export function AboutUs(props) {
 
 
             <div className={styles['secondAboutUs']}>
-                <a className={styles['pageNumberSecond']}>
+                <a className={`${styles['pageNumberSecond']} ${currentTheme.textColor}`}>
                     03
                     <a className={styles['lineSymbolLeft']}>&#8212;</a>
                     <a className={styles['lineSymbol']}>&#8212;</a>
@@ -86,12 +85,12 @@ export function AboutUs(props) {
                     04
                 </a>
 
-                <h1 className={styles['textServices']}>
+                <h1 className={`${styles['textServices']} ${currentTheme.textColor}`}>
                     Here are our services
                 </h1>
 
                 <div className={styles['textUnderServicesDiv']}>
-                    <a className={styles['textUnderServices']}>
+                    <a className={`${styles['textUnderServices']} ${currentTheme.textColor}`}>
                         Nemo enim ipsam voluptatem quia voluptas
                         sit aspernatur aut odit aut fugit, sed quia
                         consequuntur magni dolores eos qui ratione
@@ -102,14 +101,14 @@ export function AboutUs(props) {
                 </div>
 
                 <div className={styles['servicesList']}>
-                    <div className={styles['serviceBox']}>
-                        <a className={styles['headTextServices']}>
+                    <div className={`${styles['serviceBox']} ${currentTheme.greyBackgroundColor}`}>
+                        <a className={`${styles['headTextServices']} ${currentTheme.textColor}`}>
                             Locations
                         </a>
 
                         <img className = {styles['photoServices']} src={photoServices1} alt="" />
 
-                        <a className={styles['textInServices']}>
+                        <a className={`${styles['textInServices']} ${currentTheme.textColor}`}>
                             Nemo enim ipsam voluptatem quia voluptas
                             sit aspernatur aut odit aut fugit, sed quia
                             consequuntur magni dolores eos qui ratione
@@ -119,14 +118,14 @@ export function AboutUs(props) {
                         </a>
 
                     </div>
-                    <div className={styles['serviceBox']}>
-                        <a className={styles['headTextServices']}>
+                    <div className={`${styles['serviceBox']} ${currentTheme.greyBackgroundColor}`}>
+                        <a className={`${styles['headTextServices']} ${currentTheme.textColor}`}>
                             Map
                         </a>
 
                         <img className = {styles['photoServices']} src={photoServices2} alt="" />
 
-                        <a className={styles['textInServices']}>
+                        <a className={`${styles['textInServices']} ${currentTheme.textColor}`}>
                             Nemo enim ipsam voluptatem quia voluptas
                             sit aspernatur aut odit aut fugit, sed quia
                             consequuntur magni dolores eos qui ratione
@@ -136,14 +135,14 @@ export function AboutUs(props) {
                         </a>
 
                     </div>
-                    <div className={styles['serviceBox']}>
-                        <a className={styles['headTextServices']}>
+                    <div className={`${styles['serviceBox']} ${currentTheme.greyBackgroundColor}`}>
+                        <a className={`${styles['headTextServices']} ${currentTheme.textColor}`}>
                             Photographers
                         </a>
 
                         <img className = {styles['photoServices']} src={photoServices3} alt="" />
 
-                        <a className={styles['textInServices']}>
+                        <a className={`${styles['textInServices']} ${currentTheme.textColor}`}>
                             Nemo enim ipsam voluptatem quia
                             voluptas sit aspernatur aut odit aut
                             fugit, sed quia consequuntur magni dolores
@@ -162,29 +161,29 @@ export function AboutUs(props) {
 
             {/*--------------------------------------------------------------------*/}
 
-            <div className={styles['thirdAboutUs']}>
+            <div className = {`${styles['thirdAboutUs']} ${currentTheme.backgroundColor}`}>
                 <div className={styles['joinUsDiv']}>
                     <div className={styles['signInText']}>
-                        <a className={styles['signInTextFirst']}>
+                        <a className={`${styles['signInTextFirst']} ${currentTheme.textColor}`}>
                             Sign in&nbsp;
                         </a>
-                        <a className={styles['signInTextSecond']}>
+                        <a className={`${styles['signInTextSecond']} ${currentTheme.textReverseColor}`}>
                             to&nbsp;
                         </a>
 
                         <img className = {styles['bulbLight']} src={bulbLight} alt="" />
 
-                        <a className={styles['signInTextFirst']}>
+                        <a className={`${styles['signInTextFirst']} ${currentTheme.textColor}`}>
                             use all this features
                         </a>
                     </div>
 
                     <div className={styles['buttonJoinUsDiv']}>
-                        <button className={styles['buttonJoinUs']}>JOIN US</button>
+                        <button className={`${styles['buttonJoinUs']} ${currentTheme.buttonJoinUsColor}`}>JOIN US</button>
                     </div>
                 </div>
 
-                <a className={styles['pageNumberSecond']}>
+                <a className={`${styles['pageNumberSecond']} ${currentTheme.textColor}`}>
                     04
                     <a className={styles['lineSymbolLeft']}>&#8212;</a>
                     <a className={styles['lineSymbol']}>&#8212;</a>

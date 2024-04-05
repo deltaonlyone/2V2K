@@ -22,18 +22,18 @@ export function NavbarExpanded(props) {
     const dispatch = useDispatch();
 
     return (
-        <nav className={`${styles.nav} ${isExpanded ? styles['nav--expanded'] : ''}`}>
-            <a href="/" className={styles.nav__brand}>Snavvy</a>
+        <nav className={`${styles.nav} ${currentTheme.backgroundColor} ${isExpanded ? styles['nav--expanded'] : ''}`}>
+            <a href="/" className={`${styles.nav__brand} ${currentTheme.textColor} ${currentTheme.borderColor}`}>Snavvy</a>
 
             <div className={styles.nav__collapsable}>
 
-                    <a href="#" className={styles.underlineHover} >
+                    <a href="#" className={`${styles.underlineHover}  ${currentTheme.textColor}`}>
                         Locations
                     </a>
-                    <a href="#" className={styles.underlineHover}>
+                    <a href="#" className={`${styles.underlineHover} ${currentTheme.textColor}`}>
                         Map
                     </a>
-                    <a href="#" className={styles.underlineHover}>
+                    <a href="#" className={`${styles.underlineHover} ${currentTheme.textColor}`}>
                         Photographers
                     </a>
 
@@ -55,7 +55,7 @@ export function NavbarExpanded(props) {
 
 
                     <div className={styles.nav__cta}>
-                        <button className={`${styles.buttonNavbar} ${currentTheme.buttonColors}`} onClick = {props.handleToggleSign}>Sign in</button>
+                        <button className={`${styles.buttonNavbar} ${currentTheme.buttonNavbarColor}`} onClick = {props.handleToggleSign}>Sign in</button>
                     </div>
 
             </div>

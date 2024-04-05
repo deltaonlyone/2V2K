@@ -12,7 +12,7 @@ const reducer_1 = (state = initialState, action) => {
             return {
                 ...state,
                 isDarkTheme: !state.isDarkTheme,
-                currentTheme: state.isDarkTheme ? whiteTheme : darkTheme,
+                currentTheme: state.isDarkTheme ? darkTheme : whiteTheme,
             };
         default:
             return state;

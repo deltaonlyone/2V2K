@@ -1,7 +1,11 @@
 import React, {useState} from 'react';
 import styles from './FormInput.module.css';
 
+import { useSelector} from 'react-redux';
+
 export function FormInput(props) {
+    const currentTheme = useSelector(state => state.currentTheme);
+
     const [inputValue, setInputValue] = useState('');
 
     const customStyle = {
@@ -18,11 +22,11 @@ export function FormInput(props) {
 
     return (
         <div className={styles['formInput']}>
-            <div className={styles['TextInput']}>
+            <div className={`${styles['textInput']} ${currentTheme.textColor}`}>
                 {props.text}
             </div>
             <input
-                className={styles['fieldInput']}
+                className={`${styles['fieldInput']} ${currentTheme.fieldInputColor}`}
                 style={customStyle}
                 value={inputValue}
                 onChange={handleChange}

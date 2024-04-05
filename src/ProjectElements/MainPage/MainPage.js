@@ -4,10 +4,15 @@ import {PhotoSet} from "../PhotoSet/PhotoSet";
 import {MenuSignIn} from "../MenuSignIn/MenuSignIn";
 import {AboutUs} from "../AboutUs/AboutUs";
 import {useState} from "react";
+
+import { useSelector} from 'react-redux';
+
 // import UsersList from './UsersList';
 
 
 const MainPage = () => {
+
+    const currentTheme = useSelector(state => state.currentTheme);
 
     const [isOpened, setIsOpened] = useState(false);
 
@@ -27,7 +32,7 @@ const MainPage = () => {
 
 
     return (
-        <div className = {styles['mainPage']}>
+        <div className = {`${styles['mainPage']} ${currentTheme.backgroundColor}`}>
             {isOpened && <MenuSignIn handleToggleSign = {handleToggleSingBar}></MenuSignIn>}
 
             <div id = 'mainPageContainer'>
