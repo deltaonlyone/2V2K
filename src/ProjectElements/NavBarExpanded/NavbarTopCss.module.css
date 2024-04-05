@@ -78,10 +78,6 @@
     /* This is what hides the content */
     overflow: hidden;
     max-height: 0;
-
-    transition: padding 500ms ease, max-height 250ms ease;
-
-
 }
 
 
@@ -116,12 +112,16 @@ a {
     .nav__collapsable {
         max-height: 500px;
         display: flex;
+        transition: none;
+
     }
 
     .nav--expanded .nav__collapsable,
     .nav__cta {
         padding: 0;
         margin: 0;
+        transition: none;
+
     }
 
     .nav__collapsable {
@@ -273,6 +273,7 @@ a {
     justify-content: center;
     gap: 10px;
     transition-duration: .5s;
+
     /*margin: 0;*/
     /*padding: 0;*/
 }
