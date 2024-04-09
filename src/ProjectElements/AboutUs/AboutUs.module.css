@@ -289,3 +289,17 @@
     cursor: pointer;
     border: 1px solid;
 }
+
+{/*--------------------------------------------------------------------*/}
+
+.mapAboutUsDiv {
+    width: 100%;
+    height: auto;
+}
+
+.mapAboutUs {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+}

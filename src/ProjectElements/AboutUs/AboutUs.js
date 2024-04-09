@@ -6,6 +6,8 @@ import photoServices1 from './photo-1-services.jpg';
 import photoServices2 from './photo-2-services.jpg';
 import photoServices3 from './photo-3-services.jpg';
 import bulbLight from './bulb.png';
+import mapPhoto from './mapAboutUSPhoto.jpg';
+
 
 import { useSelector} from 'react-redux';
 
@@ -191,6 +193,12 @@ export function AboutUs(props) {
                     04
                 </a>
 
+            </div>
+
+            {/*--------------------------------------------------------------------*/}
+
+            <div className = {`${styles['mapAboutUsDiv']} ${currentTheme.mapAboutUsColor}`}>
+                <img className={`${styles['mapAboutUs']}`} src={mapPhoto} alt=""/>
             </div>
 
         </nav>

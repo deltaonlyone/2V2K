@@ -61,9 +61,9 @@ export function NavbarExpanded(props) {
 
             <button className={styles.nav__collapser} onClick={handleToggle}>
                 <div className={styles.container_top}>
-                    <div id={styles['bar1']} className={styles.bars}></div>
-                    <div id={styles['bar2']} className={styles.bars}></div>
-                    <div id={styles['bar3']} className={styles.bars}></div>
+                    <div id={styles['bar1']} className={`${styles.bars}  ${currentTheme.backgroundReverseColor}`}></div>
+                    <div id={styles['bar2']} className={`${styles.bars}  ${currentTheme.backgroundReverseColor}`}></div>
+                    <div id={styles['bar3']} className={`${styles.bars}  ${currentTheme.backgroundReverseColor}`}></div>
                 </div>
 
             </button>
