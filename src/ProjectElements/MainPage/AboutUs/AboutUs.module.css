@@ -1,6 +1,6 @@
 .container{
     width:100vw;
-    height: 2000px;
+    height: 100%;
     position: relative;
 }
 
@@ -292,14 +292,44 @@
 
 {/*--------------------------------------------------------------------*/}
 
-.mapAboutUsDiv {
-    width: 100%;
-    height: auto;
+.mapAboutUs{
+    height:640px;
+    width:100%;
+    background-image: url('mapAboutUSPhoto.jpg');
+    background-size: cover; /* розтягнути зображення так, щоб воно покривало всю площину */
+    background-position: center;
 }
 
-.mapAboutUs {
-    width: 100%;
-    height: auto;
-    display: block;
-    position: relative;
+.mapAboutUsText{
+    height:100%;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
+.mapTextHead{
+    font-size:128px;
+}
+
+.mapTextMain{
+    max-width: 900px;
+    font-size: 18px;
+    margin: 50px;
+    text-align:center;
+    line-height: 2;
+}
+
+.buttonMap{
+    width:300px;
+    height:50px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+
+{/*--------------------------------------------------------------------*/}
+
+
+

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styles from './NavbarTopCss.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { connect } from 'react-redux';
-import { toggleTheme } from '../../store/actions/action_1';
+import { toggleTheme } from '../../../store/actions/action_1';
 
 
 

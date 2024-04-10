@@ -15,7 +15,7 @@ export function PhotoSet(props) {
                 <h1 className = {`${styles['topText']} ${currentTheme.textColor}`}>EXPLORE WIDE WORLD OF PHOTOGRAPHY WITH US</h1>
 
                 <div>
-                    <input placeholder="email adress" type="text" name="text" className={`${styles['inputCenter']} ${currentTheme.inputCenterColor}`}></input>
+                    <input placeholder="email address" type="text" name="text" className={`${styles['inputCenter']} ${currentTheme.inputCenterColor}`}></input>
                     <button className={`${styles['buttonCenter']} ${currentTheme.buttonCenterColor}`}>Get Started</button>
                 </div>
             </div>

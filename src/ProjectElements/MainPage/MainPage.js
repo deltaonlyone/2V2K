@@ -1,8 +1,9 @@
 import styles from './MainPage.module.css';
-import {NavbarExpanded} from "../NavBarExpanded/NavbarExpanded";
-import {PhotoSet} from "../PhotoSet/PhotoSet";
+import {NavbarExpanded} from "../Forms/NavBarExpanded/NavbarExpanded";
+import {FormFooter} from "../Forms/FormFooter/FormFooter";
+import {PhotoSet} from "./PhotoSet/PhotoSet";
 import {MenuSignIn} from "../MenuSignIn/MenuSignIn";
-import {AboutUs} from "../AboutUs/AboutUs";
+import {AboutUs} from "./AboutUs/AboutUs";
 import {useState} from "react";
 
 import { useSelector} from 'react-redux';
@@ -35,12 +36,14 @@ const MainPage = () => {
         <div className = {`${styles['mainPage']} ${currentTheme.backgroundColor}`}>
             {isOpened && <MenuSignIn handleToggleSign = {handleToggleSingBar}></MenuSignIn>}
 
-            <div id = 'mainPageContainer'>
+            <div id = 'mainPageContainer' className = {`${styles['mainPageContainer']}`}>
                 <NavbarExpanded handleToggleSign = {handleToggleSingBar}></NavbarExpanded>
 
                 <PhotoSet></PhotoSet>
 
                 <AboutUs></AboutUs>
+
+                <FormFooter></FormFooter>
             </div>
 
             {/*<div>*/}

@@ -3,5 +3,9 @@
 
 .mainPage{
     font-family: 'Comfortaa', sans-serif;
-    height: 4887px;
+}
+
+.mainPageContainer{
+    display: flex;
+    flex-direction: column;
 }

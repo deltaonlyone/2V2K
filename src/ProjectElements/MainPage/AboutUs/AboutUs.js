@@ -6,7 +6,9 @@ import photoServices1 from './photo-1-services.jpg';
 import photoServices2 from './photo-2-services.jpg';
 import photoServices3 from './photo-3-services.jpg';
 import bulbLight from './bulb.png';
-import mapPhoto from './mapAboutUSPhoto.jpg';
+import logo from "../../../photos/Snavvy_Logo/Snavvy_logo_White.svg";
+import telephoneSvg from "../../Forms/FormFooter/telephoneSvg.svg";
+import emailSvg from "../../Forms/FormFooter/emailSvg.svg";
 
 
 import { useSelector} from 'react-redux';
@@ -163,7 +165,7 @@ export function AboutUs(props) {
 
             {/*--------------------------------------------------------------------*/}
 
-            <div className = {`${styles['thirdAboutUs']} ${currentTheme.backgroundColor}`}>
+            <div className = {`${styles['thirdAboutUs']}`}>
                 <div className={styles['joinUsDiv']}>
                     <div className={styles['signInText']}>
                         <a className={`${styles['signInTextFirst']} ${currentTheme.textColor}`}>
@@ -197,9 +199,32 @@ export function AboutUs(props) {
 
             {/*--------------------------------------------------------------------*/}
 
-            <div className = {`${styles['mapAboutUsDiv']} ${currentTheme.mapAboutUsColor}`}>
-                <img className={`${styles['mapAboutUs']}`} src={mapPhoto} alt=""/>
+
+            <div className = {`${styles['mapAboutUs']}`}>
+                <div className = {`${styles['mapAboutUsText']} ${currentTheme.mapAboutUsColor}`}>
+                    <h1 className = {`${styles['mapTextHead']} ${currentTheme.textColor}`}>
+                        MAP
+                    </h1>
+
+                    <a className = {`${styles['mapTextMain']} ${currentTheme.textColor}`}>
+                        Nemo enim ipsam voluptatem quia voluptas
+                        sit aspernatur aut odit aut fugit, sed quia
+                        consequuntur magni dolores eos qui ratione
+                        voluptatem sequi nesciunt. Neque porro quisquam
+                        est, qui dolorem.
+                    </a>
+
+                    <button className={`${styles['buttonMap']} ${currentTheme.buttonMapColor}`}>EXPLORE</button>
+                </div>
             </div>
+
+
+
+            {/*--------------------------------------------------------------------*/}
+
+
+
+
 
         </nav>
     );
