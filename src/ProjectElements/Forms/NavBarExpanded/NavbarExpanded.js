@@ -3,8 +3,7 @@ import styles from './NavbarTopCss.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { connect } from 'react-redux';
 import { toggleTheme } from '../../../store/actions/action_1';
-
-
+import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 export function NavbarExpanded(props) {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -26,11 +25,9 @@ export function NavbarExpanded(props) {
 
             <div className={styles.nav__collapsable}>
 
-                    <a href="#" className={`${styles.underlineHover}  ${currentTheme.textColor}`}>
-                        Locations
-                    </a>
+
                     <a href="#" className={`${styles.underlineHover} ${currentTheme.textColor}`}>
-                        Map
+                        <Link to="/map">Map</Link>
                     </a>
                     <a href="#" className={`${styles.underlineHover} ${currentTheme.textColor}`}>
                         Photographers
