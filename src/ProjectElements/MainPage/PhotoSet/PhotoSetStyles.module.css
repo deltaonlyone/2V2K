@@ -82,34 +82,6 @@
     border: 2px solid;
 }
 
-@media (max-width: 1100px) {
-    .topText{
-        font-size: 20px;
-    }
-
-
-    .inputCenter {
-        width: 250px;
-        height: 40px;
-        font-size: 15px;
-        border-radius: 10px;
-    }
-
-    .inputCenter::placeholder {
-        font-size: 15px;
-        white-space: nowrap;
-    }
-
-
-    .buttonCenter{
-        margin-top: 20px;
-        height: 40px;
-        width: 125px;
-        font-size: 15px;
-        border-radius: 10px;
-    }
-}
-
 
 
 
@@ -160,6 +132,36 @@
     opacity: 0.9;
 }
 
+.photoTop3{
+    margin-top: 3%;
+    height: 85%;
+    width: 19%;
+    object-fit: cover;
+    filter: blur(3px);
+    z-index: -1;
+    opacity: 0.9;
+}
+
+.photoTop4{
+    margin-top: 1.5%;
+    height: 85%;
+    width: 19%;
+    object-fit: cover;
+    filter: blur(3px);
+    z-index: -1;
+    opacity: 0.9;
+}
+
+.photoTop5{
+    margin-top: 3%;
+    height: 85%;
+    width: 19%;
+    object-fit: cover;
+    filter: blur(3px);
+    z-index: -1;
+    opacity: 0.9;
+}
+
 .photoDown1{
     margin-top: 1.5%;
     height: 85%;
@@ -180,6 +182,139 @@
     opacity: 0.9;
 }
 
+.photoDown3{
+    margin-top: 1.5%;
+    height: 85%;
+    width: 19%;
+    object-fit: cover;
+    filter: blur(3px);
+    z-index: -1;
+    opacity: 0.9;
+}
+
+.photoDown4{
+    margin-top: 3%;
+    height: 85%;
+    width: 19%;
+    object-fit: cover;
+    filter: blur(3px);
+    z-index: -1;
+    opacity: 0.9;
+}
+
+.photoDown5{
+    margin-top: 1.5%;
+    height: 85%;
+    width: 19%;
+    object-fit: cover;
+    filter: blur(3px);
+    z-index: -1;
+    opacity: 0.9;
+}
 
 
+.photoSetSecond{
+    display: none;
+}
 
+
+@media (max-width: 1100px) {
+    .topText{
+        font-size: 20px;
+    }
+
+
+    .inputCenter {
+        width: 250px;
+        height: 40px;
+        font-size: 15px;
+        border-radius: 10px;
+    }
+
+    .inputCenter::placeholder {
+        font-size: 15px;
+        white-space: nowrap;
+    }
+
+
+    .buttonCenter{
+        margin-top: 20px;
+        height: 40px;
+        width: 125px;
+        font-size: 15px;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 700px) {
+    .container{
+        height: 120vw;
+    }
+
+    .photoSet{
+        display: none;
+    }
+
+    .photoSetSecond{
+        height:100%;
+        width:100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .photoSetTop{
+        height:33.3%;
+        width:100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 3% 0 3%;
+    }
+
+    .photoSetMiddle{
+        height:33.3%;
+        width:100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 3% 0 3%;
+    }
+
+    .photoSetDown{
+        height:33.3%;
+        width:100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 3% 0 3%;
+    }
+
+    .photoTop{
+        margin-top: 3%;
+        height: 90%;
+        width: 31%;
+        object-fit: cover;
+        filter: blur(3px);
+        z-index: -1;
+        opacity: 0.9;
+    }
+
+    .photoMiddle{
+        margin-top: 3%;
+        height: 90%;
+        width: 31%;
+        object-fit: cover;
+        filter: blur(3px);
+        z-index: -1;
+        opacity: 0.9;
+    }
+
+    .photoDown{
+        margin-top: 3%;
+        height: 90%;
+        width: 31%;
+        object-fit: cover;
+        filter: blur(3px);
+        z-index: -1;
+        opacity: 0.9;
+    }
+
+}
