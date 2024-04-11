@@ -3,7 +3,7 @@ import styles from './MenuSignIn.module.css';
 import logo from "../../photos/Snavvy_Logo/Snavvy_logo_White.svg";
 import {FormInput} from "../Forms/FormInput/FormInput";
 
-import { useSelector} from 'react-redux';
+import {useSelector} from 'react-redux';
 
 export function MenuSignIn(props) {
     const [usernameOrEmail, setUsernameOrEmail] = useState('');
@@ -27,11 +27,11 @@ export function MenuSignIn(props) {
                 if (!response.ok) {
                     throw new Error('Authentication failed');
                 }
-                return response.json();
+                return response.headers.get('X-Authentication');
             })
             .then(data => {
-                const token = data.headers['X-Authentication'];
-                localStorage.setItem('token', token);
+                localStorage.setItem('token', data);
+                props.handleToggleSign()
             })
             .catch(error => {
                 console.error('Authentication error:', error);
@@ -41,9 +41,11 @@ export function MenuSignIn(props) {
 
     return (
         <nav className={`${styles['container']} `} onClick={props.handleToggleSign}>
-            <div className={`${styles['menu']} ${currentTheme.signInMenuBackground}`} onClick={(e) => e.stopPropagation()}>
+            <div className={`${styles['menu']} ${currentTheme.signInMenuBackground}`}
+                 onClick={(e) => e.stopPropagation()}>
 
-                <button className={`${styles['backButton']} ${currentTheme.backButtonColor}`} onClick={props.handleToggleSign}></button>
+                <button className={`${styles['backButton']} ${currentTheme.backButtonColor}`}
+                        onClick={props.handleToggleSign}></button>
 
                 <img className={`${styles['logo']} ${currentTheme.svgColor}`} src={logo} alt=""/>
 
@@ -69,7 +71,9 @@ export function MenuSignIn(props) {
                         Forgot password?
                     </a>
 
-                    <button className={`${styles['submitButton']} ${currentTheme.buttonSignInColor}`} onClick={handleSubmit}>Sign in</button>
+                    <button className={`${styles['submitButton']} ${currentTheme.buttonSignInColor}`}
+                            onClick={handleSubmit}>Sign in
+                    </button>
                 </div>
                 <div className={`${styles['createAccountText']} ${currentTheme.inputFormColor}`}>
                     <a className={`${styles['textAccountLeft']} ${currentTheme.textColor}`}>
