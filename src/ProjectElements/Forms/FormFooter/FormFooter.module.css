@@ -266,3 +266,79 @@ li:hover::after {
 .example-2 .icon-content a[data-social="facebook"] ~ .tooltip {
     background-color: #1877F2;
 }
+
+.footerContainerSecond{
+    display:none;
+}
+
+@media (max-width: 1100px) {
+    .footerContainer{
+        display:none;
+    }
+
+    .footerContainerSecond{
+        width:100%;
+        height: 86%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .informationTextHead{
+        font-size:27px;
+    }
+
+    .informationAboutUs{
+        height:500px;
+    }
+
+    .informationAboutUsMiddleRight{
+        height:100%;
+        width: 40%;
+        display:flex;
+        flex-direction: column;
+    }
+
+    .informationAboutUsMiddleLeft{
+        height:100%;
+        width: 60%;
+        display:flex;
+        flex-direction: column;
+    }
+
+    .informationAboutUsTop{
+        height: 15%;
+    }
+
+    .logoSnavvy{
+        margin:0;
+        width:200px;
+    }
+
+    .informationAboutUsMiddle{
+        height: 30%;
+        display:flex;
+        justify-content: space-between;
+    }
+
+    .informationAboutUsBottom{
+        height: 45%;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .formInformationInput{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .buttonSubmitEmail{
+        width:80%;
+    }
+
+    .inputEmail{
+        width:80%;
+    }
+}
