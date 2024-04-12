@@ -26,15 +26,28 @@ export function AboutUs(props) {
                 <div className={`${styles['downArrowSymbol']} ${currentTheme.textColor}`}>&darr;</div>
             </div>
 
+            <div className={styles['exploreAndPagePhone']}>
+                <a className={`${styles['pageNumberFirst']} ${currentTheme.textColor}`}>
+                    02
+                    <a className={styles['lineSymbolLeft']}>&#8212;</a>
+                    <a className={styles['lineSymbol']}>&#8212;</a>
+                    <a className={styles['lineSymbolRight']}>&#8212;</a>
+                    04
+                </a>
+
+            </div>
+
             <div className={`${styles['greyBackground']} ${currentTheme.greyBackgroundColor}`}></div>
 
 
-            <div className = {styles['bigLineFirstDiv']}>
-                <img className = {`${styles['bigLineFirst']} ${currentTheme.svgLightGreyColor}`} src={bigLineFirst} alt="" />
+            <div className={styles['bigLineFirstDiv']}>
+                <img className={`${styles['bigLineFirst']} ${currentTheme.svgLightGreyColor}`} src={bigLineFirst}
+                     alt=""/>
             </div>
 
 
             <div className={styles['firstAboutUs']}>
+
                 <div className={styles['firstAboutUsLeft']}>
                     <h1 className={`${styles['textAboutUs']} ${currentTheme.textColor}`}>
                         About Us
@@ -65,19 +78,14 @@ export function AboutUs(props) {
                 </div>
 
                 <div className={styles['firstAboutUsRight']}>
-                    <img className = {`${styles['photoAboutUsFirst']} ${currentTheme.borderColor}`} src={photoAboutUsLoopa} alt="" />
+                    <img className={`${styles['photoAboutUsFirst']} ${currentTheme.borderColor}`}
+                         src={photoAboutUsLoopa} alt=""/>
                 </div>
 
             </div>
 
 
-
-
-
-{/*--------------------------------------------------------------------*/}
-
-
-
+            {/*--------------------------------------------------------------------*/}
 
 
             <div className={styles['secondAboutUs']}>
@@ -110,7 +118,7 @@ export function AboutUs(props) {
                             Locations
                         </a>
 
-                        <img className = {styles['photoServices']} src={photoServices1} alt="" />
+                        <img className={styles['photoServices']} src={photoServices1} alt=""/>
 
                         <a className={`${styles['textInServices']} ${currentTheme.textColor}`}>
                             Nemo enim ipsam voluptatem quia voluptas
@@ -127,7 +135,7 @@ export function AboutUs(props) {
                             Map
                         </a>
 
-                        <img className = {styles['photoServices']} src={photoServices2} alt="" />
+                        <img className={styles['photoServices']} src={photoServices2} alt=""/>
 
                         <a className={`${styles['textInServices']} ${currentTheme.textColor}`}>
                             Nemo enim ipsam voluptatem quia voluptas
@@ -144,7 +152,7 @@ export function AboutUs(props) {
                             Photographers
                         </a>
 
-                        <img className = {styles['photoServices']} src={photoServices3} alt="" />
+                        <img className={styles['photoServices']} src={photoServices3} alt=""/>
 
                         <a className={`${styles['textInServices']} ${currentTheme.textColor}`}>
                             Nemo enim ipsam voluptatem quia
@@ -159,13 +167,28 @@ export function AboutUs(props) {
 
                 </div>
 
+                <div className={styles['servicesListPhone']}>
+                    <div className={`${styles['servicesSmallBox']} ${currentTheme.greyBackgroundColor}`}>
+
+
+                    </div>
+                    <div className={`${styles['servicesSmallBox']} ${currentTheme.greyBackgroundColor}`}>
+
+
+                    </div>
+                    <div className={`${styles['servicesSmallBox']} ${currentTheme.greyBackgroundColor}`}>
+
+
+                    </div>
+
+                </div>
 
 
             </div>
 
             {/*--------------------------------------------------------------------*/}
 
-            <div className = {`${styles['thirdAboutUs']}`}>
+            <div className={`${styles['thirdAboutUs']}`}>
                 <div className={styles['joinUsDiv']}>
                     <div className={styles['signInText']}>
                         <a className={`${styles['signInTextFirst']} ${currentTheme.textColor}`}>
@@ -175,7 +198,7 @@ export function AboutUs(props) {
                             to&nbsp;
                         </a>
 
-                        <img className = {styles['bulbLight']} src={bulbLight} alt="" />
+                        <img className={styles['bulbLight']} src={bulbLight} alt=""/>
 
                         <a className={`${styles['signInTextFirst']} ${currentTheme.textColor}`}>
                             use all this features
@@ -183,7 +206,8 @@ export function AboutUs(props) {
                     </div>
 
                     <div className={styles['buttonJoinUsDiv']}>
-                        <button className={`${styles['buttonJoinUs']} ${currentTheme.buttonJoinUsColor}`}>JOIN US</button>
+                        <button className={`${styles['buttonJoinUs']} ${currentTheme.buttonJoinUsColor}`}>JOIN US
+                        </button>
                     </div>
                 </div>
 
@@ -200,13 +224,13 @@ export function AboutUs(props) {
             {/*--------------------------------------------------------------------*/}
 
 
-            <div className = {`${styles['mapAboutUs']}`}>
-                <div className = {`${styles['mapAboutUsText']} ${currentTheme.mapAboutUsColor}`}>
-                    <h1 className = {`${styles['mapTextHead']} ${currentTheme.textColor}`}>
+            <div className={`${styles['mapAboutUs']}`}>
+                <div className={`${styles['mapAboutUsText']} ${currentTheme.mapAboutUsColor}`}>
+                    <h1 className={`${styles['mapTextHead']} ${currentTheme.textColor}`}>
                         MAP
                     </h1>
 
-                    <a className = {`${styles['mapTextMain']} ${currentTheme.textColor}`}>
+                    <a className={`${styles['mapTextMain']} ${currentTheme.textColor}`}>
                         Nemo enim ipsam voluptatem quia voluptas
                         sit aspernatur aut odit aut fugit, sed quia
                         consequuntur magni dolores eos qui ratione
@@ -219,11 +243,7 @@ export function AboutUs(props) {
             </div>
 
 
-
             {/*--------------------------------------------------------------------*/}
-
-
-
 
 
         </nav>
