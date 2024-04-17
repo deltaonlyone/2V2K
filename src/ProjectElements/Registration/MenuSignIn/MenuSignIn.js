@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styles from './MenuSignIn.module.css';
-import logo from "../../photos/Snavvy_Logo/Snavvy_logo_White.svg";
-import {FormInput} from "../Forms/FormInput/FormInput";
+import logo from "../../../photos/Snavvy_Logo/Snavvy_logo_White.svg";
+import {FormInput} from "../../Forms/FormInput/FormInput";
 
 import {useSelector} from 'react-redux';
 
@@ -67,7 +67,12 @@ export function MenuSignIn(props) {
 
                     </FormInput>
 
-                    <a className={styles['forgotPasswordText']}>
+                    <a className={styles['forgotPasswordText']}
+                       onClick={(e) => {
+                           props.handleToggleSign();
+                           props.handleToggleForgotPassword();
+                       }}
+                    >
                         Forgot password?
                     </a>
 
@@ -80,7 +85,12 @@ export function MenuSignIn(props) {
                         New to Snavvy?
                     </a>
 
-                    <a className={styles['textAccountRight']}>
+                    <a className={styles['textAccountRight']}
+                       onClick={(e) => {
+                           props.handleToggleSign();
+                           props.handleToggleSignUp();
+                       }}
+                    >
                         Create an account
                     </a>
 
