@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './PhotoSetStyles.module.css';
 import randomPhoto1 from './randomPhoto.jpg';
 import randomPhoto2 from './randomPhoto2.png';
+import {FormButton} from "../../Forms/FormButton/FormButton";
 
 import { useSelector} from 'react-redux';
 
@@ -15,11 +16,15 @@ export function PhotoSet(props) {
                 <h1 className={`${styles['topText']} ${currentTheme.textColor}`}>EXPLORE WIDE WORLD OF PHOTOGRAPHY WITH
                     US</h1>
 
-                <div>
+                <div className={styles['inputAndButton']}>
                     <input placeholder="email address" type="text" name="text"
                            className={`${styles['inputCenter']} ${currentTheme.inputCenterColor}`}></input>
-                    <button className={`${styles['buttonCenter']} ${currentTheme.buttonCenterColor}`}>Get Started
-                    </button>
+                    {/*<button className={`${styles['buttonCenter']} ${currentTheme.buttonCenterColor}`}>Get Started*/}
+                    {/*</button>*/}
+                    <FormButton height={'auto'}
+                               width={'10vw'}
+                               text={'Get Started'}
+                    ></FormButton>
                 </div>
             </div>
 
