@@ -1,88 +1,37 @@
 import './App.css';
-import logo from './photos/logoWithoutLetters.png';
+import MainPage from "./ProjectElements/MainPage/MainPage";
+import ProfilePage from "./ProjectElements/Profile/Profile";
+import MapPage from "./ProjectElements/Map/Map";
+import UsersList from './UsersList';
+import AllUsersPhotos from "./AllUsersPhotos";
+import faviconLogo from './photos/Snavvy_Logo/favicon.svg';
+import logo from './photos/Snavvy_Logo/Snavvy_logo_White.svg';
+import randomAvatar from './photos/randomAvatar.jpg';
+import PhotoComponent from "./PhotoComponent";
+import {Helmet} from "react-helmet";
+
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    Link
+} from "react-router-dom";
+
 
 const App = () => {
-  return (
-      <div className="App">
-        <nav id="navbar">
-          <ul className="navbar-items flexbox-col">
-            <li className="navbar-logo flexbox-left">
-              <a className="navbar-item-inner flexbox height-100">
-                <img className="height-100" src={logo} alt="OurLogo"></img>
-              </a>
-            </li>
-            <li className="navbar-item flexbox-left">
-              <a className="navbar-item-inner flexbox-left">
-                <div className="navbar-item-inner-icon-wrapper flexbox">
-                  <ion-icon name="search-outline"></ion-icon>
-                </div>
-                <span className="link-text">Search</span>
-              </a>
-            </li>
-            <li className="navbar-item flexbox-left">
-              <a className="navbar-item-inner flexbox-left">
-                <div className="navbar-item-inner-icon-wrapper flexbox">
-                  <ion-icon name="home-outline"></ion-icon>
-                </div>
-                <span className="link-text">Home</span>
-              </a>
-            </li>
-            <li className="navbar-item flexbox-left">
-              <a className="navbar-item-inner flexbox-left">
-                <div className="navbar-item-inner-icon-wrapper flexbox">
-                  <ion-icon name="folder-open-outline"></ion-icon>
-                </div>
-                <span className="link-text">Projects</span>
-              </a>
-            </li>
-            <li className="navbar-item flexbox-left">
-              <a className="navbar-item-inner flexbox-left">
-                <div className="navbar-item-inner-icon-wrapper flexbox">
-                  <ion-icon name="pie-chart-outline"></ion-icon>
-                </div>
-                <span className="link-text">Dashboard</span>
-              </a>
-            </li>
-            <li className="navbar-item flexbox-left">
-              <a className="navbar-item-inner flexbox-left">
-                <div className="navbar-item-inner-icon-wrapper flexbox">
-                  <ion-icon name="people-outline"></ion-icon>
-                </div>
-                <span className="link-text">Team</span>
-              </a>
-            </li>
-            <li className="navbar-item flexbox-left">
-              <a className="navbar-item-inner flexbox-left">
-                <div className="navbar-item-inner-icon-wrapper flexbox">
-                  <ion-icon name="chatbubbles-outline"></ion-icon>
-                </div>
-                <span className="link-text">Support</span>
-              </a>
-            </li>
-            <li className="navbar-item flexbox-left">
-              <a className="navbar-item-inner flexbox-left">
-                <div className="navbar-item-inner-icon-wrapper flexbox">
-                  <ion-icon name="settings-outline"></ion-icon>
-                </div>
-                <span className="link-text">Settings</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
+    return (
 
-        <main id="main" className="flexbox-col">
-          <h2>Lorem ipsum!</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum corporis,
-            rerum doloremque iste sed voluptates omnis molestias molestiae animi
-            recusandae labore sit amet delectus ad necessitatibus laudantium qui!
-            Magni quisquam illum quaerat necessitatibus sint quibusdam perferendis!
-            Aut ipsam cumque deleniti error perspiciatis iusto accusamus consequuntur
-            assumenda. Obcaecati minima sed natus?
-          </p>
-        </main>
-      </div>
-  );
+        <div id='app-root' className="App">
+            <Helmet><title>Snavvy</title></Helmet>
+            <Router>
+                <Routes>
+                    <Route path="/" element={<MainPage></MainPage>}></Route>
+                    <Route path="/profile" element={<ProfilePage></ProfilePage>}></Route>
+                    <Route path="/map" element={<MapPage></MapPage>}></Route>
+                </Routes>
+            </Router>
+        </div>
+    );
 };
 
 export default App;

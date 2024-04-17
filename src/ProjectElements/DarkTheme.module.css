@@ -1,0 +1,212 @@
+.textColor{
+    color:white;
+}
+
+.textGreyColor{
+    color: #7B7E86;
+}
+
+.textReverseColor{
+    color:black;
+}
+
+.borderColor{
+    border-color:white;
+}
+
+.backgroundColor{
+    background-color:black;
+}
+
+.backgroundReverseColor{
+    background-color:white;
+}
+
+.svgColor{
+    fill: #FFFFFF;
+}
+
+.svgLightGreyColor{
+    fill: #7D7D7D;
+}
+
+.greyBackgroundColor{
+    background-color: #131316;
+}
+
+
+
+/*--------------------*/
+
+
+.buttonSubmitEmailColor{
+    border-color: white;
+    color:white;
+}
+
+.buttonSubmitEmailColor:hover {
+    border-color: grey;
+}
+
+
+.inputEmailColor{
+    border-color: white;
+    color:white;
+}
+
+.inputEmailColor:hover {
+    border-color: grey;
+}
+
+/*--------------------*/
+
+
+.buttonMapColor{
+    border-color: white;
+    color:white;
+}
+
+.buttonMapColor:hover {
+    border-color: grey;
+}
+
+
+
+/*--------------------*/
+
+.mapAboutUsColor{
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.6),rgba(0,0,0,1));
+}
+
+/*--------------------*/
+
+.buttonSignInColor{
+    border-color:  grey;
+    color: white;
+    background-color:black;
+}
+
+.buttonSignInColor:hover {
+    border-color: white;
+}
+
+.buttonSignInColor:focus {
+    border-color: white;
+}
+
+/*---------------------------*/
+
+.inputFormColor{
+    border-color: grey;
+    background-color: #0F0F0F;
+}
+
+/*---------------------------*/
+
+.backButtonColor{
+    background-color:white;
+    border-color: grey;
+    color:white;
+}
+
+.backButtonColor:before, .backButtonColor:after {
+    background-color: black;
+    color:white;
+}
+.backButtonColor:hover {
+    border-color: white;
+}
+
+
+/*---------------------------*/
+
+.signInMenuBackground{
+    background-color:black;
+    border-color: grey;
+}
+
+/*---------------------------*/
+
+
+.fieldInputColor{
+    background-color:black;
+    border-color: grey;
+    color:white;
+}
+
+/*---------------------------*/
+
+.buttonJoinUsColor{
+    color:white;
+    background-color: black;
+    border-color: white;
+}
+
+.buttonJoinUsColor:hover {
+    border-color: grey;
+}
+
+/*----------------------*/
+
+.photoSetDownColor{
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.8),rgba(0,0,0,1));
+}
+
+/*--------------------*/
+
+.buttonCenterColor{
+    border-color:  white;
+    color: white;
+}
+
+.buttonCenterColor:hover {
+    border-color: white;
+}
+
+.buttonCenterColor:focus {
+    border-color: white;
+}
+
+
+/*-----------------------------*/
+
+.inputCenterColor {
+    border-color: white;
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+}
+
+.inputCenterColor::placeholder {
+    color: white;
+}
+
+.inputCenterColor:hover {
+    border-color: white;
+}
+
+.inputCenterColor:focus {
+    border-color: white;
+}
+
+/*-----------------------*/
+
+.photoSetColor{
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.6),rgba(0,0,0,1));
+}
+
+/*----------------------*/
+
+.buttonNavbarColor {
+    color: white;
+    background: black;
+    border-color: white;
+}
+
+.buttonNavbarColor::before {
+    background-color: white;
+}
+
+.buttonNavbarColor:hover {
+    color: black;
+    border-color: white;
+}

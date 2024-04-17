@@ -1,0 +1,413 @@
+.container{
+    width:100vw;
+    height: 100%;
+    position: relative;
+}
+
+.downArrowPlace{
+    width:100vw;
+    height:35px;
+    justify-content: center;
+    display: flex;
+}
+
+.downArrowSymbol{
+    font-size:30px;
+}
+
+.firstAboutUs{
+    padding:80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.firstAboutUsLeft{
+    margin-left: 50px;
+    width: 600px;
+    z-index: 1;
+    margin-right:50px;
+}
+
+.firstAboutUsRight{
+    width:58%;
+    z-index: 1;
+}
+
+.textAboutUs{
+    font-size: 50px;
+    margin-bottom: 50px;
+}
+
+.textUnderAboutUs{
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.exploreAndPage{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    align-items: center;
+}
+
+.pageNumberFirst{
+    font-size: 17px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.photoAboutUsFirst{
+    margin-top: 140px;
+    width:100%;
+    border-radius: 30px;
+    border: 1px solid;
+}
+
+.greyBackground{
+    width:100vw;
+    position:absolute;
+    height: 300px;
+    z-index: 0;
+    margin-top: 28vw;
+}
+
+
+.lineSymbol{
+    margin: 2px;
+}
+
+.lineSymbolLeft{
+    margin-left: 18px;
+}
+
+.lineSymbolRight{
+    margin-right: 18px;
+}
+
+.bigLineFirstDiv{
+    overflow: hidden;
+    width: 100vw;
+}
+
+.bigLineFirst{
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+}
+
+
+
+/*--------------------------------------------*/
+
+.secondAboutUs{
+    margin-top: 150px;
+}
+
+.pageNumberSecond{
+    font-size: 17px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+
+
+}
+
+.textServices{
+    font-size: 50px;
+    display: flex;
+    width:100%;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.textUnderServicesDiv{
+    max-width:100%;
+    display:flex;
+    justify-content: center;
+    margin-top:20px;
+
+}
+
+.textUnderServices{
+    font-size: 16px;
+    line-height: 1.5;
+    max-width:800px;
+    text-align: center;
+}
+
+.servicesList{
+    width:100%;
+    padding:60px 30px 30px 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+.serviceBox{
+    width: 450px;
+    height: 600px;
+    margin:20px;
+    border-radius: 30px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.headTextServices{
+    font-size:30px;
+    margin-bottom:30px;
+}
+
+.photoServices{
+    width:320px;
+    height:320px;
+    margin-bottom:30px;
+}
+
+.textInServices{
+    font-size: 16px;
+    line-height: 1.5;
+    width:320px;
+}
+
+.exploreAndPagePhone{
+    display:none;
+}
+
+
+
+
+
+@media (max-width: 1100px) {
+
+    .bigLineFirstDiv{
+        display:flex;
+        height:100%;
+    }
+
+    .bigLineFirst{
+        margin-top: 300px;
+    }
+
+    .greyBackground{
+        margin-top:480px;
+        height:130px;
+    }
+
+    .downArrowPlace{
+        display: none;
+    }
+
+    .exploreAndPagePhone{
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        height: 50px;
+        align-items: center;
+    }
+
+    .photoAboutUsFirst{
+        max-width:500px;
+        margin-top:80px;
+    }
+
+
+    .firstAboutUsRight{
+        justify-content: center;
+        display:flex;
+        width:90%;
+    }
+
+
+    .exploreAndPage{
+        display: none;
+    }
+
+    .firstAboutUs{
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .firstAboutUsLeft{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width:100%;
+        max-width: 500px;
+        margin: 0 50px 0 50px;
+    }
+
+    .textAboutUs{
+        font-size: 30px;
+    }
+
+    .firstAboutUs{
+        justify-content: center;
+        width:100%;
+    }
+
+    .firstAboutUs{
+        padding: 15px;
+        padding-top: 50px;
+    }
+
+    .lineSymbol{
+        margin: 1px;
+    }
+
+    .buttonExplore{
+        margin:0;
+    }
+
+}
+
+
+/*--------------------------------------------*/
+
+
+
+.thirdAboutUs{
+    width:100vw;
+    height:400px;
+    margin-top:100px;
+}
+
+.joinUsDiv{
+    width:100vw;
+
+}
+
+.signInText{
+    display: flex;
+    justify-content: center;
+}
+
+.signInTextFirst{
+    font-size: 55px;
+    z-index:2;
+    font-weight: bold;
+    word-spacing: 7px;
+}
+
+.signInTextSecond{
+    font-size: 55px;
+    z-index:2;
+    font-weight: bold;
+    word-spacing: 7px;
+}
+
+.bulbLight{
+    z-index:1;
+    width:180px;
+    position:absolute;
+    margin-right:375px;
+    margin-top: -51px;
+}
+
+.buttonJoinUsDiv{
+    display:flex;
+    width:100vw;
+    justify-content: center;
+    margin: 100px 0 100px 0;
+}
+
+.buttonJoinUs{
+    height:40px;
+    border-radius: 10px;
+    border: 1px solid;
+    width: 250px;
+    font-size: 14px;
+}
+
+.buttonJoinUs:hover {
+    cursor: pointer;
+    border: 1px solid;
+}
+
+.servicesListPhone{
+
+}
+
+@media (max-width: 1100px) {
+    .servicesList{
+        display:none;
+    }
+
+    .servicesListPhone{
+        display:flex;
+        padding: 50px;
+        width:100%;
+        height:540px;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .servicesSmallBox{
+        width:100%;
+        max-width:500px;
+        height:32%;
+    }
+}
+
+@media (max-width: 700px) {
+    .textUnderServicesDiv{
+        display:none;
+    }
+
+    .textServices{
+        font-size:36px;
+    }
+}
+
+{/*--------------------------------------------------------------------*/}
+
+.mapAboutUs{
+    height:640px;
+    width:100%;
+    background-image: url('mapAboutUSPhoto.jpg');
+    background-size: cover; /* розтягнути зображення так, щоб воно покривало всю площину */
+    background-position: center;
+}
+
+.mapAboutUsText{
+    height:100%;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mapTextHead{
+    font-size:128px;
+}
+
+.mapTextMain{
+    max-width: 900px;
+    font-size: 18px;
+    margin: 50px;
+    text-align:center;
+    line-height: 2;
+}
+
+.buttonMap{
+    width:300px;
+    height:50px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+
+{/*--------------------------------------------------------------------*/}
+
+
+

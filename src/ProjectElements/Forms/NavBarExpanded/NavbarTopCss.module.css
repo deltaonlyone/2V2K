@@ -1,0 +1,484 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300');
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
+
+*,
+*::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Non-navbar specific stuff moved to bottom of file */
+
+.nav {
+    width: 100vw;
+    display: grid;
+    align-items: center;
+    padding: 0.2rem 2rem;
+
+    /* Individual value for the menu icon, then auto size the rest */
+    grid-template-columns: 60px repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+
+    /* This is the layout for the navbar in expanded mobile mode */
+    grid-template-areas:
+		"collapser brand"
+		"collapsable collapsable";
+
+    justify-content: left;
+}
+
+.nav__collapser {
+    grid-area: collapser;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+}
+
+.nav__brand {
+    width: 150px;
+    font-weight: bold;
+    font-size: 2rem;
+    font-family: "Gloria Hallelujah", cursive;
+    grid-area: brand;
+
+    margin-right: 60px;
+}
+
+.nav__cta {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.nav__collapsable {
+    display: grid;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    grid-area: collapsable;
+
+    /* This is what hides the content */
+    overflow: hidden;
+    max-height: 0;
+}
+
+
+.nav--expanded .nav__collapsable {
+    max-height: 500px; /* This is what shows the content */
+    margin-top: 1rem;
+    padding: 2rem 0;
+}
+
+a {
+    font-size: 1.7rem;
+}
+
+.underlineHover:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Desktop mode styles */
+@media (min-width: 700px) {
+    .nav {
+        /* Layout for nav in desktop mode */
+        grid-template-columns: 1fr 7fr;
+        grid-template-areas: "brand collapsable collapsable";
+    }
+
+    .nav__collapser {
+        display: none;
+    }
+
+    .nav__collapsable {
+        max-height: 500px;
+        display: flex;
+        transition: none;
+
+    }
+
+    .nav--expanded .nav__collapsable,
+    .nav__cta {
+        padding: 0;
+        margin: 0;
+        transition: none;
+
+    }
+
+    .nav__collapsable {
+        display: flex;
+        gap: 2rem;
+    }
+
+
+    .nav__brand {
+        border-right: 1px solid;
+    }
+
+    .nav__collapsable a{
+        margin-left:20px;
+    }
+
+    .toggleSwitch {
+        margin-left: auto;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.cta {
+    font-size: 1.1rem;
+    border-radius: 13px;
+    padding: 0.5em 1em;
+    border: 1.1px solid;
+}
+
+.cta--bold {
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.toggleSwitch {
+    position: relative;
+    width: 80px;
+    height: 40px;
+    --light: #d8dbe0;
+    --dark: #28292c;
+    --link: rgb(27, 129, 112);
+    --link-hover: rgb(24, 94, 82);
+}
+
+.switchLabel {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    background-color: var(--dark);
+    border-radius: 25px;
+    cursor: pointer;
+    border: 3px solid var(--dark);
+}
+
+.checkbox {
+    position: absolute;
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.checkbox:checked ~ .slider {
+    background-color: var(--light);
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    -webkit-box-shadow: inset 12px -4px 0px 0px var(--light);
+    box-shadow: inset 12px -4px 0px 0px var(--light);
+    background-color: var(--dark);
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.checkbox:checked ~ .slider::before {
+    -webkit-transform: translateX(40px);
+    -ms-transform: translateX(40px);
+    transform: translateX(40px);
+    background-color: var(--dark);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.container_top {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+    transition-duration: .5s;
+
+    /*margin: 0;*/
+    /*padding: 0;*/
+}
+
+.bars {
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+}
+
+#bar2 {
+    transition-duration: .8s;
+}
+
+#bar1 {
+    width: 50%;
+}
+
+#bar2 {
+    width: 75%;
+}
+
+.change  .bars {
+    position: absolute;
+    transition-duration: .5s;
+}
+
+.change  #bar2 {
+    transform: scaleX(0);
+    transition-duration: .1s;
+}
+
+.change  #bar1 {
+    width: 100%;
+    transform: rotate(45deg);
+    transition-duration: .5s;
+}
+
+.change  #bar3 {
+    width: 100%;
+    transform: rotate(-45deg);
+    transition-duration: .5s;
+}
+
+.change {
+    transition-duration: .5s;
+    transform: rotate(180deg);
+}
+
+
+
+
+
+
+
+
+
+.buttonNavbar {
+    font-family: 'Comfortaa', sans-serif;
+    height: 50px;
+    width: 105px;
+    padding: 0 20px;
+    border: unset;
+    border-radius: 15px;
+    z-index: 1;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    transition: all 250ms;
+    overflow: hidden;
+    border: 1px solid;
+}
+
+.buttonNavbar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 10px;
+    z-index: -1;
+    transition: all 250ms
+}
+
+.buttonNavbar:hover {
+    border: 1px solid ;
+}
+
+.buttonNavbar:hover::before {
+    width: 100%;
+}
+
+
+
+
+
+@media (max-width: 1100px) {
+
+    .nav__collapsable a{
+        margin-left:0;
+    }
+
+    a {
+        font-size: 1.6rem;
+    }
+
+
+    .nav__brand{
+        margin-right: 10px;
+        width:120px;
+        font-size:1.8rem;
+    }
+
+    .buttonNavbar{
+        height: 40px;
+        width: 90px;
+        font-size: 12px;
+        border-radius:12px;
+    }
+
+
+
+
+    .toggleSwitch {
+        width: 60px;
+        height: 30px;
+    }
+
+    .switchLabel {
+        height: 30px;
+        border-radius: 20px;
+        border: 3px solid var(--dark);
+    }
+
+    .slider {
+        border-radius: 20px;
+    }
+
+    .slider::before {
+        top: 5px;
+        left: 6px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        -webkit-box-shadow: inset 9px -3px 0px 0px var(--light);
+        box-shadow: inset 9px -3px 0px 0px var(--light);
+    }
+
+    .checkbox:checked ~ .slider::before {
+        -webkit-transform: translateX(30px);
+        -ms-transform: translateX(30px);
+        transform: translateX(30px);
+    }
+}
+
+@media (max-width: 700px) {
+    a {
+        font-size: 1.5rem;
+    }
+
+    .buttonNavbar {
+        height: 50px;
+        width: 105px;
+        border-radius: 15px;
+        font-size: 17px;
+    }
+
+
+    .toggleSwitch {
+        position: relative;
+        width: 80px;
+        height: 40px;
+        --light: #d8dbe0;
+        --dark: #28292c;
+        --link: rgb(27, 129, 112);
+        --link-hover: rgb(24, 94, 82);
+    }
+
+    .switchLabel {
+        position: absolute;
+        width: 100%;
+        height: 40px;
+        background-color: var(--dark);
+        border-radius: 25px;
+        cursor: pointer;
+        border: 3px solid var(--dark);
+    }
+
+    .checkbox {
+        position: absolute;
+        display: none;
+    }
+
+    .slider {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 25px;
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+    }
+
+    .checkbox:checked ~ .slider {
+        background-color: var(--light);
+    }
+
+    .slider::before {
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        -webkit-box-shadow: inset 12px -4px 0px 0px var(--light);
+        box-shadow: inset 12px -4px 0px 0px var(--light);
+        background-color: var(--dark);
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+    }
+
+    .checkbox:checked ~ .slider::before {
+        -webkit-transform: translateX(40px);
+        -ms-transform: translateX(40px);
+        transform: translateX(40px);
+        background-color: var(--dark);
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+}
