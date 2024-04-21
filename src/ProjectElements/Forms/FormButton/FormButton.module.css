@@ -1,0 +1,66 @@
+.formButton{
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 1vw;
+    border-radius: 1vw;
+    border: 1.5px solid;
+    transition: all .1s ease;
+}
+
+/* Стиль кнопки при фокусі */
+.formButton:focus {
+    outline: none;
+    position: relative;
+}
+
+.formButton:focus::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border: 1.5px solid white;
+    border-radius: 0.8vw;
+}
+
+.formButton:hover {
+    background-color: white;
+    border-color: black;
+    color:black;
+}
+
+/* Стиль кнопки при натисканні */
+.formButton:active {
+    -webkit-box-shadow: inset 1px 1px 10px black;
+    -moz-box-shadow:    inset 1px 1px 10px black;
+    box-shadow:         inset 1px 1px 10px black;
+}
+
+
+/* Стиль кнопки при перетягуванні (не всі браузери підтримують цей стан) */
+.formButton:active {
+
+}
+
+/* Стиль кнопки у вимкненому стані */
+.formButton:disabled {
+
+}
+
+/* Стиль кнопки у стані завантаження */
+.formButton.loading:after {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #ffffff;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

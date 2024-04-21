@@ -2,7 +2,7 @@ import styles from './Map.module.css';
 import {useState} from "react";
 import {NavbarExpanded} from "../Forms/NavBarExpanded/NavbarExpanded";
 import {FormFooter} from "../Forms/FormFooter/FormFooter";
-import {MenuSignIn} from "../MenuSignIn/MenuSignIn";
+import {MenuSignIn} from "../Registration/MenuSignIn/MenuSignIn";
 
 import { useSelector} from 'react-redux';
 
