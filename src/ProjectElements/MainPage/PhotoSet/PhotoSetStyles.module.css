@@ -234,6 +234,20 @@
 
 
 @media (max-width: 1100px) {
+
+    .centerText{
+        width:90%;
+    }
+
+    .inputAndButton{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+        height:150px;
+        align-items: center;
+    }
+
     .topText{
         font-size: 20px;
     }

@@ -171,16 +171,77 @@ export function AboutUs(props) {
                 </div>
 
                 <div className={styles['servicesListPhone']}>
-                    <div className={`${styles['servicesSmallBox']} ${currentTheme.greyBackgroundColor}`}>
 
+                    <div className={`${styles['servicesSmallBox']} `}>
+
+                        <div className={`${styles['flip-card']}`}>
+                            <div className={`${styles['flip-card-inner']}`}>
+                                <div className={`${styles['flip-card-front']} ${currentTheme.greyBackgroundColor}`}>
+
+                                    <p className={`${styles['textServicesHeadPhone']} ${currentTheme.textColor}`}>
+                                        Locations
+                                    </p>
+                                    <img className={styles['photoServicesPhone']} src={photoServices1} alt=""/>
+                                </div>
+                                <div className={`${styles['flip-card-back']} ${currentTheme.greyBackgroundColor}`}>
+
+                                    <p className={`${styles['textServicesPhone']} ${currentTheme.textColor}`}>
+                                        Nemo enim ipsam voluptatem quia voluptas sit
+                                        aspernatur aut odit aut fugit, sed quia consequuntur
+                                        magni dolores eos qui ratione voluptatem
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
-                    <div className={`${styles['servicesSmallBox']} ${currentTheme.greyBackgroundColor}`}>
 
+                    <div className={`${styles['servicesSmallBox']} `}>
 
+                        <div className={`${styles['flip-card']}`}>
+                            <div className={`${styles['flip-card-inner']}`}>
+                                <div className={`${styles['flip-card-front']} ${currentTheme.greyBackgroundColor}`}>
+
+                                    <p className={`${styles['textServicesHeadPhone']} ${currentTheme.textColor}`}>
+                                        Map
+                                    </p>
+                                    <img className={styles['photoServicesPhone']} src={photoServices2} alt=""/>
+                                </div>
+                                <div className={`${styles['flip-card-back']} ${currentTheme.greyBackgroundColor}`}>
+
+                                    <p className={`${styles['textServicesPhone']} ${currentTheme.textColor}`}>
+                                        Nemo enim ipsam voluptatem quia voluptas sit
+                                        aspernatur aut odit aut fugit, sed quia consequuntur
+                                        magni dolores eos qui ratione voluptatem
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div className={`${styles['servicesSmallBox']} ${currentTheme.greyBackgroundColor}`}>
 
+                    <div className={`${styles['servicesSmallBox']}`}>
+                        <div className={`${styles['flip-card']}`}>
+                            <div className={`${styles['flip-card-inner']}`}>
+                                <div className={`${styles['flip-card-front']} ${currentTheme.greyBackgroundColor}`}>
+
+                                    <p className={`${styles['textServicesHeadPhone']} ${currentTheme.textColor}`}>
+                                        Photographers
+                                    </p>
+                                    <img className={styles['photoServicesPhone']} src={photoServices3} alt=""/>
+                                </div>
+                                <div className={`${styles['flip-card-back']} ${currentTheme.greyBackgroundColor}`}>
+
+                                    <p className={`${styles['textServicesPhone']} ${currentTheme.textColor}`}>
+                                        Nemo enim ipsam voluptatem quia voluptas sit
+                                        aspernatur aut odit aut fugit, sed quia consequuntur
+                                        magni dolores eos qui ratione voluptatem
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
 

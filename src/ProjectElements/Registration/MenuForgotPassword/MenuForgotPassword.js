@@ -4,6 +4,7 @@ import logo from "../../../photos/Snavvy_Logo/Snavvy_logo_White.svg";
 import {FormInputSign} from "../../Forms/FormInputSign/FormInputSign";
 
 import {useSelector} from 'react-redux';
+import {FormInput} from "../../Forms/FormInput/FormInput";
 
 export function MenuForgotPassword(props) {
     // const [usernameOrEmail, setUsernameOrEmail] = useState('');
@@ -52,9 +53,14 @@ export function MenuForgotPassword(props) {
                 <a className={`${styles['forgotPasswordHeadText']} ${currentTheme.textColor}`}>Enter your email address and we'll send you a link to restore access to your account</a>
 
                 <div className={`${styles['inputForm']} ${currentTheme.inputFormColor}`}>
-                    <FormInput height={'39px'}
+                    <FormInputSign height={'39px'}
                                width={'100%'}
-                               text={'Username or email address'}/>
+                               text={'Username or email address'}>
+                    </FormInputSign>
+
+                    <button className={`${styles['submitButton']} ${currentTheme.buttonSignInColor}`}>
+                        Confirm
+                    </button>
                 </div>
 
                 <div className={styles['informationText']}>

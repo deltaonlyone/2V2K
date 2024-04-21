@@ -334,7 +334,7 @@
 }
 
 .servicesListPhone{
-
+    display:none;
 }
 
 @media (max-width: 1100px) {
@@ -343,10 +343,11 @@
     }
 
     .servicesListPhone{
+        align-items: center;
         display:flex;
         padding: 50px;
         width:100%;
-        height:540px;
+        height:640px;
         flex-direction: column;
         justify-content: space-between;
     }
@@ -409,5 +410,68 @@
 
 {/*--------------------------------------------------------------------*/}
 
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+}
 
+.title {
+    font-size: 1.5em;
+    font-weight: 900;
+    text-align: center;
+    margin: 0;
+}
 
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 1rem;
+}
+
+.flip-card-front {
+    padding:15px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flip-card-back {
+    padding:15px;
+    transform: rotateY(180deg);
+}
+
+.photoServicesPhone{
+    height:100%;
+    border-radius: 30px;
+}
+.textServicesHeadPhone{
+    font-size: 20px;
+    width: 200px;
+}
+
+.textServicesPhone{
+    font-size: 14px;
+}

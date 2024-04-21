@@ -51,7 +51,37 @@ export function MenuSignUp(props) {
                 <a className={`${styles['signInText']} ${currentTheme.textColor}`}>Sign up</a>
 
                 <div className={`${styles['inputForm']} ${currentTheme.inputFormColor}`}>
+                    <FormInputSign height={'43px'}
+                                   width={'100%'}
+                                   text={'Email address'}
+                    >
 
+                    </FormInputSign>
+
+                    <FormInputSign height={'43px'}
+                                   width={'100%'}
+                                   text={'Username'}
+                    >
+
+                    </FormInputSign>
+
+                    <FormInputSign height={'43px'}
+                                   width={'100%'}
+                                   text={'Password'}
+                    >
+
+                    </FormInputSign>
+
+                    <FormInputSign height={'43px'}
+                                   width={'100%'}
+                                   text={'Repeat password'}
+                    >
+
+                    </FormInputSign>
+
+                    <button className={`${styles['submitButton']} ${currentTheme.buttonSignInColor}`}>
+                        Sign up
+                    </button>
 
                 </div>
                 <div className={`${styles['createAccountText']} ${currentTheme.inputFormColor}`}>

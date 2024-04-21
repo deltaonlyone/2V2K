@@ -309,6 +309,7 @@ a {
 
 
 .buttonNavbar {
+    cursor:pointer;
     font-family: 'Comfortaa', sans-serif;
     height: 50px;
     width: 105px;
