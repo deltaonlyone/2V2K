@@ -3,6 +3,7 @@ import styles from './PhotoSetStyles.module.css';
 import randomPhoto1 from './randomPhoto.jpg';
 import randomPhoto2 from './randomPhoto2.png';
 import {FormButton} from "../../Forms/FormButton/FormButton";
+import {FormInput} from "../../Forms/FormInput/FormInput";
 
 import { useSelector} from 'react-redux';
 
@@ -13,18 +14,31 @@ export function PhotoSet(props) {
     return (
         <nav className={`${styles['container']} ${currentTheme.backgroundColor}`}>
             <div className={styles['centerText']}>
-                <h1 className={`${styles['topText']} ${currentTheme.textColor}`}>EXPLORE WIDE WORLD OF PHOTOGRAPHY WITH
-                    US</h1>
+                <h1 className={`${styles['topText']} ${currentTheme.textColor}`}>EXPLORE WIDE WORLD OF PHOTOGRAPHY</h1>
+                <h2 className={`${styles['topTextBottom']} ${currentTheme.textColor}`}>WITH
+                    US</h2>
 
                 <div className={styles['inputAndButton']}>
-                    <input placeholder="email address" type="text" name="text"
-                           className={`${styles['inputCenter']} ${currentTheme.inputCenterColor}`}></input>
-                    {/*<button className={`${styles['buttonCenter']} ${currentTheme.buttonCenterColor}`}>Get Started*/}
-                    {/*</button>*/}
-                    <FormButton height={'auto'}
-                               width={'10vw'}
+
+                    <FormInput
+                        height={'55px'}
+                        width={'65%'}
+                        text={'email address'}
+
+                    ></FormInput>
+
+
+                    <FormButton height={'55px'}
+                               width={'32%'}
                                text={'Get Started'}
                     ></FormButton>
+
+
+                    {/*<input placeholder="email address" type="text" name="text"*/}
+                    {/*       className={`${styles['inputCenter']} ${currentTheme.inputCenterColor}`}></input>*/}
+
+                    {/*<button className={`${styles['buttonCenter']} ${currentTheme.buttonCenterColor}`}>Get Started*/}
+                    {/*</button>*/}
                 </div>
             </div>
 

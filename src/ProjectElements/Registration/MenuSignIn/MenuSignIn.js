@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styles from './MenuSignIn.module.css';
 import logo from "../../../photos/Snavvy_Logo/Snavvy_logo_White.svg";
-import {FormInput} from "../../Forms/FormInput/FormInput";
+import {FormInputSign} from "../../Forms/FormInputSign/FormInputSign";
 
 import {useSelector} from 'react-redux';
 
@@ -52,20 +52,20 @@ export function MenuSignIn(props) {
                 <a className={`${styles['signInText']} ${currentTheme.textColor}`}>Sign in</a>
 
                 <div className={`${styles['inputForm']} ${currentTheme.inputFormColor}`}>
-                    <FormInput height={'43px'}
-                               width={'100%'}
-                               text={'Username or email address'}
-                               onChange={setUsernameOrEmail}
+                    <FormInputSign height={'43px'}
+                                   width={'100%'}
+                                   text={'Username or email address'}
+                                   onChange={setUsernameOrEmail}
                     >
 
-                    </FormInput>
-                    <FormInput height={'43px'}
-                               width={'100%'}
-                               text={'Password'}
-                               onChange={setPassword}
+                    </FormInputSign>
+                    <FormInputSign height={'43px'}
+                                   width={'100%'}
+                                   text={'Password'}
+                                   onChange={setPassword}
                     >
 
-                    </FormInput>
+                    </FormInputSign>
 
                     <a className={styles['forgotPasswordText']}
                        onClick={(e) => {

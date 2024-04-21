@@ -4,6 +4,8 @@ import {useDispatch, useSelector} from "react-redux";
 import logo from "../../../photos/Snavvy_Logo/Snavvy_logo_White.svg";
 import telephoneSvg from "./telephoneSvg.svg";
 import emailSvg from "./emailSvg.svg";
+import {FormButton} from "../FormButton/FormButton";
+import {FormInput} from "../FormInput/FormInput";
 
 
 export function FormFooter(props) {
@@ -32,11 +34,25 @@ export function FormFooter(props) {
                         Register
                     </a>
                     <form className={`${styles['formInformationInput']}`}>
-                        <input placeholder="email address" type="text" name="text"
-                               className={`${styles['inputEmail']} ${currentTheme.inputEmailColor}`}></input>
-                        <button
-                            className={`${styles['buttonSubmitEmail']} ${currentTheme.buttonSubmitEmailColor}`}>Submit
-                        </button>
+
+                        <FormInput
+                            height={'50px'}
+                            width={'100%'}
+                            text={'email address'}
+
+                        ></FormInput>
+
+
+                        <FormButton height={'50px'}
+                                    width={'100%'}
+                                    text={'Submit'}
+                        ></FormButton>
+
+                        {/*<input placeholder="email address" type="text" name="text"*/}
+                        {/*       className={`${styles['inputEmail']} ${currentTheme.inputEmailColor}`}></input>*/}
+                        {/*<button*/}
+                        {/*    className={`${styles['buttonSubmitEmail']} ${currentTheme.buttonSubmitEmailColor}`}>Submit*/}
+                        {/*</button>*/}
                     </form>
 
                 </div>

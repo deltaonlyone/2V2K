@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styles from './MenuSignUp.module.css';
 import logo from "../../../photos/Snavvy_Logo/Snavvy_logo_White.svg";
-import {FormInput} from "../../Forms/FormInput/FormInput";
+import {FormInputSign} from "../../Forms/FormInputSign/FormInputSign";
 
 import {useSelector} from 'react-redux';
 

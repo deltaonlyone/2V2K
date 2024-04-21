@@ -1,11 +1,73 @@
+.formInputColor {
+    background-color: rgba(255, 255, 255, 0);
+    border-color: #7D7D7D;
+    color: white;
+}
+.formInputColor::placeholder {
+    color: white;
+}
+.formInputColor:hover {
+    background-color: rgba(96, 96, 96, 0.4);
+}
+.formInputColor:focus {
+    border-color: white;
+    background-color: rgba(96, 96, 96, 0.4);
+}
+.formInputColor:not(:placeholder-shown) {
+    color:white;
+    border-color:white;
+}
+.formInputColor.error {
+    border-color: #B72C2C;
+    background-color: rgba(255, 255, 255, 0);
+    color:white;
+}
+.formInputColor:disabled {
+    border-color: #7D7D7D;
+    background-color: rgba(255, 255, 255, 0);
+    color: #7D7D7D;
+}
+
+
+
+
 .formButtonColor{
     border-color:  white;
     color: white;
 }
-
 .formButtonColor:focus::after {
-    border: white;
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border: 1.5px solid white;
+    border-radius: 0.8vw;
 }
+.formButtonColor:hover {
+    background-color: white;
+    border-color: black;
+    color:black;
+}
+.formButtonColor:active {
+    -webkit-box-shadow: inset 1px 1px 10px black;
+    -moz-box-shadow:    inset 1px 1px 10px black;
+    box-shadow:         inset 1px 1px 10px black;
+}
+.formButtonColor:disabled {
+    border-color: #6C6C6C;
+    color: #6C6C6C;
+    background-color: rgba(255, 255, 255, 0);
+    -webkit-box-shadow: inset 0 0 0 black;
+    -moz-box-shadow:    inset 0 0 0 black;
+    box-shadow:         inset 0 0 0 black;
+}
+.formButtonColor.loading:after {
+    border-color: #ffffff;
+}
+
+
 
 .textColor{
     color:white;

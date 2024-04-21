@@ -1,8 +1,37 @@
-.fieldInput{
-    margin-top: 7px;
-    background-color:black;
-    border-radius: 15px;
-    border: 1px solid grey;
-    color:white;
-    padding:10px;
+.formInput {
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 100%;
+    border-radius: 1em;
+    border: 1.5px solid;
+    transition: all .5s;
+    padding-left: 15px;
+}
+
+.formInput::placeholder {
+
+}
+
+/* Стан при наведенні */
+.formInput:hover {
+    cursor: pointer;
+}
+
+/* Стан введення тексту */
+.formInput:focus {
+
+}
+
+/* Стан, коли введений текст */
+.formInput:not(:placeholder-shown) {
+
+}
+
+/* Стан помилки */
+.formInput.error {
+
+}
+
+/* Відключений стан */
+.formInput:disabled {
+
 }

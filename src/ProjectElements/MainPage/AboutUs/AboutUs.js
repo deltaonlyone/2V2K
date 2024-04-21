@@ -6,6 +6,9 @@ import photoServices1 from './photo-1-services.jpg';
 import photoServices2 from './photo-2-services.jpg';
 import photoServices3 from './photo-3-services.jpg';
 import bulbLight from './bulb.png';
+import {FormButton} from "../../Forms/FormButton/FormButton";
+import {FormInput} from "../../Forms/FormInput/FormInput";
+
 import logo from "../../../photos/Snavvy_Logo/Snavvy_logo_White.svg";
 import telephoneSvg from "../../Forms/FormFooter/telephoneSvg.svg";
 import emailSvg from "../../Forms/FormFooter/emailSvg.svg";
@@ -206,8 +209,12 @@ export function AboutUs(props) {
                     </div>
 
                     <div className={styles['buttonJoinUsDiv']}>
-                        <button className={`${styles['buttonJoinUs']} ${currentTheme.buttonJoinUsColor}`}>JOIN US
-                        </button>
+                        {/*<button className={`${styles['buttonJoinUs']} ${currentTheme.buttonJoinUsColor}`}>JOIN US*/}
+                        {/*</button>*/}
+                        <FormButton height={'50px'}
+                                    width={'320px'}
+                                    text={'JOIN US'}
+                        ></FormButton>
                     </div>
                 </div>
 
@@ -238,7 +245,11 @@ export function AboutUs(props) {
                         est, qui dolorem.
                     </a>
 
-                    <button className={`${styles['buttonMap']} ${currentTheme.buttonMapColor}`}>EXPLORE</button>
+                    {/*<button className={`${styles['buttonMap']} ${currentTheme.buttonMapColor}`}>EXPLORE</button>*/}
+                    <FormButton height={'55px'}
+                                width={'300px'}
+                                text={'EXPLORE'}
+                    ></FormButton>
                 </div>
             </div>
 
