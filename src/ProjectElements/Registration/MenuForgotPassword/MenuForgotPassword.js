@@ -49,10 +49,12 @@ export function MenuForgotPassword(props) {
                 <img className={`${styles['logo']} ${currentTheme.svgColor}`} src={logo} alt=""/>
 
                 <a className={`${styles['signInText']} ${currentTheme.textColor}`}>Forgot your password?</a>
+                <a className={`${styles['forgotPasswordHeadText']} ${currentTheme.textColor}`}>Enter your email address and we'll send you a link to restore access to your account</a>
 
                 <div className={`${styles['inputForm']} ${currentTheme.inputFormColor}`}>
-
-
+                    <FormInput height={'39px'}
+                               width={'100%'}
+                               text={'Username or email address'}/>
                 </div>
 
                 <div className={styles['informationText']}>
