@@ -267,11 +267,18 @@ export function FormFooter(props) {
                         Register
                     </a>
                     <form className={`${styles['formInformationInput']}`}>
-                        <input placeholder="email address" type="text" name="text"
-                               className={`${styles['inputEmail']} ${currentTheme.inputEmailColor}`}></input>
-                        <button
-                            className={`${styles['buttonSubmitEmail']} ${currentTheme.buttonSubmitEmailColor}`}>Submit
-                        </button>
+                        <FormInput
+                            height={'50px'}
+                            width={'80%'}
+                            text={'email address'}
+
+                        ></FormInput>
+
+
+                        <FormButton height={'50px'}
+                                    width={'80%'}
+                                    text={'Submit'}
+                        ></FormButton>
                     </form>
                 </div>
             </div>
