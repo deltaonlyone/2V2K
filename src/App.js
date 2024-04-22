@@ -2,6 +2,7 @@ import './App.css';
 import MainPage from "./ProjectElements/MainPage/MainPage";
 import ProfilePage from "./ProjectElements/Profile/Profile";
 import MapPage from "./ProjectElements/Map/Map";
+import PhotographersPage from "./ProjectElements/Photographers/Photographers";
 import UsersList from './UsersList';
 import AllUsersPhotos from "./AllUsersPhotos";
 import faviconLogo from './photos/Snavvy_Logo/favicon.svg';
@@ -28,6 +29,7 @@ const App = () => {
                     <Route path="/" element={<MainPage></MainPage>}></Route>
                     <Route path="/profile" element={<ProfilePage></ProfilePage>}></Route>
                     <Route path="/map" element={<MapPage></MapPage>}></Route>
+                    <Route path="/photographers" element={<PhotographersPage></PhotographersPage>}></Route>
                 </Routes>
             </Router>
         </div>

@@ -21,7 +21,7 @@ export function NavbarExpanded(props) {
 
     return (
         <nav className={`${styles.nav} ${currentTheme.backgroundColor} ${isExpanded ? styles['nav--expanded'] : ''}`}>
-            <a href="/" className={`${styles.nav__brand} ${currentTheme.textColor} ${currentTheme.borderColor}`}>Snavvy</a>
+            <Link className={`${styles.nav__brand} ${currentTheme.textColor} ${currentTheme.borderColor}`} to="/">Snavvy</Link>
 
             <div className={styles.nav__collapsable}>
 
@@ -30,7 +30,7 @@ export function NavbarExpanded(props) {
                         <Link to="/map">Map</Link>
                     </a>
                     <a href="#" className={`${styles.underlineHover} ${currentTheme.textColor}`}>
-                        Photographers
+                        <Link to="/photographers">Photographers</Link>
                     </a>
 
 

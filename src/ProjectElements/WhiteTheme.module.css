@@ -43,7 +43,7 @@
     right: 3px;
     bottom: 3px;
     border: 1.5px solid black;
-    border-radius: 0.8vw;
+    border-radius: 1em;
 }
 .formButtonColor:hover {
     background-color: black;

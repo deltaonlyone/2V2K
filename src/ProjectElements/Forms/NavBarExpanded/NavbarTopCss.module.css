@@ -12,6 +12,10 @@
 
 /* Non-navbar specific stuff moved to bottom of file */
 
+a {
+    font-size: 1.7rem;
+}
+
 .nav {
     width: 100vw;
     display: grid;
@@ -34,16 +38,6 @@
     grid-area: collapser;
     background-color: rgba(255, 255, 255, 0);
     border: none;
-}
-
-.nav__brand {
-    width: 150px;
-    font-weight: bold;
-    font-size: 2rem;
-    font-family: "Gloria Hallelujah", cursive;
-    grid-area: brand;
-
-    margin-right: 60px;
 }
 
 .nav__cta {
@@ -71,15 +65,19 @@
     padding: 2rem 0;
 }
 
-a {
-    font-size: 1.7rem;
-}
-
 .underlineHover:hover {
     text-decoration: underline;
 }
 
+.nav__brand {
+    width: 150px;
+    font-weight: bold;
+    font-size: 2rem;
+    font-family: "Gloria Hallelujah", cursive;
+    grid-area: brand;
 
+    margin-right: 60px;
+}
 
 /* Desktop mode styles */
 @media (min-width: 700px) {
@@ -355,15 +353,15 @@ a {
         margin-left:0;
     }
 
-    a {
-        font-size: 1.6rem;
-    }
-
 
     .nav__brand{
         margin-right: 10px;
         width:120px;
         font-size:1.8rem;
+    }
+
+    a {
+        font-size: 1.5rem;
     }
 
     .buttonNavbar{
