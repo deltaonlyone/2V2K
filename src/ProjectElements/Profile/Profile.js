@@ -1,10 +1,12 @@
 import styles from './Profile.module.css';
-import {useState} from "react";
+import React, {useState} from "react";
 import {NavbarExpanded} from "../Forms/NavBarExpanded/NavbarExpanded";
 import {FormFooter} from "../Forms/FormFooter/FormFooter";
 import {MenuSignIn} from "../Registration/MenuSignIn/MenuSignIn";
+import avatarExample from './avatarExample.jpg';
 
 import { useSelector} from 'react-redux';
+import photoServices3 from "../MainPage/AboutUs/photo-3-services.jpg";
 
 const Profile = () => {
 
@@ -31,6 +33,49 @@ const Profile = () => {
 
             <div id = 'profileContainer' className = {`${styles['profileContainer']}`}>
                 <NavbarExpanded handleToggleSign = {handleToggleSingBar}></NavbarExpanded>
+
+
+                <div className={`${styles['profileAboutUserDiv']}`}>
+                    <div className={`${styles['avatarUserDiv']}`}>
+                        <img className={styles['avatarUser']} src={avatarExample} alt=""/>
+                    </div>
+
+                    <div className={`${styles['userInfoDiv']}`}>
+                        <div className={`${styles['userInfoTop']}`}>
+                            <h1 className= {`${styles['userInfoTextTopLeft']} ${currentTheme.textColor}`}>
+                                Kyrylo Sydor
+                            </h1>
+
+                            <p className={`${styles['userInfoTextTopRight']} ${currentTheme.textColor}`}>
+                                @kyrylo_sydor
+                            </p>
+
+                        </div>
+                        <div className={`${styles['userInfoMiddle']}`}>
+
+                            <p className={`${styles['userInfoTextMiddle']} ${currentTheme.textGreyColorSecond}`}>
+                                Lviv, Ukraine
+                            </p>
+
+                        </div>
+                        <div className={`${styles['userInfoBottom']}`}>
+                            <p className={`${styles['userInfoTextBottom']} ${currentTheme.textColor}`}>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Curabitur ac orci id ante rutrum elementum.
+                                Donec risus neque, convallis a interdum eu, feugiat a dui.
+                                Curabitur mattis velit vel nulla accumsan.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                    <div className={`${styles['profileButtonDiv']}`}>
+
+
+                    </div>
+                </div>
 
 
                 <FormFooter></FormFooter>
