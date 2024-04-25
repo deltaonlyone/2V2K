@@ -1,0 +1,13 @@
+.drawerContent {
+    width: 350px;
+    height: 100vh;
+    padding: 20px;
+    margin-top:67px;
+    background-color: black;
+    color: white;
+    border-top: white 4px solid;
+}
+
+.drawerContent h2 {
+    margin-bottom: 20px;
+}

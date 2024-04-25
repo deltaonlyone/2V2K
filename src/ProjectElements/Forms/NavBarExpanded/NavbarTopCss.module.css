@@ -17,11 +17,13 @@ a {
 }
 
 .nav {
+    position: fixed;
+    top: 0;
     width: 100vw;
     display: grid;
     align-items: center;
     padding: 0.2rem 2rem;
-
+    z-index: 100000;
     /* Individual value for the menu icon, then auto size the rest */
     grid-template-columns: 60px repeat(2, auto);
     grid-template-rows: repeat(2, auto);

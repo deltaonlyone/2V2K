@@ -1,4 +1,6 @@
 npm install
-npm install firebase
-npm install react-redux
-npm install react-router-dom
+npm install firebase --force
+npm install react-redux --force
+npm install react-router-dom --force
+npm install --save google-maps-react --force
+npm install @mui/material @emotion/react @emotion/styled --force

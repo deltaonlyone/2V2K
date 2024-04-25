@@ -3,7 +3,7 @@ import {useState} from "react";
 import {NavbarExpanded} from "../Forms/NavBarExpanded/NavbarExpanded";
 import {FormFooter} from "../Forms/FormFooter/FormFooter";
 import {MenuSignIn} from "../Registration/MenuSignIn/MenuSignIn";
-
+import MapContainer from './MapContainer/MapContainer';
 import { useSelector} from 'react-redux';
 
 const Map = () => {
@@ -31,9 +31,8 @@ const Map = () => {
 
             <div id = 'mapContainer' className = {`${styles['mapContainer']}`}>
                 <NavbarExpanded handleToggleSign = {handleToggleSingBar}></NavbarExpanded>
-
-
-                <FormFooter></FormFooter>
+                <MapContainer />
+                {/*<FormFooter></FormFooter>*/}
             </div>
         </div>
     );
