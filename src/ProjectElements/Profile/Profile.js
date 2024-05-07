@@ -4,6 +4,7 @@ import {NavbarExpanded} from "../Forms/NavBarExpanded/NavbarExpanded";
 import {FormFooter} from "../Forms/FormFooter/FormFooter";
 import {MenuSignIn} from "../Registration/MenuSignIn/MenuSignIn";
 import avatarExample from './avatarExample.jpg';
+import MyInfiniteScroll from "./InfinityScroll/InfinityScroll";
 
 import { useSelector} from 'react-redux';
 import photoServices3 from "../MainPage/AboutUs/photo-3-services.jpg";
@@ -76,6 +77,12 @@ const Profile = () => {
 
                     </div>
                 </div>
+
+
+                <MyInfiniteScroll/>
+
+
+
 
 
                 <FormFooter></FormFooter>

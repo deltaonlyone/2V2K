@@ -1,0 +1,6 @@
+.photoImg{
+    object-fit: cover;
+    width:280px;
+    height:280px;
+    padding: 10px;
+}

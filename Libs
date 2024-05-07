@@ -4,3 +4,4 @@ npm install react-redux --force
 npm install react-router-dom --force
 npm install --save google-maps-react --force
 npm install @mui/material @emotion/react @emotion/styled --force
+npm install --save react-infinite-scroll-component --force
