@@ -13,15 +13,16 @@
 .profileAboutUserDiv{
     display:flex;
     width:100%;
-    height:405px;
-    padding: 100px 14% 65px 14%;
+    padding: 100px 10% 65px 10%;
     flex-direction: row;
+    flex-wrap: wrap;
+
 }
 
 .avatarUserDiv{
+    margin-left:4%;
     height: 240px;
     width:240px;
-
 }
 
 .avatarUser{
@@ -36,6 +37,7 @@
     width: 100%;
     flex: 1;
     padding: 5%;
+    min-width: 450px;
 
 }
 
@@ -43,6 +45,7 @@
     display:flex;
     flex-direction: row;
     justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
 .userInfoTextTopLeft{
@@ -67,4 +70,47 @@
 .profileButtonDiv{
     height:100%;
     width: 210px;
+    display: flex;
+    align-items: center;
+    padding: 30px 0 0 0;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-right:4%;
+}
+
+.profileButton{
+    margin: 10px;
+}
+
+
+
+.profileLine{
+    margin-top: 30px;
+    width:100%;
+    height:1px;
+}
+
+
+@media (max-width: 1263px) {
+
+    .avatarUserDiv{
+        margin-left:0;
+        height: 240px;
+        width:240px;
+    }
+
+
+    .profileAboutUserDiv{
+        justify-content: center;
+    }
+
+    .profileButtonDiv{
+        flex-direction: row;
+        width:100%;
+        margin-right: 0;
+    }
+    .userInfoDiv{
+        min-width: 300px;
+    }
 }

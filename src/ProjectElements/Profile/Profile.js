@@ -8,6 +8,7 @@ import MyInfiniteScroll from "./InfinityScroll/InfinityScroll";
 
 import { useSelector} from 'react-redux';
 import photoServices3 from "../MainPage/AboutUs/photo-3-services.jpg";
+import {FormButton} from "../Forms/FormButton/FormButton";
 
 const Profile = () => {
 
@@ -73,7 +74,23 @@ const Profile = () => {
                     </div>
 
                     <div className={`${styles['profileButtonDiv']}`}>
+                        <div className={`${styles['profileButton']}`}>
+                            <FormButton height={'60px'}
+                                        width={'200px'}
+                                        text={'EDIT PROFILE'}
+                            ></FormButton>
+                        </div>
+                        <div className={`${styles['profileButton']}`}>
+                            <FormButton height={'60px'}
+                                        width={'200px'}
+                                        text={'ADD PHOTOS'}
+                            ></FormButton>
+                        </div>
+                    </div>
 
+
+
+                    <div className={`${styles['profileLine']} ${currentTheme.backgroundReverseColor}`}>
 
                     </div>
                 </div>

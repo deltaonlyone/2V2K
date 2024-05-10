@@ -23,6 +23,9 @@ export function AboutUs(props) {
     const currentTheme = useSelector(state => state.currentTheme);
 
     return (
+
+
+
         <nav className={`${styles['container']} ${currentTheme.backgroundColor}`}>
 
             <div className={`${styles['downArrowPlace']} ${currentTheme.backgroundColor}`}>

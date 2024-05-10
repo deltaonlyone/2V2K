@@ -25,8 +25,11 @@ const Photographers = () => {
         setIsOpened(!isOpened);
     };
 
+
+
     return (
         <div className = {`${styles['photographersPage']} ${currentTheme.backgroundColor}`}>
+
             {isOpened && <MenuSignIn handleToggleSign = {handleToggleSingBar}></MenuSignIn>}
 
             <div id = 'photographersContainer' className = {`${styles['photographersContainer']}`}>

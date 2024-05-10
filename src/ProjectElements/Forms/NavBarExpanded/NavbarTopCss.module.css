@@ -133,6 +133,51 @@ a {
 
 
 
+.userButtonsDiv{
+    display: flex;
+    height:100%;
+}
+
+.avatarUserDiv{
+    height: 55px;
+    width:55px;
+}
+
+.popupElement{
+
+}
+
+.popupButton{
+
+}
+
+.popupMenu{
+    border-radius:30px;
+}
+
+.popupText{
+    font-size:20px;
+}
+
+
+
+
+.avatarUser{
+    width: 100%; /* Встановлюємо ширину */
+    height: 100%; /* Встановлюємо висоту */
+    border-radius: 50%; /* Встановлюємо радіус кутів, щоб зробити круглий елемент */
+    overflow: hidden;
+}
+
+.avatarUser:hover{
+    cursor: pointer;
+}
+
+
+
+
+
+
 
 
 

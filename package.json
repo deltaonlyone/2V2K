@@ -17,6 +17,7 @@
     "css-modules": "^0.3.0",
     "google-maps-react": "^2.0.6",
     "ionicons": "^7.2.2",
+    "material-ui-popup-state": "^5.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
