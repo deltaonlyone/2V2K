@@ -20,7 +20,7 @@ export function PhotoSet(props) {
 
     const fetchImage = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/photos/homepage?count=10');
+            const response = await axios.get('http://localhost:8080/api/search/homepage?count=10');
             setPhotoIds(response.data);
         } catch (error) {
             console.error('Error fetching image:', error);
