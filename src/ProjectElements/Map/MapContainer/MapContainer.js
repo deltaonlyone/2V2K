@@ -16,6 +16,9 @@ const MapContainer = (props) => {
                 zoom={10}
                 initialCenter={{ lat: 40.7128, lng: -74.006 }}
                 style={mapStyles}
+                gestureHandling={'greedy'}
+                disableDefaultUI={true}
+
             >
                 <Marker
                     position={{ lat: 40.7128, lng: -74.006 }}

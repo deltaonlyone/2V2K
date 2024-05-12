@@ -8,6 +8,7 @@ import {useSelector} from 'react-redux';
 export function MenuSignIn(props) {
     const [usernameOrEmail, setUsernameOrEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState(null);
 
     const currentTheme = useSelector(state => state.currentTheme);
 
@@ -30,11 +31,13 @@ export function MenuSignIn(props) {
                 return response.headers.get('X-Authentication');
             })
             .then(data => {
+                setError(null)
                 localStorage.setItem('token', data);
                 props.handleToggleSign()
             })
             .catch(error => {
                 console.error('Authentication error:', error);
+                setError('Incorrect username or password'); // Встановлюємо повідомлення про помилку
             });
     };
 
@@ -75,6 +78,11 @@ export function MenuSignIn(props) {
                     >
                         Forgot password?
                     </a>
+
+                    <div className={styles['errorContainer']}>
+                        {error && <p className={styles['errorMessage']} style={{
+                        }}>{error}</p>}
+                    </div>
 
                     <button className={`${styles['submitButton']} ${currentTheme.buttonSignInColor}`}
                             onClick={handleSubmit}>Sign in

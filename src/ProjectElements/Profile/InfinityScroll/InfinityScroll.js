@@ -27,6 +27,7 @@ function MyInfiniteScroll() {
             if (data.length === 0) {
                 setHasMore(false);
             }
+            setPage(page+size);
         } catch (error) {
             console.error('Error fetching data:', error);
         }
