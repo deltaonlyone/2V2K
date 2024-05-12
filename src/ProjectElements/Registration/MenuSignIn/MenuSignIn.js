@@ -79,9 +79,10 @@ export function MenuSignIn(props) {
                         Forgot password?
                     </a>
 
-                    <div className={styles['errorContainer']}>
-                        {error && <p className={styles['errorMessage']} style={{
-                        }}>{error}</p>}
+                    <div className={`${styles['errorContainer']}`}>
+                        {error && <p className={`${styles['errorMessage']}`}>
+                            {error}
+                        </p>}
                     </div>
 
                     <button className={`${styles['submitButton']} ${currentTheme.buttonSignInColor}`}

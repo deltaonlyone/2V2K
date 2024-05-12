@@ -84,7 +84,7 @@
     color: dodgerblue;
     font-size: 16px;
     right: 90px;
-    top: 293px;
+    top: 283px;
 }
 
 .forgotPasswordText:hover{
@@ -175,12 +175,25 @@
     }
 
     .forgotPasswordText{
-        top: 475px;
-        left: 50%;
+        top: 440px;
+        right: 0;
         transform: translateX(-50%);
         white-space: nowrap;
-        text-align: center;
         width:200px;
+        text-align: right;
     }
+
+}
+
+.errorContainer{
+    font-size: 16px;
+    color: #ff3333;
+    height:16px;
+    display:flex;
+    width:100%;
+    justify-content: center;
+}
+
+.errorMessage{
 
 }

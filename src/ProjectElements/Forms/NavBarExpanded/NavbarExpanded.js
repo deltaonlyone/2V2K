@@ -83,9 +83,9 @@ export function NavbarExpanded(props) {
 
 
 
-                {/*<div className={styles.nav__cta}>*/}
-                {/*    <button className={`${styles.buttonNavbar} ${currentTheme.buttonNavbarColor}`} onClick = {props.handleToggleSign}>Sign in</button>*/}
-                {/*</div>*/}
+                <div className={styles.nav__cta}>
+                    <button className={`${styles.buttonNavbar} ${currentTheme.buttonNavbarColor}`} onClick = {props.handleToggleSign}>Sign in</button>
+                </div>
 
                 <div className={`${styles['userButtonsDiv']} `}>
                     <PopupState variant="popover" popupId="demo-popup-menu" className={`${styles['popupElement']}`}>
