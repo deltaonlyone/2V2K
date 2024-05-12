@@ -9,7 +9,7 @@ export function SinglePhoto(props) {
     return (
 
         <img
-            src={props.img}
+            src={'http://localhost:8080/api/photos/'+props.img}
             alt="Photo"
             className = {`${styles['photoImg']}`}
         />

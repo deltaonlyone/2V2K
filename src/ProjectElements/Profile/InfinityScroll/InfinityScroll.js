@@ -6,31 +6,29 @@ import {NavbarExpanded} from "../../Forms/NavBarExpanded/NavbarExpanded";
 
 import randomPhoto from "../../../photos/randomPhoto.jpg";
 import {SinglePhoto} from "./PhotoElements/SinglePhoto/SinglePhoto";
+import axios from "axios";
 
 function MyInfiniteScroll() {
     const [items, setItems] = useState([]);
     const [hasMore, setHasMore] = useState(true);
+    const [page, setPage] = useState(0);
+    const [size, setSize] = useState(12);
+
 
     useEffect(() => {
         fetchData();
-    }, []);
+    }, [page, size]);
 
-    const fetchData = () => {
-        //Видаляй курва
-        const data = [];
-        if (items.length <= 100) {
-            for (let index = 0; index < 20; index++) {
-                data.push(randomPhoto);
-                console.log("Вадим гей");
+    const fetchData = async () => {
+        try {
+            const response = await axios.get(`http://localhost:8080/api/portfolio/1/paged?page=${page}&size=${size}`);
+            const data = response.data;
+            setItems([...items, ...data]);
+            if (data.length === 0) {
+                setHasMore(false);
             }
-        }
-
-        // Імплементуй сука
-        // fetch...
-        // .then(data) =>{...
-        setItems([...items, ...data]);
-        if (data.length === 0) {
-            setHasMore(false);
+        } catch (error) {
+            console.error('Error fetching data:', error);
         }
     };
 
