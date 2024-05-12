@@ -453,6 +453,19 @@ a {
     }
 }
 
+.userButtonsDivPhone{
+    display:none;
+}
+
+.underlineHoverPhone{
+    margin-top:15px;
+}
+
+.underlineHoverPhone:hover {
+    text-decoration: underline;
+}
+
+
 @media (max-width: 700px) {
     a {
         font-size: 1.5rem;
@@ -526,5 +539,19 @@ a {
         background-color: var(--dark);
         -webkit-box-shadow: none;
         box-shadow: none;
+    }
+
+    .userButtonsDiv{
+        display:none;
+    }
+
+    .whiteLineNavbar{
+        width:100%;
+        height:1px;
+    }
+
+    .userButtonsDivPhone{
+        display:flex;
+        flex-direction: column;
     }
 }

@@ -9,6 +9,7 @@ import MyInfiniteScroll from "./InfinityScroll/InfinityScroll";
 import { useSelector} from 'react-redux';
 import photoServices3 from "../MainPage/AboutUs/photo-3-services.jpg";
 import {FormButton} from "../Forms/FormButton/FormButton";
+import {FormSortPhotosTypes} from "../Forms/FormSortPhotosTypes/FormSortPhotosTypes";
 
 const Profile = () => {
 
@@ -28,6 +29,8 @@ const Profile = () => {
 
         setIsOpened(!isOpened);
     };
+
+    const words = ["Wedding", "Portrait", "Couple", "Landscape", "Kids"];
 
     return (
         <div className = {`${styles['profilePage']} ${currentTheme.backgroundColor}`}>
@@ -94,6 +97,9 @@ const Profile = () => {
 
                     </div>
                 </div>
+
+
+                <FormSortPhotosTypes words={words} />
 
 
                 <MyInfiniteScroll/>
