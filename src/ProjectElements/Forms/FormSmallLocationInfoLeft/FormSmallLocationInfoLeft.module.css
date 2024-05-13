@@ -1,0 +1,106 @@
+.container{
+    background-color: white;
+    display: flex;
+    position: absolute;
+    height: 100vh;
+    width: 30%;
+    z-index: 3;
+    min-width:400px;
+    flex-direction: column;
+}
+
+.locationNameHeaderDiv{
+    padding-top: 70px;
+    width:100%;
+    display:flex;
+    justify-content: center;
+}
+
+.locationNameHeader{
+    padding:10px;
+    font-size: 28px;
+}
+
+.smallInfoDiv{
+    display:flex;
+    flex-direction: column;
+    padding: 50px 28px 0 28px;
+}
+
+
+
+
+
+.locationNameDiv{
+    display:flex;
+    flex-direction: column;
+}
+
+.locationNameField{
+    font-size:13px;
+    color: #767676;
+}
+
+.locationName{
+    margin-top: 4px;
+    font-size: 18px;
+    color: black;
+}
+
+
+
+
+
+.locationDetailsDiv{
+    margin-top: 30px;
+    display:flex;
+    flex-direction: column;
+}
+
+.locationDetailsField{
+    font-size:13px;
+    color: #767676;
+}
+
+.locationDetails{
+    margin-top: 4px;
+    font-size: 16px;
+    color: black;
+}
+
+
+
+
+
+.locationRatingDiv{
+    margin-top: 30px;
+    height: 30px;
+    background-color: black;
+}
+
+
+
+
+
+.showOnMapText{
+    margin-top: 30px;
+    color: #007EDA;
+    font-size: 18px;
+}
+
+
+
+.locationImgDiv{
+    width:100%;
+    margin-top: 30px;
+}
+
+.locationImg{
+    width:100%;
+}
+
+
+
+.buttonMoreInfoDiv{
+    margin-top: 15px;
+}

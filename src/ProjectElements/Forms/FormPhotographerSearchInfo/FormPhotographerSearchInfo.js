@@ -5,6 +5,7 @@ import {useSelector} from 'react-redux';
 import {bindTrigger} from "material-ui-popup-state";
 import Button from "@mui/material/Button";
 import {FormButton} from "../FormButton/FormButton";
+import {FormButtonReverse} from "../FormButtonReverse/FormButtonReverse";
 
 export function FormPhotographerSearchInfo(props) {
     const currentTheme = useSelector(state => state.currentTheme);
@@ -65,10 +66,10 @@ export function FormPhotographerSearchInfo(props) {
 
                 <div className={`${styles['thirdElements']} `}>
                     <div className={`${styles['buttonsStyle']} `}>
-                        <FormButton height={'53px'}
+                        <FormButtonReverse height={'53px'}
                                     width={'198px'}
                                     text={'Send request'}
-                        ></FormButton>
+                        ></FormButtonReverse>
                     </div>
 
                     <div className={`${styles['buttonsStyle']} `}>
