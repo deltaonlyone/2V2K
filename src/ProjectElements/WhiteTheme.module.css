@@ -82,8 +82,16 @@
     color: #444444;
 }
 
+.textGreyColorThird{
+    color: #444444;
+}
+
 .textReverseColor{
     color:white;
+}
+
+.textColorTransparency{
+    color: rgba(0, 0, 0, 0.8);
 }
 
 .borderColor{
@@ -117,6 +125,32 @@
 
 
 
+
+
+/*--------------------*/
+
+
+.secondElementsColor ::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: white;
+    border-radius: 10px;
+    background-color: black;
+}
+
+.secondElementsColor ::-webkit-scrollbar
+{
+    display: contents;
+    width: 12px;
+    height:12px;
+}
+
+.secondElementsColor ::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: white;
+    background-color: white;
+    border: black solid 3px;
+}
 
 /*--------------------*/
 

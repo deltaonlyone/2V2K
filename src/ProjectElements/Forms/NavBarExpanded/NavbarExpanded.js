@@ -91,7 +91,7 @@ export function NavbarExpanded(props) {
                     <PopupState variant="popover" popupId="demo-popup-menu" className={`${styles['popupElement']}`}>
                         {(popupState) => (
                             <React.Fragment>
-                                <Button variant="contained" {...bindTrigger(popupState)}
+                                <Button className={`${styles['popupElement']}`} variant="contained" {...bindTrigger(popupState)}
                                         className={`${styles['popupButton']}`}>
 
                                 </Button>

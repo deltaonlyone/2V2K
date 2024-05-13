@@ -31,7 +31,7 @@ export function FormPhotographerSearchInfo(props) {
                     />
                 </div>
 
-                <div className={`${styles['secondElements']} `}>
+                <div className={`${styles['secondElements']} ${currentTheme.secondElementsColor}`}>
                     <div className={`${styles['scrollContainer']} `}>
                         {photos.map((photo, index) => (
                             <img
@@ -45,7 +45,7 @@ export function FormPhotographerSearchInfo(props) {
 
 
                     <div className={`${styles['informationUserStyleDiv']} `}>
-                        <a className={`${styles['informationUserStyle']} ${currentTheme.textColor}`}>
+                        <a className={`${styles['informationUserStyle']} ${currentTheme.textColorTransparency}`}>
                             {props.informationUser}
                         </a>
                     </div>

@@ -39,22 +39,46 @@ const Photographers = () => {
 
             {isOpened && <MenuSignIn handleToggleSign = {handleToggleSingBar}></MenuSignIn>}
 
-            <div id = 'photographersContainer' className = {`${styles['photographersContainer']}`}>
+            <div id = 'photographersContainer' className={`${styles['photographersContainer']} ${currentTheme.backgroundColor}`}>
                 <NavbarExpanded handleToggleSign = {handleToggleSingBar}></NavbarExpanded>
 
-                <FormPhotographerSearchInfo
-                    name="Kyrylo Sydor"
-                    location="Lviv, Ukraine"
-                    avatar='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTousHbMHE9y6ZaMX9GcxFGJRfxq8aWGYcIV_dPgWOwqQ&s'
-                    photos={randomPhotos}
+                <div className={`${styles['textPageInfo']}`}>
+                    <a className={`${styles['textPageInfoHeader']} ${currentTheme.textColor}`}>
+                        Find your photographer
+                    </a>
 
-                    informationUser = 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem.'
+                    <a className={`${styles['textPageInfoBottom']} ${currentTheme.textGreyColorThird}`}>
+                        from us the list - from you the choice
+                    </a>
+                </div>
+
+                <div className={`${styles['photographersListContainer']}`}>
+                    <FormPhotographerSearchInfo
+                        name="Kyrylo Sydor"
+                        location="Lviv, Ukraine"
+                        avatar='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTousHbMHE9y6ZaMX9GcxFGJRfxq8aWGYcIV_dPgWOwqQ&s'
+                        photos={randomPhotos}
+
+                        informationUser = 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem.'
 
 
-                    minimumTime = "2"
-                    priceHour = "50"
-                />
+                        minimumTime = "2"
+                        priceHour = "50"
+                    />
 
+                    <FormPhotographerSearchInfo
+                        name="Kyrylo Sydor"
+                        location="Lviv, Ukraine"
+                        avatar='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTousHbMHE9y6ZaMX9GcxFGJRfxq8aWGYcIV_dPgWOwqQ&s'
+                        photos={randomPhotos}
+
+                        informationUser = 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem.'
+
+
+                        minimumTime = "2"
+                        priceHour = "50"
+                    />
+                </div>
 
                 <FormFooter></FormFooter>
             </div>
