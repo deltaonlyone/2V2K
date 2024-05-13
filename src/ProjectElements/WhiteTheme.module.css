@@ -68,6 +68,45 @@
 }
 
 
+.formButtonColorReverse{
+    background-color: black;
+    border-color:  white;
+    color: white;
+}
+.formButtonColorReverse:focus::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border: 1.5px solid white;
+    border-radius: 1em;
+}
+.formButtonColorReverse:hover {
+    background-color: white;
+    border-color: black;
+    color:black;
+}
+.formButtonColorReverse:active {
+    -webkit-box-shadow: inset 1px 1px 10px black;
+    -moz-box-shadow:    inset 1px 1px 10px black;
+    box-shadow:         inset 1px 1px 10px black;
+}
+.formButtonColorReverse:disabled {
+    border-color: #6C6C6C;
+    color: #6C6C6C;
+    background-color: rgba(255, 255, 255, 0);
+    -webkit-box-shadow: inset 0 0 0 black;
+    -moz-box-shadow:    inset 0 0 0 black;
+    box-shadow:         inset 0 0 0 black;
+}
+.formButtonColorReverse.loading:after {
+    border-color: #ffffff;
+}
+
+
+
 
 
 .textColor{
