@@ -44,6 +44,11 @@ export function NavbarExpanded(props) {
         }
     };
 
+    const handleSignOut = () => {
+        localStorage.removeItem("token")
+            window.location.reload()
+    };
+
     useEffect(() => {
         document.addEventListener('click', handleClickOutside, true);
         return () => {
@@ -83,41 +88,46 @@ export function NavbarExpanded(props) {
 
 
 
-                <div className={styles.nav__cta}>
-                    <button className={`${styles.buttonNavbar} ${currentTheme.buttonNavbarColor}`} onClick = {props.handleToggleSign}>Sign in</button>
-                </div>
+                {!localStorage.getItem("token") && (
+                    <div className={styles.nav__cta}>
+                        <button className={`${styles.buttonNavbar} ${currentTheme.buttonNavbarColor}`} onClick={props.handleToggleSign}>Sign in</button>
+                    </div>
+                )}
+                {localStorage.getItem("token") && (
+                    <div className={`${styles['userButtonsDiv']} `}>
+                        <PopupState variant="popover" popupId="demo-popup-menu" className={`${styles['popupElement']}`}>
+                            {(popupState) => (
+                                <React.Fragment>
+                                    <Button className={`${styles['popupElement']}`}
+                                            variant="contained" {...bindTrigger(popupState)}
+                                            className={`${styles['popupButton']}`}>
 
-                <div className={`${styles['userButtonsDiv']} `}>
-                    <PopupState variant="popover" popupId="demo-popup-menu" className={`${styles['popupElement']}`}>
-                        {(popupState) => (
-                            <React.Fragment>
-                                <Button className={`${styles['popupElement']}`} variant="contained" {...bindTrigger(popupState)}
-                                        className={`${styles['popupButton']}`}>
+                                    </Button>
+                                    <Menu {...bindMenu(popupState)} className={`${styles['popupMenu']}`}>
+                                        <Link to="/saved">
+                                            <MenuItem onClick={popupState.close}
+                                                      className={`${styles.popupText}`}>Saved</MenuItem>
+                                        </Link>
+                                        <Link to="/settings">
 
-                                </Button>
-                                <Menu {...bindMenu(popupState)} className={`${styles['popupMenu']}`}>
-                                    <Link to="/saved">
-                                        <MenuItem onClick={popupState.close}
-                                                  className={`${styles.popupText}`}>Saved</MenuItem>
-                                    </Link>
-                                    <Link to="/settings">
-                                        <MenuItem onClick={popupState.close}
-                                                  className={`${styles.popupText} `}>Settings</MenuItem>
-                                    </Link>
-                                    <MenuItem onClick={popupState.close} className={`${styles.popupText}`}>Log
-                                        out</MenuItem>
-                                </Menu>
-                            </React.Fragment>
-                        )}
-                    </PopupState>
+                                            <MenuItem onClick={popupState.close}
+                                                      className={`${styles.popupText} `}>Settings</MenuItem>
+                                        </Link>
+                                        <MenuItem onClick={handleSignOut} className={`${styles.popupText}`}>Log
+                                            out</MenuItem>
+                                    </Menu>
+                                </React.Fragment>
+                            )}
+                        </PopupState>
 
 
-                    <Link to="/profile">
-                        <div className={`${styles['avatarUserDiv']}`}>
-                            <img className={styles['avatarUser']} src={avatarExample} alt=""/>
-                        </div>
-                    </Link>
-                </div>
+                        <Link to="/profile">
+                            <div className={`${styles['avatarUserDiv']}`}>
+                                <img className={styles['avatarUser']} src={avatarExample} alt=""/>
+                            </div>
+                        </Link>
+                    </div>
+                )}
 
 
                 <div className={`${styles['userButtonsDivPhone']} `}>
