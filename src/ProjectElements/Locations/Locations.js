@@ -64,7 +64,7 @@ const Locations = () => {
                     <div className={`${styles['infoImgDiv']} ${currentTheme.backgroundColor}`}>
 
                         <img className={styles['photoLocation']}
-                             src={'https://www.pandotrip.com/wp-content/uploads/2013/05/Untitled-42-740x491.jpg'}
+                             src={'https://www.nature-one.de/img/natureone/location/heroslider/8_location.jpg'}
                              alt=""/>
 
                         <div className={`${styles['infoImgButtons']} `}>
