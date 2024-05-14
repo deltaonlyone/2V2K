@@ -143,16 +143,17 @@ a {
     width:55px;
 }
 
+
 .popupElement{
 
 }
 
 .popupButton{
-    background-color: white;
+    background-color: black;
 }
 
 .popupMenu{
-    border-radius:30px;
+    border-radius:90px;
 }
 
 .popupText{
