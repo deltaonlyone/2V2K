@@ -4,6 +4,7 @@ import ProfilePage from "./ProjectElements/Profile/Profile";
 import MapPage from "./ProjectElements/Map/Map";
 import PhotographersPage from "./ProjectElements/Photographers/Photographers";
 import SettingsPage from "./ProjectElements/Settings/Settings";
+import LocationsPage from "./ProjectElements/Locations/Locations";
 import UsersList from './UsersList';
 import AllUsersPhotos from "./AllUsersPhotos";
 import faviconLogo from './photos/Snavvy_Logo/favicon.svg';
@@ -32,6 +33,7 @@ const App = () => {
                     <Route path="/map" element={<MapPage></MapPage>}></Route>
                     <Route path="/photographers" element={<PhotographersPage></PhotographersPage>}></Route>
                     <Route path="/settings" element={<SettingsPage></SettingsPage>}></Route>
+                    <Route path="/map/locations" element={<LocationsPage></LocationsPage>}></Route>
                 </Routes>
             </Router>
         </div>

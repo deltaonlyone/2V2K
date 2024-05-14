@@ -6,6 +6,7 @@ import {bindTrigger} from "material-ui-popup-state";
 import Button from "@mui/material/Button";
 import {FormButton} from "../FormButton/FormButton";
 import {FormButtonBlue} from "../FormButtonBlue/FormButtonBlue";
+import {FormButtonBlueLink} from "../FormButtonBlueLink/FormButtonBlueLink";
 
 export function FormSmallLocationInfoLeft(props) {
     const currentTheme = useSelector(state => state.currentTheme);
@@ -69,10 +70,12 @@ export function FormSmallLocationInfoLeft(props) {
                 </div>
 
                 <div className={`${styles['buttonMoreInfoDiv']}`}>
-                    <FormButtonBlue height={'37px'}
+                    <FormButtonBlueLink
+                                link = {'locations'}
+                                height={'37px'}
                                 width={'113px'}
                                 text={'MORE INFO'}
-                    ></FormButtonBlue>
+                    ></FormButtonBlueLink>
                 </div>
 
             </div>
