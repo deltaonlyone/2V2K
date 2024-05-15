@@ -46,7 +46,7 @@ export function NavbarExpanded(props) {
 
     const handleSignOut = () => {
         localStorage.removeItem("token")
-            window.location.reload()
+        window.location.reload()
     };
 
     useEffect(() => {
@@ -56,7 +56,18 @@ export function NavbarExpanded(props) {
         };
     }, []);
 
-        return (
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
+
+    const handleMenuClick = (e) => {
+        e.stopPropagation(); // Зупиняємо подальше розповсюдження події
+    };
+
+    return (
         <nav className={`${styles.nav} ${currentTheme.backgroundColor} ${isExpanded ? styles['nav--expanded'] : ''}`}>
             <Link className={`${styles.nav__brand} ${currentTheme.textColor} ${currentTheme.borderColor}`}
                   to="/">Snavvy</Link>
@@ -85,39 +96,59 @@ export function NavbarExpanded(props) {
                 </div>
 
 
-
-
-
                 {!localStorage.getItem("token") && (
                     <div className={styles.nav__cta}>
-                        <button className={`${styles.buttonNavbar} ${currentTheme.buttonNavbarColor}`} onClick={props.handleToggleSign}>Sign in</button>
+                        <button className={`${styles.buttonNavbar} ${currentTheme.buttonNavbarColor}`}
+                                onClick={props.handleToggleSign}>Sign in
+                        </button>
                     </div>
                 )}
                 {/*{localStorage.getItem("token") && (*/}
                 <div className={`${styles['userButtonsDiv']} `}>
-                    <PopupState variant="popover" popupId="demo-popup-menu" className={`${styles['popupElement']}`}>
-                        {(popupState) => (
-                            <React.Fragment>
-                                <Button className={`${styles['popupElement']}`}
-                                        variant="contained" {...bindTrigger(popupState)}
-                                        className={`${styles['popupButton']}`}>
-                                </Button>
-                                <Menu {...bindMenu(popupState)} className={`${styles['popupMenu']}`}>
-                                    <Link to="/saved">
-                                        <MenuItem onClick={popupState.close}
-                                                  className={`${styles.popupText}`}>Saved</MenuItem>
-                                    </Link>
-                                    <Link to="/settings">
+                    <div className={`${styles['burgerMenuDiv']} `}>
+                        {/*<button onClick={toggleMenu}>*/}
+                        {/*    Відкрити меню*/}
+                        {/*</button>*/}
 
-                                        <MenuItem onClick={popupState.close}
-                                                  className={`${styles.popupText}`}>Settings</MenuItem>
-                                    </Link>
-                                    <MenuItem onClick={handleSignOut} className={`${styles.popupText}`}>Log
-                                        out</MenuItem>
-                                </Menu>
-                            </React.Fragment>
+                        <button className={styles.nav__collapserMenu} onClick={toggleMenu}>
+                            <div className={styles.container_top}>
+                                <div id={styles['bar4']}
+                                     className={`${styles.bars2}  ${currentTheme.backgroundReverseColor}`}></div>
+                                <div id={styles['bar4']}
+                                     className={`${styles.bars2}  ${currentTheme.backgroundReverseColor}`}></div>
+                                <div id={styles['bar4']}
+                                     className={`${styles.bars2}  ${currentTheme.backgroundReverseColor}`}></div>
+                            </div>
+
+                        </button>
+
+                        {isOpen && (
+                            <div className={styles.burgerMenuOverlay}>
+                                <div className={`${styles.burgerMenu} ${currentTheme.borderColor} ${currentTheme.greyBackgroundColor}`} onClick={handleMenuClick}>
+                                    {/* Ваше бургер меню тут */}
+                                    <ul>
+                                        <Link to="/saved">
+                                            <li className={`${styles.textBurgerMenu}  ${currentTheme.textColor}`}>
+                                                Saved
+                                            </li>
+                                        </Link>
+                                        <Link to="/settings">
+                                            <li className={`${styles.textBurgerMenu}  ${currentTheme.textColor}`}>
+                                                Settings
+                                            </li>
+                                        </Link>
+                                        <div className={`${styles.lineStyle}  ${currentTheme.backgroundReverseColor}`}>
+
+                                        </div>
+
+                                        <li className={`${styles.textBurgerMenuSecond}  ${currentTheme.textColor}`} onClick={handleSignOut}>
+                                            Log out
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         )}
-                    </PopupState>
+                    </div>
 
 
                     <Link to="/profile">
