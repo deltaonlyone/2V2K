@@ -92,7 +92,7 @@ export function FormFooter(props) {
                     </a>
 
                     <ul className={`${styles['example-2']}`}>
-                        <li className={`${styles['icon-content']}`}>
+                        <li className={`${styles['icon-content']} ${styles.liStyle}`}>
                             <a
                                 href="https://instagram.com/"
                                 aria-label="Instagram"
@@ -108,7 +108,7 @@ export function FormFooter(props) {
                             </a>
                             <div className={`${styles['tooltip']}`}>Instagram</div>
                         </li>
-                        <li className={`${styles['icon-content']}`}>
+                        <li className={`${styles['icon-content']} ${styles.liStyle}`}>
                             <a
                                 href="https://telegram.org/"
                                 aria-label="Telegram"
@@ -131,7 +131,7 @@ export function FormFooter(props) {
                             </a>
                             <div className={`${styles['tooltip']}`}>Telegram</div>
                         </li>
-                        <li className={`${styles['icon-content']}`}>
+                        <li className={`${styles['icon-content']} ${styles.liStyle}`}>
                             <a
                                 href="https://facebook.com/"
                                 aria-label="Facebook"
@@ -197,7 +197,7 @@ export function FormFooter(props) {
                         </a>
 
                         <ul className={`${styles['example-2']}`}>
-                            <li className={`${styles['icon-content']}`}>
+                            <li className={`${styles['icon-content']} ${styles.liStyle}`}>
                                 <a
                                     href="https://instagram.com/"
                                     aria-label="Instagram"
@@ -213,7 +213,7 @@ export function FormFooter(props) {
                                 </a>
                                 <div className={`${styles['tooltip']}`}>Instagram</div>
                             </li>
-                            <li className={`${styles['icon-content']}`}>
+                            <li className={`${styles['icon-content']} ${styles.liStyle}`}>
                                 <a
                                     href="https://telegram.org/"
                                     aria-label="Telegram"
@@ -236,7 +236,7 @@ export function FormFooter(props) {
                                 </a>
                                 <div className={`${styles['tooltip']}`}>Telegram</div>
                             </li>
-                            <li className={`${styles['icon-content']}`}>
+                            <li className={`${styles['icon-content']} ${styles.liStyle}`}>
                                 <a
                                     href="https://facebook.com/"
                                     aria-label="Facebook"

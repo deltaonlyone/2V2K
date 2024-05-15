@@ -175,7 +175,7 @@ ul {
     list-style: none;
 }
 
-li::after {
+.liStyle::after {
     content: "";
     display: block;
     height: 0px;
@@ -183,7 +183,7 @@ li::after {
     pointer-events: none;
 }
 
-li:hover::after {
+.liStyle:hover::after {
     height: 10px;
 }
 
