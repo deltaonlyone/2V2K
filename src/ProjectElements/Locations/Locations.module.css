@@ -79,3 +79,7 @@
 .somePhotoText{
     font-size: 32px;
 }
+
+.containerSomePhotoPlace{
+    padding: 0 13% 0 13%;
+}
