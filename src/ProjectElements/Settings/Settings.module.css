@@ -7,5 +7,168 @@
 
 .settingsPageContainer{
     display: flex;
+    flex-direction: row;
+}
+
+.settingsContainer{
+    padding-top: 90px;
+}
+
+.settingsListContainer{
+    /*padding-left: 12%;*/
+    /*padding-top: 3%;*/
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.settingsListContainerLeft {
+    padding-left: 15%;
+    padding-top: 3%;
+}
+
+.settingsListContainerRight {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.settingsListContainerRightColumn {
+    width: 100%;
+    display: flex;
     flex-direction: column;
+}
+
+.avatarUserDiv{
+    height: 55px;
+    width: 55px;
+}
+
+.avatarUserDivDescription{
+    height: 200px;
+    width: 200px;
+}
+
+.avatarUser{
+    width: 100%; /* Встановлюємо ширину */
+    height: 100%; /* Встановлюємо висоту */
+    border-radius: 50%; /* Встановлюємо радіус кутів, щоб зробити круглий елемент */
+    overflow: hidden;
+}
+
+.userInfoContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.userInfoDiv{
+    height: 50%;
+    width: 275px;
+    flex: 1;
+    padding-left: 1%;
+    padding-top: 1%;
+    min-width: 100px;
+}
+
+.userInfoTextTop{
+    font-size: 15px;
+}
+
+.userInfoTextBottom{
+    font-size: 12px;
+    padding-top: 5px;
+}
+
+.container {
+    width: 275px;
+    padding-top: 20px;
+}
+
+.list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.item {
+    display: flex;
+    padding: 8px;
+    transition: background-color 0.4s;
+    border-radius: 10px;
+}
+
+.item:hover {
+    background-color: #131316;
+    cursor: pointer;
+}
+
+.icon {
+    margin-right: 8px;
+}
+
+.logOut{
+    font-size: 12px;
+    padding-top: 5px;
+    color: red;
+}
+
+.settingsListDetailsContainer {
+    padding-top: 7%;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.settingsTextHeader {
+    font-size: 20px;
+}
+
+.settingsTextHeader2 {
+    font-size: 13px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+.settingsTextDescription {
+    width: 75%;
+    font-size: 10px;
+    padding-top: 10px;
+}
+
+.formInformationInput{
+    padding-top: 10px;
+}
+
+.settingsDetailsLeft {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.settingsDetailsRight {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.ButtonRelative {
+    position: relative;
+    top: -50px;
+    display: flex;
+    width: 100px;
+    height: 40px;
+    border-radius: 1em;
+    transition: all .3s;
+}
+
+.HeaderColumn {
+    padding-top: 10.5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.profileLine{
+    margin-top: 10px;
+    width:70%;
+    height:1px;
 }
