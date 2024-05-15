@@ -14,8 +14,8 @@ import telephoneSvg from "../../Forms/FormFooter/telephoneSvg.svg";
 import emailSvg from "../../Forms/FormFooter/emailSvg.svg";
 
 
-import { useSelector} from 'react-redux';
-
+import {useSelector} from 'react-redux';
+import {Link} from "react-router-dom";
 
 
 export function AboutUs(props) {
@@ -23,7 +23,6 @@ export function AboutUs(props) {
     const currentTheme = useSelector(state => state.currentTheme);
 
     return (
-
 
 
         <nav className={`${styles['container']} ${currentTheme.backgroundColor}`}>

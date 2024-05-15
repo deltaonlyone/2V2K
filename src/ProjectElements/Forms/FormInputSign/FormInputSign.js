@@ -29,6 +29,7 @@ export function FormInputSign(props) {
                 className={`${styles['fieldInput']} ${currentTheme.fieldInputColor}`}
                 style={customStyle}
                 value={inputValue}
+                type={props.type}
                 onChange={handleChange}
             />
         </div>

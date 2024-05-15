@@ -4,22 +4,42 @@ import {useSelector, useDispatch} from 'react-redux';
 import {connect} from 'react-redux';
 import {toggleTheme} from '../../../store/actions/action_1';
 import {Link, BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import avatarExample from "../../Profile/avatarExample.jpg";
+import avatarExample from "./User_cicrle_light.svg";
 
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import PopupState, {bindTrigger, bindMenu} from 'material-ui-popup-state';
+import axios from "axios";
 
 export function NavbarExpanded(props) {
     const [isExpanded, setIsExpanded] = useState(false);
+    const [user, setUser] = useState();
+    const [userPhoto, setUserPhoto] = useState();
+
     const handleToggle = () => {
         setIsExpanded(!isExpanded);
 
         const x = document.querySelector(`.${styles.container_top}`);
         x.classList.toggle(styles.change); // Використовуємо styles.change
     };
-
+    const fetchUser = async () => {
+        if (localStorage.getItem("token") !== null) {
+            axios.get('http://localhost:8080/api/users/my', {
+                headers: {
+                    'X-Authorization': `${localStorage.getItem("token")}`, // замініть 'your-token-here' на ваш токен або інший заголовок
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then(response => {
+                    setUser(response.data);
+                    setUserPhoto(user.userPhoto)
+                })
+                .catch(error => {
+                    console.error('Error fetching users:', error);
+                });
+        }
+    };
 
     const currentTheme = useSelector(state => state.currentTheme);
     const dispatch = useDispatch();
@@ -46,10 +66,11 @@ export function NavbarExpanded(props) {
 
     const handleSignOut = () => {
         localStorage.removeItem("token")
-            window.location.reload()
+        window.location.reload()
     };
 
     useEffect(() => {
+        fetchUser()
         document.addEventListener('click', handleClickOutside, true);
         return () => {
             document.removeEventListener('click', handleClickOutside, true);
@@ -85,12 +106,11 @@ export function NavbarExpanded(props) {
                 </div>
 
 
-
-
-
                 {!localStorage.getItem("token") && (
                     <div className={styles.nav__cta}>
-                        <button className={`${styles.buttonNavbar} ${currentTheme.buttonNavbarColor}`} onClick={props.handleToggleSign}>Sign in</button>
+                        <button className={`${styles.buttonNavbar} ${currentTheme.buttonNavbarColor}`}
+                                onClick={props.handleToggleSign}>Sign in
+                        </button>
                     </div>
                 )}
                 {localStorage.getItem("token") && (
@@ -101,7 +121,6 @@ export function NavbarExpanded(props) {
                                     <Button className={`${styles['popupElement']}`}
                                             variant="contained" {...bindTrigger(popupState)}
                                             className={`${styles['popupButton']}`}>
-
                                     </Button>
                                     <Menu {...bindMenu(popupState)} className={`${styles['popupMenu']}`}>
                                         <Link to="/saved">
@@ -120,12 +139,24 @@ export function NavbarExpanded(props) {
                             )}
                         </PopupState>
 
-
-                        <Link to="/profile">
-                            <div className={`${styles['avatarUserDiv']}`}>
-                                <img className={styles['avatarUser']} src={avatarExample} alt=""/>
-                            </div>
+                        {user &&
+                        <Link to="/profile"  state={user.id} >
+                            {userPhoto &&
+                                <div className={`${styles['avatarUserDiv']}`}>
+                                    <img className={styles['avatarUser']}
+                                         src={`http://localhost:8080/api/photos/` + userPhoto.id}
+                                         alt="User Avatar"/>
+                                </div>
+                            }
+                            {!userPhoto &&
+                                <div className={`${styles['avatarUserDiv']}`}>
+                                    <img className={styles['avatarUser']}
+                                         src={avatarExample}
+                                         alt="User Avatar"/>
+                                </div>
+                            }
                         </Link>
+                        }
                     </div>
                 )}
 

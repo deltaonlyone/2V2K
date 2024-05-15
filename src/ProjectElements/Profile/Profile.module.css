@@ -67,6 +67,11 @@
     font-size: 20px;
 }
 
+.userInfoTextBottomEdit{
+    padding-top: 5px;
+    font-size: 12px;
+}
+
 .profileButtonDiv{
     height:100%;
     width: 210px;

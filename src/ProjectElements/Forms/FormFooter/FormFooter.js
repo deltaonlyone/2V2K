@@ -28,6 +28,7 @@ export function FormFooter(props) {
                     </a>
                 </div>
 
+                {!localStorage.getItem("token") && (
 
                 <div className={`${styles['informationAboutUsSecond']}`}>
                     <a className={`${styles['informationTextHead']} ${currentTheme.textColor}`}>
@@ -56,6 +57,7 @@ export function FormFooter(props) {
                     </form>
 
                 </div>
+                    )}
 
 
                 <div className={`${styles['informationAboutUsThird']}`}>
@@ -260,6 +262,7 @@ export function FormFooter(props) {
                     </div>
                 </div>
 
+                {!localStorage.getItem("token") && (
 
                 <div className={`${styles['informationAboutUsBottom']}`}>
 
@@ -281,6 +284,7 @@ export function FormFooter(props) {
                         ></FormButton>
                     </form>
                 </div>
+                    )}
             </div>
 
 
