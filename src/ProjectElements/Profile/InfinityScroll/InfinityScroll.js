@@ -8,26 +8,30 @@ import randomPhoto from "../../../photos/randomPhoto.jpg";
 import {SinglePhoto} from "./PhotoElements/SinglePhoto/SinglePhoto";
 import axios from "axios";
 
-function MyInfiniteScroll() {
+function MyInfiniteScroll(props) {
     const [items, setItems] = useState([]);
     const [hasMore, setHasMore] = useState(true);
     const [page, setPage] = useState(0);
     const [size, setSize] = useState(12);
-
+    const {user} = props
 
     useEffect(() => {
-        fetchData();
-    }, [page, size]);
+        if (user && user.id) {
+            fetchData();
+        }
+    }, [user]);
 
     const fetchData = async () => {
         try {
-            const response = await axios.get(`http://localhost:8080/api/portfolio/1/paged?page=${page}&size=${size}`);
-            const data = response.data;
-            setItems([...items, ...data]);
-            if (data.length === 0) {
-                setHasMore(false);
+            if (hasMore){
+                const response = await axios.get(`http://localhost:8080/api/portfolio/${user.id}/paged?page=${page}&size=${size}`);
+                const data = response.data;
+                setItems([...items, ...data]);
+                if (data.length === 0) {
+                    setHasMore(false);
+                }
+                setPage(page + size);
             }
-            setPage(page+size);
         } catch (error) {
             console.error('Error fetching data:', error);
         }

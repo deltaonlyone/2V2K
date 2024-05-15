@@ -35,6 +35,7 @@ export function MenuSignIn(props) {
                 setError(null)
                 localStorage.setItem('token', data);
                 props.handleToggleSign()
+                window.location.reload()
             })
             .catch(error => {
                 console.error('Authentication error:', error);
@@ -63,6 +64,7 @@ export function MenuSignIn(props) {
                     <FormInputSign height={'43px'}
                                    width={'100%'}
                                    text={'Username or email address'}
+                                   type="email"
                                    onChange={setUsernameOrEmail}
                     >
 
@@ -70,6 +72,7 @@ export function MenuSignIn(props) {
                     <FormInputSign height={'43px'}
                                    width={'100%'}
                                    text={'Password'}
+                                   type="password"
                                    onChange={setPassword}
                     >
 

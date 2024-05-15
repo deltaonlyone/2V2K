@@ -67,7 +67,7 @@
     width: 275px;
     flex: 1;
     padding-left: 1%;
-    padding-top: 1%;
+    padding-top: 4%;
     min-width: 100px;
 }
 
@@ -100,10 +100,15 @@
 .item:hover {
     background-color: #131316;
     cursor: pointer;
+    color: white !important;
 }
 
 .icon {
     margin-right: 8px;
+}
+
+.active {
+    background-color: #131316;
 }
 
 .logOut{
@@ -136,7 +141,11 @@
 }
 
 .formInformationInput{
-    padding-top: 10px;
+    /*padding-top: 10px;*/
+    padding-right: 140px;
+}
+
+.formButton {
 }
 
 .settingsDetailsLeft {
@@ -167,8 +176,36 @@
     flex-direction: column;
 }
 
+.SecondHeaderColumn {
+    padding-top: 3%;
+    display: flex;
+    flex-direction: column;
+}
+
+.divRow {
+    display: flex;
+    flex-direction: row;
+}
+
 .profileLine{
     margin-top: 10px;
+    margin-bottom: 10px;
     width:70%;
     height:1px;
+}
+
+.UpdateButton {
+    padding-top: 20px;
+}
+
+.settingsDeleteAccount {
+    color: red;
+    font-size: 20px;
+}
+
+.forgotPasswordText{
+    color: dodgerblue;
+    font-size: 12px;
+    margin-left: 85px;
+    margin-top: 35px;
 }

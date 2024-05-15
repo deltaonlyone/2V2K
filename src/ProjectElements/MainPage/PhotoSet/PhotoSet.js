@@ -53,29 +53,31 @@ export function PhotoSet(props) {
                 <h1 className={`${styles['topText']} ${currentTheme.textColor}`}>EXPLORE WIDE WORLD OF PHOTOGRAPHY</h1>
                 <h2 className={`${styles['topTextBottom']} ${currentTheme.textColor}`}>WITH
                     US</h2>
+                {!localStorage.getItem("token") && (
 
-                <div className={styles['inputAndButton']}>
+                    <div className={styles['inputAndButton']}>
 
-                    <FormInput
-                        height={'55px'}
-                        width={'65%'}
-                        text={'email address'}
+                        <FormInput
+                            height={'55px'}
+                            width={'65%'}
+                            text={'email address'}
 
-                    ></FormInput>
-
-
-                    <FormButton height={'55px'}
-                               width={'32%'}
-                               text={'Get Started'}
-                    ></FormButton>
+                        ></FormInput>
 
 
-                    {/*<input placeholder="email address" type="text" name="text"*/}
-                    {/*       className={`${styles['inputCenter']} ${currentTheme.inputCenterColor}`}></input>*/}
+                        <FormButton height={'55px'}
+                                    width={'32%'}
+                                    text={'Get Started'}
+                        ></FormButton>
 
-                    {/*<button className={`${styles['buttonCenter']} ${currentTheme.buttonCenterColor}`}>Get Started*/}
-                    {/*</button>*/}
-                </div>
+
+                        {/*<input placeholder="email address" type="text" name="text"*/}
+                        {/*       className={`${styles['inputCenter']} ${currentTheme.inputCenterColor}`}></input>*/}
+
+                        {/*<button className={`${styles['buttonCenter']} ${currentTheme.buttonCenterColor}`}>Get Started*/}
+                        {/*</button>*/}
+                    </div>
+                )}
             </div>
             <div className={`${styles['photoSet']} ${currentTheme.photoSetColor}`}>
                 <div className={styles['photoSetTop']}>
