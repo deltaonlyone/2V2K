@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300');
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
+.locationsPage{
+    font-family: 'Comfortaa', sans-serif;
+}
+
+.locationsPageContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.infoDiv{
+    display:flex;
+    flex-direction: row;
+    width:100%;
+    justify-content: space-between;
+    padding: 150px 13% 0 13%;
+    flex-wrap: wrap;
+}
+
+.infoTextDiv{
+    display:flex;
+    flex-direction: column;
+    width:55%;
+    min-width:400px;
+    margin-right: 10px;
+}
+
+.nameText{
+    font-size: 48px;
+    padding-bottom: 20px;
+}
+
+.secondText{
+    font-size: 18px;
+    margin-top: 3px;
+}
+
+.infoText{
+    padding-top: 20px;
+    font-size: 18px;
+}
+
+
+
+
+.infoImgDiv{
+    margin-top: 20px;
+    display:flex;
+    flex-direction: column;
+    width:40%;
+    min-width: 400px;
+}
+
+.photoLocation{
+    border-radius: 10px;
+}
+
+.infoImgButtons{
+    display:flex;
+    flex-direction: row;
+    margin-top: 12px;
+}
+
+.infoImgButtonsLeft{
+
+}
+
+.infoImgButtonsRight{
+    margin-left: 15px;
+}
+
+.somePhotoTextDiv{
+    text-align: center;
+    padding: 30px;
+}
+
+.somePhotoText{
+    font-size: 32px;
+}
+
+.containerSomePhotoPlace{
+    padding: 0 13% 0 13%;
+}

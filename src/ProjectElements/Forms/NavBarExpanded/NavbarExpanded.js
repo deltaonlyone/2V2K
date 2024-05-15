@@ -4,7 +4,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import {connect} from 'react-redux';
 import {toggleTheme} from '../../../store/actions/action_1';
 import {Link, BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import avatarExample from "./User_cicrle_light.svg";
+import avatarExample from "../../Profile/avatarExample.jpg";
 
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
@@ -77,6 +77,17 @@ export function NavbarExpanded(props) {
         };
     }, []);
 
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
+
+    const handleMenuClick = (e) => {
+        e.stopPropagation(); // Зупиняємо подальше розповсюдження події
+    };
+
     return (
         <nav className={`${styles.nav} ${currentTheme.backgroundColor} ${isExpanded ? styles['nav--expanded'] : ''}`}>
             <Link className={`${styles.nav__brand} ${currentTheme.textColor} ${currentTheme.borderColor}`}
@@ -85,10 +96,10 @@ export function NavbarExpanded(props) {
             <div className={styles.nav__collapsable}>
 
 
-                <a href="#" className={`${styles.underlineHover} ${currentTheme.textColor}`}>
+                <a href="#" className={`${currentTheme.textColor}`}>
                     <Link to="/map">Map</Link>
                 </a>
-                <a href="#" className={`${styles.underlineHover} ${currentTheme.textColor}`}>
+                <a href="#" className={`${currentTheme.textColor}`}>
                     <Link to="/photographers">Photographers</Link>
                 </a>
 
@@ -115,47 +126,67 @@ export function NavbarExpanded(props) {
                 )}
                 {localStorage.getItem("token") && (
                     <div className={`${styles['userButtonsDiv']} `}>
-                        <PopupState variant="popover" popupId="demo-popup-menu" className={`${styles['popupElement']}`}>
-                            {(popupState) => (
-                                <React.Fragment>
-                                    <Button className={`${styles['popupElement']}`}
-                                            variant="contained" {...bindTrigger(popupState)}
-                                            className={`${styles['popupButton']}`}>
-                                    </Button>
-                                    <Menu {...bindMenu(popupState)} className={`${styles['popupMenu']}`}>
-                                        <Link to="/saved">
-                                            <MenuItem onClick={popupState.close}
-                                                      className={`${styles.popupText}`}>Saved</MenuItem>
-                                        </Link>
-                                        <Link to="/settings">
+                        <div className={`${styles['burgerMenuDiv']} `}>
+                            <button className={styles.nav__collapserMenu} onClick={toggleMenu}>
+                                <div className={styles.container_top}>
+                                    <div id={styles['bar4']}
+                                         className={`${styles.bars2}  ${currentTheme.backgroundReverseColor}`}></div>
+                                    <div id={styles['bar4']}
+                                         className={`${styles.bars2}  ${currentTheme.backgroundReverseColor}`}></div>
+                                    <div id={styles['bar4']}
+                                         className={`${styles.bars2}  ${currentTheme.backgroundReverseColor}`}></div>
+                                </div>
 
-                                            <MenuItem onClick={popupState.close}
-                                                      className={`${styles.popupText} `}>Settings</MenuItem>
-                                        </Link>
-                                        <MenuItem onClick={handleSignOut} className={`${styles.popupText}`}>Log
-                                            out</MenuItem>
-                                    </Menu>
-                                </React.Fragment>
+                            </button>
+
+                            {isOpen && (
+                                <div className={styles.burgerMenuOverlay}>
+                                    <div
+                                        className={`${styles.burgerMenu} ${currentTheme.borderColor} ${currentTheme.greyBackgroundColor}`}
+                                        onClick={handleMenuClick}>
+                                        <ul>
+                                            <Link to="/saved">
+                                                <li className={`${styles.textBurgerMenu}  ${currentTheme.textColor}`}>
+                                                    Saved
+                                                </li>
+                                            </Link>
+                                            <Link to="/settings">
+                                                <li className={`${styles.textBurgerMenu}  ${currentTheme.textColor}`}>
+                                                    Settings
+                                                </li>
+                                            </Link>
+                                            <div
+                                                className={`${styles.lineStyle}  ${currentTheme.backgroundReverseColor}`}>
+
+                                            </div>
+
+                                            <li className={`${styles.textBurgerMenuSecond}  ${currentTheme.textColor}`}
+                                                onClick={handleSignOut}>
+                                                Log out
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             )}
-                        </PopupState>
+                        </div>
 
                         {user &&
-                        <Link to="/profile"  state={user.id} >
-                            {userPhoto &&
-                                <div className={`${styles['avatarUserDiv']}`}>
-                                    <img className={styles['avatarUser']}
-                                         src={`http://localhost:8080/api/photos/` + userPhoto.id}
-                                         alt="User Avatar"/>
-                                </div>
-                            }
-                            {!userPhoto &&
-                                <div className={`${styles['avatarUserDiv']}`}>
-                                    <img className={styles['avatarUser']}
-                                         src={avatarExample}
-                                         alt="User Avatar"/>
-                                </div>
-                            }
-                        </Link>
+                            <Link to="/profile" state={user.id}>
+                                {userPhoto &&
+                                    <div className={`${styles['avatarUserDiv']}`}>
+                                        <img className={styles['avatarUser']}
+                                             src={`http://localhost:8080/api/photos/` + userPhoto.id}
+                                             alt="User Avatar"/>
+                                    </div>
+                                }
+                                {!userPhoto &&
+                                    <div className={`${styles['avatarUserDiv']}`}>
+                                        <img className={styles['avatarUser']}
+                                             src={avatarExample}
+                                             alt="User Avatar"/>
+                                    </div>
+                                }
+                            </Link>
                         }
                     </div>
                 )}

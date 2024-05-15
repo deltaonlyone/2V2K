@@ -14,8 +14,9 @@ import telephoneSvg from "../../Forms/FormFooter/telephoneSvg.svg";
 import emailSvg from "../../Forms/FormFooter/emailSvg.svg";
 
 
-import {useSelector} from 'react-redux';
-import {Link} from "react-router-dom";
+import { useSelector} from 'react-redux';
+import {FormButtonLink} from "../../Forms/FormButtonLink/FormButtonLink";
+
 
 
 export function AboutUs(props) {
@@ -23,6 +24,7 @@ export function AboutUs(props) {
     const currentTheme = useSelector(state => state.currentTheme);
 
     return (
+
 
 
         <nav className={`${styles['container']} ${currentTheme.backgroundColor}`}>
@@ -274,10 +276,12 @@ export function AboutUs(props) {
                     <div className={styles['buttonJoinUsDiv']}>
                         {/*<button className={`${styles['buttonJoinUs']} ${currentTheme.buttonJoinUsColor}`}>JOIN US*/}
                         {/*</button>*/}
-                        <FormButton height={'50px'}
+                        <FormButtonLink
+                                    link = {'photographers'}
+                                    height={'50px'}
                                     width={'320px'}
                                     text={'JOIN US'}
-                        ></FormButton>
+                        ></FormButtonLink>
                     </div>
                 </div>
 
@@ -309,10 +313,12 @@ export function AboutUs(props) {
                     </a>
 
                     {/*<button className={`${styles['buttonMap']} ${currentTheme.buttonMapColor}`}>EXPLORE</button>*/}
-                    <FormButton height={'55px'}
+                    <FormButtonLink
+                                link = {'map'}
+                                height={'55px'}
                                 width={'300px'}
                                 text={'EXPLORE'}
-                    ></FormButton>
+                    ></FormButtonLink>
                 </div>
             </div>
 

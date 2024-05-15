@@ -1,0 +1,41 @@
+.container{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+}
+
+.firstElements{
+    height: 42px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.userAvatar{
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.userName{
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.buttonsStyle{
+    margin-left: 10px;
+}
+
+
+
+
+.secondElements{
+    margin-top: 15px;
+}
+
+.photosStyle{
+    height: 340px;
+    max-width:300px;
+    border-radius: 10px;
+    margin:5px;
+}
