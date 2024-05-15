@@ -1,51 +1,54 @@
-import React, {useState} from 'react';
-import styles from './FormFooter.module.css';
+import React, {useState} from "react";
+import styles from "./FormFooter.module.css";
 import {useDispatch, useSelector} from "react-redux";
 import logo from "../../../photos/Snavvy_Logo/Snavvy_logo_White.svg";
 import telephoneSvg from "./telephoneSvg.svg";
 import emailSvg from "./emailSvg.svg";
 import {FormButton} from "../FormButton/FormButton";
 import {FormInput} from "../FormInput/FormInput";
-
+import {SvgLogo} from "../FormSvg/FormSvg";
+import {SvgTelephone} from "../FormSvg/FormSvg";
+import {SvgMessage} from "../FormSvg/FormSvg";
 
 export function FormFooter(props) {
+    const currentTheme = useSelector((state) => state.currentTheme);
 
-    const currentTheme = useSelector(state => state.currentTheme);
 
     return (
-
-        <footer className={`${styles['informationAboutUs']}`}>
-            <div className={`${styles['footerContainer']}`}>
-                <div className={`${styles['informationAboutUsFirst']}`}>
-                    <img className={`${styles['logoSnavvy']} ${currentTheme.svgColor}`} src={logo} alt=""/>
-                    <a className={`${styles['informationText']} ${currentTheme.textColor}`}>
-                        Nemo enim ipsam voluptatem quia
-                        voluptas sit aspernatur aut odit
-                        aut fugit, sed quia consequuntur magni
-                        dolores eos qui ratione voluptatem sequi
-                        nesciunt. Neque porro quisquam est, qui
-                        dolorem.
+        <footer className={`${styles["informationAboutUs"]}`}>
+            <div className={`${styles["footerContainer"]}`}>
+                <div className={`${styles["informationAboutUsFirst"]}`}>
+                    <div className={`${styles["logoSnavvy"]}`}>
+                        <SvgLogo color={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                                 stroke={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                        />
+                    </div>
+                    <a
+                        className={`${styles["informationText"]} ${currentTheme.textColor}`}
+                    >
+                        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+                        fugit, sed quia consequuntur magni dolores eos qui ratione
+                        voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem.
                     </a>
                 </div>
 
-
-                <div className={`${styles['informationAboutUsSecond']}`}>
-                    <a className={`${styles['informationTextHead']} ${currentTheme.textColor}`}>
+                <div className={`${styles["informationAboutUsSecond"]}`}>
+                    <a
+                        className={`${styles["informationTextHead"]} ${currentTheme.textColor}`}
+                    >
                         Register
                     </a>
-                    <form className={`${styles['formInformationInput']}`}>
-
+                    <form className={`${styles["formInformationInput"]}`}>
                         <FormInput
-                            height={'50px'}
-                            width={'100%'}
-                            text={'email address'}
-
+                            height={"50px"}
+                            width={"100%"}
+                            text={"email address"}
                         ></FormInput>
 
-
-                        <FormButton height={'50px'}
-                                    width={'100%'}
-                                    text={'Submit'}
+                        <FormButton
+                            height={"50px"}
+                            width={"100%"}
+                            text={"Submit"}
                         ></FormButton>
 
                         {/*<input placeholder="email address" type="text" name="text"*/}
@@ -54,51 +57,61 @@ export function FormFooter(props) {
                         {/*    className={`${styles['buttonSubmitEmail']} ${currentTheme.buttonSubmitEmailColor}`}>Submit*/}
                         {/*</button>*/}
                     </form>
-
                 </div>
 
-
-                <div className={`${styles['informationAboutUsThird']}`}>
-                    <a className={`${styles['informationTextHead']} ${currentTheme.textColor}`}>
+                <div className={`${styles["informationAboutUsThird"]}`}>
+                    <a
+                        className={`${styles["informationTextHead"]} ${currentTheme.textColor}`}
+                    >
                         Contact us
                     </a>
 
-                    <div className={`${styles['informationContacts']}`}>
-                        <div className={`${styles['informationContactsPhone']}`}>
-                            <img className={`${styles['telephoneSvg']} ${currentTheme.svgColor}`} src={telephoneSvg}
-                                 alt=""/>
+                    <div className={`${styles["informationContacts"]}`}>
+                        <div className={`${styles["informationContactsPhone"]}`}>
+                            <div className={`${styles["telephoneSvg"]}`}>
+                                <SvgTelephone color={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                                         stroke={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                                />
+                            </div>
 
-                            <a className={`${styles['informationContactText']} ${currentTheme.textColor}`}>
+                            <a
+                                className={`${styles["informationContactText"]} ${currentTheme.textColor}`}
+                            >
                                 +380 00 000 00 00
                             </a>
                         </div>
 
-                        <div className={`${styles['informationContactsEmail']}`}>
-                            <img className={`${styles['emailSvg']} ${currentTheme.svgColor}`} src={emailSvg} alt=""/>
+                        <div className={`${styles["informationContactsEmail"]}`}>
+                            <div className={`${styles["emailSvg"]}`}>
+                                <SvgMessage color={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                                              stroke={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                                />
+                            </div>
 
-                            <a className={`${styles['informationContactText']} ${currentTheme.textColor}`}>
+                            <a
+                                className={`${styles["informationContactText"]} ${currentTheme.textColor}`}
+                            >
                                 snavvy_support@gmail.com
                             </a>
                         </div>
                     </div>
-
-
                 </div>
 
-
-                <div className={`${styles['informationAboutUsFourth']}`}>
-                    <a className={`${styles['informationTextHead']} ${currentTheme.textColor}`}>
+                <div className={`${styles["informationAboutUsFourth"]}`}>
+                    <a
+                        className={`${styles["informationTextHead"]} ${currentTheme.textColor}`}
+                    >
                         Follow us
                     </a>
 
-                    <ul className={`${styles['example-2']}`}>
-                        <li className={`${styles['icon-content']} ${styles.liStyle}`}>
+                    <ul className={`${styles["example-2"]}`}>
+                        <li className={`${styles["icon-content"]} ${styles.liStyle}`}>
                             <a
                                 href="https://instagram.com/"
                                 aria-label="Instagram"
                                 data-social="instagram"
                             >
-                                <div className={`${styles['filled']}`}></div>
+                                <div className={`${styles["filled"]}`}></div>
                                 <svg version="1.1" viewBox="0 0 24 24">
                                     <path
                                         d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
@@ -106,15 +119,15 @@ export function FormFooter(props) {
                                     ></path>
                                 </svg>
                             </a>
-                            <div className={`${styles['tooltip']}`}>Instagram</div>
+                            <div className={`${styles["tooltip"]}`}>Instagram</div>
                         </li>
-                        <li className={`${styles['icon-content']} ${styles.liStyle}`}>
+                        <li className={`${styles["icon-content"]} ${styles.liStyle}`}>
                             <a
                                 href="https://telegram.org/"
                                 aria-label="Telegram"
                                 data-social="telegram"
                             >
-                                <div className={`${styles['filled']}`}></div>
+                                <div className={`${styles["filled"]}`}></div>
                                 <svg version="1.1" viewBox="0 0 100 100">
                                     <path
                                         d="M95,9.9c-1.3-1.1-3.4-1.2-7-0.1c0,0,0,0,0,0c-2.5,0.8-24.7,9.2-44.3,17.3c-17.6,7.3-31.9,13.7-33.6,14.5
@@ -129,15 +142,15 @@ export function FormFooter(props) {
                                     ></path>
                                 </svg>
                             </a>
-                            <div className={`${styles['tooltip']}`}>Telegram</div>
+                            <div className={`${styles["tooltip"]}`}>Telegram</div>
                         </li>
-                        <li className={`${styles['icon-content']} ${styles.liStyle}`}>
+                        <li className={`${styles["icon-content"]} ${styles.liStyle}`}>
                             <a
                                 href="https://facebook.com/"
                                 aria-label="Facebook"
                                 data-social="facebook"
                             >
-                                <div className={`${styles['filled']}`}></div>
+                                <div className={`${styles["filled"]}`}></div>
                                 <svg version="1.1" viewBox="0 0 310 310">
                                     <path
                                         d="M81.703,165.106h33.981V305c0,2.762,2.238,5,5,5h57.616c2.762,0,5-2.238,5-5V165.765h39.064
@@ -149,61 +162,75 @@ export function FormFooter(props) {
                                     ></path>
                                 </svg>
                             </a>
-                            <div className={`${styles['tooltip']}`}>Facebook</div>
+                            <div className={`${styles["tooltip"]}`}>Facebook</div>
                         </li>
                     </ul>
                 </div>
-
             </div>
 
-
-            <div className={`${styles['footerContainerSecond']}`}>
-                <div className={`${styles['informationAboutUsTop']}`}>
-                    <img className={`${styles['logoSnavvy']} ${currentTheme.svgColor}`} src={logo} alt=""/>
+            <div className={`${styles["footerContainerSecond"]}`}>
+                <div className={`${styles["informationAboutUsTop"]}`}>
+                    <div className={`${styles["logoSnavvy"]}`}>
+                        <SvgLogo color={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                                 stroke={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                        />
+                    </div>
                 </div>
 
-                <div className={`${styles['informationAboutUsMiddle']}`}>
-                    <div className={`${styles['informationAboutUsMiddleLeft']}`}>
-
-                        <a className={`${styles['informationTextHead']} ${currentTheme.textColor}`}>
+                <div className={`${styles["informationAboutUsMiddle"]}`}>
+                    <div className={`${styles["informationAboutUsMiddleLeft"]}`}>
+                        <a
+                            className={`${styles["informationTextHead"]} ${currentTheme.textColor}`}
+                        >
                             Contact us
                         </a>
 
-                        <div className={`${styles['informationContacts']}`}>
-                            <div className={`${styles['informationContactsPhone']}`}>
-                                <img className={`${styles['telephoneSvg']} ${currentTheme.svgColor}`} src={telephoneSvg}
-                                     alt=""/>
+                        <div className={`${styles["informationContacts"]}`}>
+                            <div className={`${styles["informationContactsPhone"]}`}>
+                                <img
+                                    className={`${styles["telephoneSvg"]} ${currentTheme.svgColor}`}
+                                    src={telephoneSvg}
+                                    alt=""
+                                />
 
-                                <a className={`${styles['informationContactText']} ${currentTheme.textColor}`}>
+                                <a
+                                    className={`${styles["informationContactText"]} ${currentTheme.textColor}`}
+                                >
                                     +380 00 000 00 00
                                 </a>
                             </div>
 
-                            <div className={`${styles['informationContactsEmail']}`}>
-                                <img className={`${styles['emailSvg']} ${currentTheme.svgColor}`} src={emailSvg}
-                                     alt=""/>
+                            <div className={`${styles["informationContactsEmail"]}`}>
+                                <img
+                                    className={`${styles["emailSvg"]} ${currentTheme.svgColor}`}
+                                    src={emailSvg}
+                                    alt=""
+                                />
 
-                                <a className={`${styles['informationContactText']} ${currentTheme.textColor}`}>
+                                <a
+                                    className={`${styles["informationContactText"]} ${currentTheme.textColor}`}
+                                >
                                     snavvy_support@gmail.com
                                 </a>
                             </div>
                         </div>
-
                     </div>
 
-                    <div className={`${styles['informationAboutUsMiddleRight']}`}>
-                        <a className={`${styles['informationTextHead']} ${currentTheme.textColor}`}>
+                    <div className={`${styles["informationAboutUsMiddleRight"]}`}>
+                        <a
+                            className={`${styles["informationTextHead"]} ${currentTheme.textColor}`}
+                        >
                             Follow us
                         </a>
 
-                        <ul className={`${styles['example-2']}`}>
-                            <li className={`${styles['icon-content']} ${styles.liStyle}`}>
+                        <ul className={`${styles["example-2"]}`}>
+                            <li className={`${styles["icon-content"]} ${styles.liStyle}`}>
                                 <a
                                     href="https://instagram.com/"
                                     aria-label="Instagram"
                                     data-social="instagram"
                                 >
-                                    <div className={`${styles['filled']}`}></div>
+                                    <div className={`${styles["filled"]}`}></div>
                                     <svg version="1.1" viewBox="0 0 24 24">
                                         <path
                                             d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
@@ -211,15 +238,15 @@ export function FormFooter(props) {
                                         ></path>
                                     </svg>
                                 </a>
-                                <div className={`${styles['tooltip']}`}>Instagram</div>
+                                <div className={`${styles["tooltip"]}`}>Instagram</div>
                             </li>
-                            <li className={`${styles['icon-content']} ${styles.liStyle}`}>
+                            <li className={`${styles["icon-content"]} ${styles.liStyle}`}>
                                 <a
                                     href="https://telegram.org/"
                                     aria-label="Telegram"
                                     data-social="telegram"
                                 >
-                                    <div className={`${styles['filled']}`}></div>
+                                    <div className={`${styles["filled"]}`}></div>
                                     <svg version="1.1" viewBox="0 0 100 100">
                                         <path
                                             d="M95,9.9c-1.3-1.1-3.4-1.2-7-0.1c0,0,0,0,0,0c-2.5,0.8-24.7,9.2-44.3,17.3c-17.6,7.3-31.9,13.7-33.6,14.5
@@ -234,15 +261,15 @@ export function FormFooter(props) {
                                         ></path>
                                     </svg>
                                 </a>
-                                <div className={`${styles['tooltip']}`}>Telegram</div>
+                                <div className={`${styles["tooltip"]}`}>Telegram</div>
                             </li>
-                            <li className={`${styles['icon-content']} ${styles.liStyle}`}>
+                            <li className={`${styles["icon-content"]} ${styles.liStyle}`}>
                                 <a
                                     href="https://facebook.com/"
                                     aria-label="Facebook"
                                     data-social="facebook"
                                 >
-                                    <div className={`${styles['filled']}`}></div>
+                                    <div className={`${styles["filled"]}`}></div>
                                     <svg version="1.1" viewBox="0 0 310 310">
                                         <path
                                             d="M81.703,165.106h33.981V305c0,2.762,2.238,5,5,5h57.616c2.762,0,5-2.238,5-5V165.765h39.064
@@ -254,46 +281,50 @@ export function FormFooter(props) {
                                         ></path>
                                     </svg>
                                 </a>
-                                <div className={`${styles['tooltip']}`}>Facebook</div>
+                                <div className={`${styles["tooltip"]}`}>Facebook</div>
                             </li>
                         </ul>
                     </div>
                 </div>
 
-
-                <div className={`${styles['informationAboutUsBottom']}`}>
-
-                    <a className={`${styles['informationTextHead']} ${currentTheme.textColor}`}>
+                <div className={`${styles["informationAboutUsBottom"]}`}>
+                    <a
+                        className={`${styles["informationTextHead"]} ${currentTheme.textColor}`}
+                    >
                         Register
                     </a>
-                    <form className={`${styles['formInformationInput']}`}>
+                    <form className={`${styles["formInformationInput"]}`}>
                         <FormInput
-                            height={'50px'}
-                            width={'80%'}
-                            text={'email address'}
-
+                            height={"50px"}
+                            width={"80%"}
+                            text={"email address"}
                         ></FormInput>
 
-
-                        <FormButton height={'50px'}
-                                    width={'80%'}
-                                    text={'Submit'}
+                        <FormButton
+                            height={"50px"}
+                            width={"80%"}
+                            text={"Submit"}
                         ></FormButton>
                     </form>
                 </div>
             </div>
 
-
-            <div className={`${styles['footerBottomTextDiv']}`}>
-                <a className={`${styles['footerBottomText']} ${currentTheme['textGreyColor']}`}>
+            <div className={`${styles["footerBottomTextDiv"]}`}>
+                <a
+                    className={`${styles["footerBottomText"]} ${currentTheme["textGreyColor"]}`}
+                >
                     © 2024 All Rights Reserved
                 </a>
-                <div className={`${styles['footerBottomTextRight']}`}>
-                    <a className={`${styles['footerBottomTextHover']} ${currentTheme['textGreyColor']}`}>
+                <div className={`${styles["footerBottomTextRight"]}`}>
+                    <a
+                        className={`${styles["footerBottomTextHover"]} ${currentTheme["textGreyColor"]}`}
+                    >
                         Privacy Policy
                     </a>
 
-                    <a className={`${styles['footerBottomTextHover']} ${currentTheme['textGreyColor']}`}>
+                    <a
+                        className={`${styles["footerBottomTextHover"]} ${currentTheme["textGreyColor"]}`}
+                    >
                         Terms of Use
                     </a>
                 </div>

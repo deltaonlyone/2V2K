@@ -10,6 +10,7 @@ import { useSelector} from 'react-redux';
 import photoServices3 from "../MainPage/AboutUs/photo-3-services.jpg";
 import {FormButton} from "../Forms/FormButton/FormButton";
 import {FormSortPhotosTypes} from "../Forms/FormSortPhotosTypes/FormSortPhotosTypes";
+import {SvgPencil, SvgPlus, SvgSignOut} from "../Forms/FormSvg/FormSvg";
 
 const Profile = () => {
 
@@ -80,13 +81,31 @@ const Profile = () => {
                         <div className={`${styles['profileButton']}`}>
                             <FormButton height={'60px'}
                                         width={'200px'}
-                                        text={'EDIT PROFILE'}
+                                        text={
+                                            <>
+                                                <SvgPencil
+                                                    color={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                                                    stroke={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                                                    className={`${styles["svgTextLeft"]}`}
+                                                />
+                                                {'       EDIT PROFILE'}
+                                            </>
+                                        }
                             ></FormButton>
                         </div>
                         <div className={`${styles['profileButton']}`}>
                             <FormButton height={'60px'}
                                         width={'200px'}
-                                        text={'ADD PHOTOS'}
+                                        text={
+                                            <>
+                                                <SvgPlus
+                                                    color={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                                                    stroke={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                                                    className={`${styles["svgTextLeft"]}`}
+                                                />
+                                                {'       ADD PHOTOS'}
+                                            </>
+                                        }
                             ></FormButton>
                         </div>
                     </div>

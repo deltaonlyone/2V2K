@@ -502,6 +502,7 @@ a {
 .textBurgerMenu{
     font-size: 20px;
     margin: 15px 0 0 20px;
+
 }
 
 .textBurgerMenuSecond{
@@ -613,4 +614,11 @@ a {
     .nav__collapserMenu{
         display: none;
     }
+}
+
+
+.svgTextLeft{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
 }
