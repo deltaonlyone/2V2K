@@ -1,0 +1,57 @@
+.textAreaContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.textArea {
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 100%;
+    border-radius: 1em;
+    border: 1.5px solid;
+    transition: all .3s;
+    resize: none; /* Prevents resizing of the textarea */
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.textArea:focus {
+    outline: none;
+    position: relative;
+}
+
+.textArea:hover {
+    cursor: text;
+}
+
+/* Style for the character count */
+.charCount {
+    font-size: 0.8em;
+    color: #666;
+    position: absolute;
+    bottom: 0.5em;
+    right: 0.5em;
+}
+
+/* Optional: Style for the textarea when it reaches the limit */
+.textArea.exceeded {
+    border-color: red;
+}
+
+/* Optional: Style for a loading state */
+.textArea.loading:after {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 2px solid;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
