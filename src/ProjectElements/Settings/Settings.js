@@ -1,5 +1,5 @@
 import styles from './Settings.module.css';
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {NavbarExpanded} from "../Forms/NavBarExpanded/NavbarExpanded";
 import {FormFooter} from "../Forms/FormFooter/FormFooter";
 import {MenuSignIn} from "../Registration/MenuSignIn/MenuSignIn";
@@ -7,13 +7,14 @@ import {MenuSignIn} from "../Registration/MenuSignIn/MenuSignIn";
 import {useSelector} from 'react-redux';
 import avatarExample from "../../photos/User_cicrle_light.svg";
 import {FormButton} from "../Forms/FormButton/FormButton";
-import PublicProfile from "../Settings/PublicProfile.svg";
+import publicProfile from "./PublicProfile.svg";
 import Account from "../Settings/Account.svg";
 import PasswordSecurity from "../Settings/PasswordSecurity.svg";
 import LogOut from "../Settings/LogOut.svg";
 import {FormInput} from "../Forms/FormInput/FormInput";
 import {FormTextArea} from "../Forms/FormTextArea/FormTextArea";
 import {FormButtonReverse} from "../Forms/FormButtonReverse/FormButtonReverse";
+import axios from "axios";
 
 const Settings = () => {
 
@@ -22,6 +23,19 @@ const Settings = () => {
     const [isOpened, setIsOpened] = useState(false);
 
     const [activeItem, setActiveItem] = useState('PublicProfile');
+
+    const [user, setUser] = useState(null);
+    const [userName, setUserName] = useState(null);
+    const [userBio, setUserBio] = useState(null);
+    const [userUserName, setUserUserName] = useState(null);
+    const [userEmail, setUserEmail] = useState(null);
+    const [userLocation, setUserLocation] = useState(null);
+    const [profilePhoto, setProfilePhoto] = useState(null);
+
+
+
+    const [check, setCheck] = useState(true);
+
 
     const handleClick = (item) => {
         setActiveItem(item);
@@ -39,7 +53,32 @@ const Settings = () => {
         setIsOpened(!isOpened);
     };
 
-
+    const fetchUser = async () => {
+        if (localStorage.getItem("token") !== null) {
+            axios.get('http://localhost:8080/api/users/my', {
+                headers: {
+                    'X-Authorization': `${localStorage.getItem("token")}`, // замініть 'your-token-here' на ваш токен або інший заголовок
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then(response => {
+                    setUser(response.data);
+                    setUserName(user.name);
+                    setUserBio(user.bio);
+                    setUserUserName(user.username);
+                    setUserEmail(user.email);
+                    setUserLocation(user.location);
+                    setProfilePhoto(user.profilePhoto);
+                    setCheck(false);
+                })
+                .catch(error => {
+                    console.error('Error fetching users:', error);
+                });
+        }
+    };
+    if (check) {
+        fetchUser()
+    }
     const renderContent = () => {
         switch (activeItem) {
             case 'PublicProfile':
@@ -54,21 +93,35 @@ const Settings = () => {
                             <div className={styles['settingsDetailsLeft']}>
                                 <span
                                     className={`${styles['settingsTextHeader2']} ${currentTheme.textColor}`}>Name</span>
-                                <div className={styles['formInformationInput']}>
-                                    <FormInput height={'40px'} width={'75%'} text={'*Name need be here*'}/>
-                                </div>
+                                    <div className={styles['formInformationInput']}>
+                                        {userName ?(
+                                        <FormInput height={'40px'} width={'75%'} text={`${userName}`}/>
+                                        ):(
+                                            <FormInput height={'40px'} width={'75%'} />
+                                        )
+                                        }
+
+                                    </div>
                                 <span className={`${styles['settingsTextDescription']} ${currentTheme.textGreyColor}`}>
                                     Your name may appear around Snavvy where you contribute or are mentioned. You can remove it at any time.
                                 </span>
                                 <span
                                     className={`${styles['settingsTextHeader2']} ${currentTheme.textColor}`}>Bio</span>
                                 <div className={styles['formInformationInput']}>
-                                    <FormTextArea maxLength={200} height="100px" width="75%"/>
+                                    {userBio ? (
+                                    <FormTextArea maxLength={200} height="100px" width="75%" innerText={`${userBio}`}/>
+                                    ):(
+                                        <FormTextArea maxLength={200} height="100px" width="75%" innerText=""/>
+                                    )
+                                    }
                                 </div>
                                 <span
                                     className={`${styles['settingsTextHeader2']} ${currentTheme.textColor}`}>Location</span>
                                 <div className={styles['formInformationInput']}>
-                                    <FormInput height={'40px'} width={'75%'} text={'*Location need be here*'}/>
+                                    {userLocation?
+                                        (<FormInput height={'40px'} width={'75%'} text={`${userLocation}`}/>):
+                                        (<FormInput height={'40px'} width={'75%'} text={""}/>)}
+
                                 </div>
                                 <div className={styles['UpdateButton']}>
                                     <FormButtonReverse height={'40px'} width={'25%'} text={'Update profile'}/>
@@ -77,10 +130,13 @@ const Settings = () => {
                             <div className={styles['settingsDetailsRight']}>
                                 <span className={`${styles['settingsTextHeader2']} ${currentTheme.textColor}`}>Profile picture</span>
                                 <div className={styles['avatarUserDivDescription']}>
-                                    <img className={styles['avatarUser']} src={avatarExample} alt=""/>
+                                    {profilePhoto ?(
+                                    <img className={styles['avatarUser']} src={`http://localhost:8080/api/photos/` + profilePhoto.id} alt=""/>
+                                        ):(
+                                    <img className={styles['avatarUser']} src={avatarExample} alt=""/>)}
                                 </div>
                                 <div className={`${styles['ButtonRelative']} ${currentTheme.textColor}`}>
-                                    <FormButtonReverse height={'40px'} width={'100px'} text={'Edit'}/>
+                                <FormButtonReverse height={'40px'} width={'100px'} text={'Edit'}/>
                                 </div>
                             </div>
                         </div>
@@ -99,7 +155,12 @@ const Settings = () => {
                                 className={`${styles['settingsTextHeader2']} ${currentTheme.textColor}`}></span>
                             <div className={`${styles['divRow']}`}>
                                 <div className={styles['formInformationInput']}>
-                                    <FormInput height={'40px'} width={'163%'} text={'*Username*'}/>
+                                    {userUserName ? (
+                                        <FormInput height={'40px'} width={'163%'} text={`${userUserName}`}/>
+                                    ) : (
+                                        <FormInput height={'40px'} width={'163%'}/>
+                                    )
+                                    }
                                 </div>
                                 <div className={styles['formButton']}>
                                     <FormButtonReverse height={'40px'}
@@ -122,7 +183,11 @@ const Settings = () => {
                                 className={`${styles['settingsTextHeader2']} ${currentTheme.textColor}`}>Add email address</span>
                             <div className={`${styles['divRow']}`}>
                                 <div className={styles['formInformationInput']}>
-                                    <FormInput height={'40px'} width={'163%'} text={'*Email*'}/>
+                                    {userEmail ?(
+                                        <FormInput height={'40px'} width={'163%'} text={`${userEmail}`}/>
+                                    ):(
+                                        <FormInput height={'40px'} width={'163%'} text={""}/>
+                                    )}
                                 </div>
                             </div>
 
@@ -154,17 +219,17 @@ const Settings = () => {
                             <span
                                 className={`${styles['settingsTextHeader2']} ${currentTheme.textColor}`}>Old password</span>
                             <div className={styles['formInformationInput']}>
-                                <FormInput height={'40px'} width={'500px'} text={''}/>
+                                <FormInput height={'40px'} width={'500px'} text={''} type="password"/>
                             </div>
                             <span
                                 className={`${styles['settingsTextHeader2']} ${currentTheme.textColor}`}>New password</span>
                             <div className={styles['formInformationInput']}>
-                                <FormInput height={'40px'} width={'500px'} text={''}/>
+                                <FormInput height={'40px'} width={'500px'} text={''} type="password"/>
                             </div>
                             <span
                                 className={`${styles['settingsTextHeader2']} ${currentTheme.textColor}`}>Confirm new password</span>
                             <div className={styles['formInformationInput']}>
-                                <FormInput height={'40px'} width={'500px'} text={''}/>
+                                <FormInput height={'40px'} width={'500px'} text={''} type="password"/>
                             </div>
                             <span className={`${styles['settingsTextDescription']} ${currentTheme.textGreyColor}`}>
                                     Make sure it's at least 15 characters OR at least 8 characters including a number and a lowercase letter.
@@ -212,7 +277,11 @@ const Settings = () => {
                     <div className={`${styles['settingsListContainerLeft']}`}>
                         <div className={`${styles['userInfoContainer']}`}>
                             <div className={`${styles['avatarUserDiv']}`}>
-                                <img className={styles['avatarUser']} src={avatarExample} alt=""/>
+
+                                {profilePhoto ?(
+                                    <img className={styles['avatarUser']} src={`http://localhost:8080/api/photos/` + profilePhoto.id} alt=""/>
+                                ):(
+                                    <img className={styles['avatarUser']} src={avatarExample} alt=""/>)}
                             </div>
 
                             <div className={`${styles['userInfoDiv']}`}>
