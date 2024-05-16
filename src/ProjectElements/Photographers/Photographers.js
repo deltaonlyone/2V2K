@@ -3,6 +3,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 import styles from './Photographers.module.css';
+import avatarExample from "../../photos/User_cicrle_light.svg";
 import { NavbarExpanded } from "../Forms/NavBarExpanded/NavbarExpanded";
 import { FormFooter } from "../Forms/FormFooter/FormFooter";
 import { MenuSignIn } from "../Registration/MenuSignIn/MenuSignIn";
@@ -61,7 +62,7 @@ const Photographers = () => {
                                 key={index}
                                 name={photographer.name}
                                 location={`${photographer.city}, ${photographer.country}`}
-                                avatar={photographer.avatar || PublicProfile}
+                                avatar={photographer.avatar || avatarExample}
                                 photos={photographer.photos || []}
                                 informationUser={photographer.bio || 'No bio available.'}
                                 minimumTime={photographer.minimumTime}
