@@ -37,9 +37,8 @@ export function MenuSignUp(props) {
                 throw new Error('Something went wrong');
             }
 
-            const result = await response.json();
-            console.log('Registration successful:', result);
-            // Handle successful registration (e.g., redirect to login)
+            props.handleToggleSignUp();
+            props.handleToggleSign();
         } catch (error) {
             console.error('Error during registration:', error);
             setError('Registration failed. Please try again.');
