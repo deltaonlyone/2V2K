@@ -10,11 +10,14 @@ import MyInfiniteScroll from "./InfinityScroll/InfinityScroll";
 import avatarExample from "../../photos/User_cicrle_light.svg";
 import {FormButton} from "../Forms/FormButton/FormButton";
 import {FormSortPhotosTypes} from "../Forms/FormSortPhotosTypes/FormSortPhotosTypes";
+import {AddPhotos} from "../AddPhotos/AddPhotos";
+
 
 const Profile = () => {
     const currentTheme = useSelector(state => state.currentTheme);
     const location = useLocation();
     const [isOpened, setIsOpened] = useState(false);
+    const [isPhotoModalOpened, setIsPhotoModalOpened] = useState(false);
     const [user, setUser] = useState(null);
     const [currentUser, setCurrentUser] = useState(null);
     const [selectedCategory, setSelectedCategory] = useState("All");
@@ -33,7 +36,7 @@ const Profile = () => {
                         }
                     })
                     setCurrentUser((await responseCurrentUser).data);
-                    if(user===currentUser){
+                    if (user === currentUser) {
                         setCheck(true);
                     }
                 }
@@ -51,7 +54,13 @@ const Profile = () => {
         setIsOpened(!isOpened);
     };
 
-    const words = ["Wedding", "Portrait", "Couple", "Family", "Kids"];
+    const handleTogglePhotoModal = () => {
+        const appRoot = document.getElementById('profileContainer');
+        appRoot.style.filter = isPhotoModalOpened ? 'blur(0px)' : 'blur(12px)';
+        setIsPhotoModalOpened(!isPhotoModalOpened);
+    };
+
+    const words = ["Wedding", "Portrait", "Couple", "Landscape", "Kids"];
 
     const onCategoryChange = (category) => {
         console.log(`Selected category: ${category}`);
@@ -61,6 +70,7 @@ const Profile = () => {
     return (
         <div className={`${styles['profilePage']} ${currentTheme.backgroundColor}`}>
             {isOpened && <MenuSignIn handleToggleSign={handleToggleSingBar}/>}
+            {isPhotoModalOpened && <AddPhotos handleToggleSign={handleTogglePhotoModal}/>}
             <div id='profileContainer' className={`${styles['profileContainer']}`}>
                 <NavbarExpanded handleToggleSign={handleToggleSingBar}/>
                 {user && (
@@ -92,16 +102,17 @@ const Profile = () => {
                                 )}
                             </div>
                         </div>
-                        {check ?(
-                        <div className={`${styles['profileButtonDiv']}`}>
-                            <div className={`${styles['profileButton']}`}>
-                                <FormButton height={'60px'} width={'200px'} text={'EDIT PROFILE'}/>
+                        {check ? (
+                            <div className={`${styles['profileButtonDiv']}`}>
+                                <div className={`${styles['profileButton']}`}>
+                                    <FormButton height={'60px'} width={'200px'} text={'EDIT PROFILE'}/>
+                                </div>
+                                <div className={`${styles['profileButton']}`}>
+                                    <FormButton height={'60px'} width={'200px'} text={'ADD PHOTOS'}
+                                                onClick={handleTogglePhotoModal}/>
+                                </div>
                             </div>
-                            <div className={`${styles['profileButton']}`}>
-                                <FormButton height={'60px'} width={'200px'} text={'ADD PHOTOS'}/>
-                            </div>
-                        </div>
-                        ): (
+                        ) : (
                             <div className={`${styles['profileButtonDiv']}`}>
                                 <div className={`${styles['profileButton']}`}>
                                     <FormButton height={'60px'} width={'200px'} text={'SEND MESSAGE'}/>

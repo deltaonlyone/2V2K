@@ -97,8 +97,16 @@ const Settings = () => {
                             </div>
                             <span
                                 className={`${styles['settingsTextHeader2']} ${currentTheme.textColor}`}></span>
-                            <div className={styles['formInformationInput']}>
-                                <FormInput height={'40px'} width={'15%'} text={'*UserName*'}/>
+                            <div className={`${styles['divRow']}`}>
+                                <div className={styles['formInformationInput']}>
+                                    <FormInput height={'40px'} width={'163%'} text={'*Username*'}/>
+                                </div>
+                                <div className={styles['formButton']}>
+                                    <FormButtonReverse height={'40px'}
+                                                       width={'165px'}
+                                                       text={'Update username'}
+                                    ></FormButtonReverse>
+                                </div>
                             </div>
                             <span className={`${styles['settingsTextDescription']} ${currentTheme.textGreyColor}`}>
                                     Your name may appear around Snavvy where you contribute or are mentioned. You can remove it at any time.
@@ -115,12 +123,6 @@ const Settings = () => {
                             <div className={`${styles['divRow']}`}>
                                 <div className={styles['formInformationInput']}>
                                     <FormInput height={'40px'} width={'163%'} text={'*Email*'}/>
-                                </div>
-                                <div className={styles['formButton']}>
-                                    <FormButtonReverse height={'40px'}
-                                                       width={'60px'}
-                                                       text={'Add'}
-                                    ></FormButtonReverse>
                                 </div>
                             </div>
 
