@@ -7,7 +7,7 @@ import {NavbarExpanded} from "../Forms/NavBarExpanded/NavbarExpanded";
 import {FormFooter} from "../Forms/FormFooter/FormFooter";
 import {MenuSignIn} from "../Registration/MenuSignIn/MenuSignIn";
 import MyInfiniteScroll from "./InfinityScroll/InfinityScroll";
-import avatarExample from "./User_cicrle_light.svg";
+import avatarExample from "../../photos/User_cicrle_light.svg";
 import {FormButton} from "../Forms/FormButton/FormButton";
 import {FormSortPhotosTypes} from "../Forms/FormSortPhotosTypes/FormSortPhotosTypes";
 
