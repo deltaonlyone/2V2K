@@ -60,13 +60,13 @@ const Photographers = () => {
                         {photographers.map((photographer, index) => (
                             <FormPhotographerSearchInfo
                                 key={index}
-                                name={photographer.name}
-                                location={`${photographer.city}, ${photographer.country}`}
-                                avatar={photographer.avatar || avatarExample}
+                                name={photographer.name||`@${photographer.username}`}
+                                location={`${photographer.city|| ""} ${(photographer.country?", "+photographer.country:"")}`}
+                                avatar={photographer.profilePhoto || avatarExample}
                                 photos={photographer.photos || []}
                                 informationUser={photographer.bio || 'No bio available.'}
-                                minimumTime={photographer.minimumTime}
-                                priceHour={photographer.priceHour}
+                                minimumTime={photographer.minimumTime ||""}
+                                priceHour={photographer.priceHour || ""}
                             />
                         ))}
                     </InfiniteScroll>

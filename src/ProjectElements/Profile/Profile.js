@@ -114,7 +114,7 @@ const Profile = () => {
                         <div className={`${styles['profileLine']} ${currentTheme.backgroundReverseColor}`}></div>
                     </div>
                 )}
-                <FormSortPhotosTypes words={words} onCategoryChange={onCategoryChange}/>
+                <FormSortPhotosTypes words={words} onCategoryChange={onCategoryChange} selectedCategory={selectedCategory}/>
                 <MyInfiniteScroll user={user} category={selectedCategory}/>
                 <FormFooter/>
             </div>
