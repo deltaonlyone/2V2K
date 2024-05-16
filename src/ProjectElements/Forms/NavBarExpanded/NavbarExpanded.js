@@ -124,13 +124,13 @@ export function NavbarExpanded(props) {
                 </div>
 
 
-                {!localStorage.getItem("token") && (
+                {!localStorage.getItem("token") &&
                     <div className={styles.nav__cta}>
                         <button className={`${styles.buttonNavbar} ${currentTheme.buttonNavbarColor}`}
                                 onClick={props.handleToggleSign}>Sign in
                         </button>
                     </div>
-                )}
+                }
                 {localStorage.getItem("token") && (
                     <div className={`${styles['userButtonsDiv']} `}>
                         <div className={`${styles['burgerMenuDiv']} `}>
@@ -197,7 +197,7 @@ export function NavbarExpanded(props) {
                     </div>
                 )}
 
-
+                {localStorage.getItem("token") && (
                 <div className={`${styles['userButtonsDivPhone']} `}>
                     <div className={`${styles['whiteLineNavbar']} ${currentTheme.backgroundReverseColor}`}>
 
@@ -217,7 +217,7 @@ export function NavbarExpanded(props) {
                     </a>
 
                 </div>
-
+                    )}
             </div>
 
             <button className={styles.nav__collapser} onClick={handleToggle}>
