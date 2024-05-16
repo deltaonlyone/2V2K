@@ -4,7 +4,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import {connect} from 'react-redux';
 import {toggleTheme} from '../../../store/actions/action_1';
 import {Link, BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import avatarExample from "../../Profile/avatarExample.jpg";
+import avatarExample from "../../Profile/User_cicrle_light.svg";
 
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
@@ -14,8 +14,10 @@ import axios from "axios";
 
 export function NavbarExpanded(props) {
     const [isExpanded, setIsExpanded] = useState(false);
-    const [user, setUser] = useState();
-    const [userPhoto, setUserPhoto] = useState();
+    const [user, setUser] = useState(null);
+    const [profilePhoto, setProfilePhoto] = useState();
+    const [check, setCheck] = useState(true);
+
 
     const handleToggle = () => {
         setIsExpanded(!isExpanded);
@@ -25,19 +27,24 @@ export function NavbarExpanded(props) {
     };
     const fetchUser = async () => {
         if (localStorage.getItem("token") !== null) {
-            axios.get('http://localhost:8080/api/users/my', {
-                headers: {
-                    'X-Authorization': `${localStorage.getItem("token")}`, // замініть 'your-token-here' на ваш токен або інший заголовок
-                    'Content-Type': 'application/json'
-                }
-            })
-                .then(response => {
-                    setUser(response.data);
-                    setUserPhoto(user.userPhoto)
+            if (check === true) {
+                axios.get('http://localhost:8080/api/users/my', {
+                    headers: {
+                        'X-Authorization': `${localStorage.getItem("token")}`, // замініть 'your-token-here' на ваш токен або інший заголовок
+                        'Content-Type': 'application/json'
+                    }
                 })
-                .catch(error => {
-                    console.error('Error fetching users:', error);
-                });
+                    .then(response => {
+                        setUser(response.data);
+                        setProfilePhoto(user.profilePhoto)
+                        if(profilePhoto!==null){
+                            setCheck(false);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching users:', error);
+                    });
+            }
         }
     };
 
@@ -70,7 +77,7 @@ export function NavbarExpanded(props) {
     };
 
     useEffect(() => {
-        fetchUser()
+
         document.addEventListener('click', handleClickOutside, true);
         return () => {
             document.removeEventListener('click', handleClickOutside, true);
@@ -87,7 +94,7 @@ export function NavbarExpanded(props) {
     const handleMenuClick = (e) => {
         e.stopPropagation(); // Зупиняємо подальше розповсюдження події
     };
-
+    fetchUser()
     return (
         <nav className={`${styles.nav} ${currentTheme.backgroundColor} ${isExpanded ? styles['nav--expanded'] : ''}`}>
             <Link className={`${styles.nav__brand} ${currentTheme.textColor} ${currentTheme.borderColor}`}
@@ -172,20 +179,19 @@ export function NavbarExpanded(props) {
 
                         {user &&
                             <Link to="/profile" state={user.id}>
-                                {userPhoto &&
+                                {profilePhoto ? (
                                     <div className={`${styles['avatarUserDiv']}`}>
                                         <img className={styles['avatarUser']}
-                                             src={`http://localhost:8080/api/photos/` + userPhoto.id}
+                                             src={`http://localhost:8080/api/photos/` + profilePhoto.id}
                                              alt="User Avatar"/>
                                     </div>
-                                }
-                                {!userPhoto &&
+                                ) : (
                                     <div className={`${styles['avatarUserDiv']}`}>
                                         <img className={styles['avatarUser']}
                                              src={avatarExample}
                                              alt="User Avatar"/>
                                     </div>
-                                }
+                                )}
                             </Link>
                         }
                     </div>

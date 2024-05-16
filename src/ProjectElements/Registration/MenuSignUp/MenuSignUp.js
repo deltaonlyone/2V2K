@@ -6,40 +6,48 @@ import {FormInputSign} from "../../Forms/FormInputSign/FormInputSign";
 import {useSelector} from 'react-redux';
 
 export function MenuSignUp(props) {
-    // const [usernameOrEmail, setUsernameOrEmail] = useState('');
-    // const [password, setPassword] = useState('');
-    //
-    // const handleSubmit = () => {
-    //     const formData = {
-    //         usernameOrEmail: usernameOrEmail,
-    //         password: password
-    //     };
-    //     fetch('http://localhost:8080/api/auth/authenticate', {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify(formData)
-    //     })
-    //         .then(response => {
-    //             if (!response.ok) {
-    //                 throw new Error('Authentication failed');
-    //             }
-    //             return response.headers.get('X-Authentication');
-    //         })
-    //         .then(data => {
-    //             localStorage.setItem('token', data);
-    //             props.handleToggleSign()
-    //         })
-    //         .catch(error => {
-    //             console.error('Authentication error:', error);
-    //         });
-    // };
+
+    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [repeatPassword, setRepeatPassword] = useState('');
+    const [error, setError] = useState('');
 
     const currentTheme = useSelector(state => state.currentTheme);
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (password !== repeatPassword) {
+            setError('Passwords do not match');
+            return;
+        }
+
+        const data = { email, username, password };
+
+        try {
+            const response = await fetch('http://localhost:8080/api/users/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (!response.ok) {
+                throw new Error('Something went wrong');
+            }
+
+            const result = await response.json();
+            console.log('Registration successful:', result);
+            // Handle successful registration (e.g., redirect to login)
+        } catch (error) {
+            console.error('Error during registration:', error);
+            setError('Registration failed. Please try again.');
+        }
+    };
+
     return (
-        <nav className={`${styles['container']} `} onClick={props.handleToggleSignUp}>
+        <nav className={`${styles['container']}`} onClick={props.handleToggleSignUp}>
             <div className={`${styles['menu']} ${currentTheme.signInMenuBackground}`}
                  onClick={(e) => e.stopPropagation()}>
 
@@ -50,40 +58,45 @@ export function MenuSignUp(props) {
 
                 <a className={`${styles['signInText']} ${currentTheme.textColor}`}>Sign up</a>
 
-                <div className={`${styles['inputForm']} ${currentTheme.inputFormColor}`}>
-                    <FormInputSign height={'43px'}
-                                   width={'100%'}
-                                   text={'Email address'}
-                    >
+                <form className={`${styles['inputForm']} ${currentTheme.inputFormColor}`} onSubmit={handleSubmit}>
+                    <FormInputSign
+                        height={'43px'}
+                        width={'100%'}
+                        text={'Email address'}
+                        type="email"
+                        onChange={ setEmail}
+                    />
 
-                    </FormInputSign>
+                    <FormInputSign
+                        height={'43px'}
+                        width={'100%'}
+                        text={'Username'}
+                        type="text"
+                        onChange={setUsername}
+                    />
 
-                    <FormInputSign height={'43px'}
-                                   width={'100%'}
-                                   text={'Username'}
-                    >
+                    <FormInputSign
+                        height={'43px'}
+                        width={'100%'}
+                        text={'Password'}
+                        type="password"
+                        onChange={setPassword}
+                    />
 
-                    </FormInputSign>
+                    <FormInputSign
+                        height={'43px'}
+                        width={'100%'}
+                        text={'Repeat password'}
+                        type="password"
+                        onChange={setRepeatPassword}
+                    />
 
-                    <FormInputSign height={'43px'}
-                                   width={'100%'}
-                                   text={'Password'}
-                    >
+                    {error && <div className={styles['errorText']}>{error}</div>}
 
-                    </FormInputSign>
-
-                    <FormInputSign height={'43px'}
-                                   width={'100%'}
-                                   text={'Repeat password'}
-                    >
-
-                    </FormInputSign>
-
-                    <button className={`${styles['submitButton']} ${currentTheme.buttonSignInColor}`}>
+                    <button type="submit" className={`${styles['submitButton']} ${currentTheme.buttonSignInColor}`}>
                         Sign up
                     </button>
-
-                </div>
+                </form>
                 <div className={`${styles['createAccountText']} ${currentTheme.inputFormColor}`}>
                     <a className={`${styles['textAccountLeft']} ${currentTheme.textColor}`}>
                         Already have an account?
@@ -108,8 +121,6 @@ export function MenuSignUp(props) {
                         Terms of Use
                     </a>
                 </div>
-
-
             </div>
         </nav>
     );
