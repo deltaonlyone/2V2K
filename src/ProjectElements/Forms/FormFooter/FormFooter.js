@@ -59,9 +59,10 @@ export function FormFooter(props) {
                 </div>
                     )}
 
-
-                <div className={`${styles['informationAboutUsThird']}`}>
-                    <a className={`${styles['informationTextHead']} ${currentTheme.textColor}`}>
+                <div className={`${styles["informationAboutUsThird"]}`}>
+                    <a
+                        className={`${styles["informationTextHead"]} ${currentTheme.textColor}`}
+                    >
                         Contact us
                     </a>
 
