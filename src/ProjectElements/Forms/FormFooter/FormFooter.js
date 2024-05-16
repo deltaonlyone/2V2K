@@ -7,6 +7,7 @@ import emailSvg from "./emailSvg.svg";
 import {FormButton} from "../FormButton/FormButton";
 import {FormInput} from "../FormInput/FormInput";
 import {SvgLogo, SvgMessage, SvgSettings, SvgTelephone} from "../FormSvg/FormSvg";
+import {Link} from "react-router-dom";
 
 
 export function FormFooter(props) {
@@ -322,13 +323,19 @@ export function FormFooter(props) {
                     © 2024 All Rights Reserved
                 </a>
                 <div className={`${styles['footerBottomTextRight']}`}>
+                    <Link to="/privacy_policy" >
                     <a className={`${styles['footerBottomTextHover']} ${currentTheme['textGreyColor']}`}>
-                        Privacy Policy
-                    </a>
 
+                        Privacy Policy
+
+                    </a>
+                    </Link>
+
+                    <Link to="/terms_of_use" >
                     <a className={`${styles['footerBottomTextHover']} ${currentTheme['textGreyColor']}`}>
                         Terms of Use
                     </a>
+                    </Link>
                 </div>
             </div>
         </footer>

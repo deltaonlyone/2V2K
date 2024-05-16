@@ -68,8 +68,10 @@ const MainPage = () => {
             {isOpenedSignUp && <MenuSignUp handleToggleSignUp = {handleToggleSignUpBar} handleToggleSign = {handleToggleSignInBar}></MenuSignUp>}
             {isOpenedForgotPassword && <MenuForgotPassword handleToggleForgotPassword = {handleToggleForgotPasswordBar}></MenuForgotPassword>}
 
+            <NavbarExpanded handleToggleSign = {handleToggleSignInBar}></NavbarExpanded>
+
+            
             <div id = 'mainPageContainer' className = {`${styles['mainPageContainer']}`}>
-                <NavbarExpanded handleToggleSign = {handleToggleSignInBar}></NavbarExpanded>
 
                 <PhotoSet></PhotoSet>
 

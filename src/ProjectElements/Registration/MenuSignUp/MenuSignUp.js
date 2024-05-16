@@ -5,6 +5,7 @@ import {FormInputSign} from "../../Forms/FormInputSign/FormInputSign";
 
 import {useSelector} from 'react-redux';
 import {SvgLogo} from "../../Forms/FormSvg/FormSvg";
+import {Link} from "react-router-dom";
 
 export function MenuSignUp(props) {
 
@@ -118,13 +119,16 @@ export function MenuSignUp(props) {
 
                 </div>
                 <div className={styles['informationText']}>
-                    <a className={styles['textBottom']}>
-                        Privacy Policy
-                    </a>
-
-                    <a className={styles['textBottom']}>
-                        Terms of Use
-                    </a>
+                    <Link to="/privacy_policy">
+                        <a className={styles['textBottom']}>
+                            Privacy Policy
+                        </a>
+                    </Link>
+                    <Link to="/terms_of_use">
+                        <a className={styles['textBottom']}>
+                            Terms of Use
+                        </a>
+                    </Link>
                 </div>
             </div>
         </nav>

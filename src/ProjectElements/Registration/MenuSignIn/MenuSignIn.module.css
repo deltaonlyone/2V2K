@@ -151,11 +151,15 @@
     text-decoration: underline;
 }
 
+.forgotPasswordTextPhone{
+    display: none;
+}
+
 @media (max-width: 700px) {
 
     .menu{
         position: fixed;
-        height: 95%;
+        height: 85%;
         width: 95%;
         border-radius: 15px;
         border: 1px solid grey;
@@ -175,12 +179,20 @@
     }
 
     .forgotPasswordText{
-        top: 440px;
-        right: 0;
-        transform: translateX(-50%);
-        white-space: nowrap;
-        width:200px;
-        text-align: right;
+        display:none
+    }
+
+    .forgotPasswordTextPhone{
+        display: contents;
+        color: dodgerblue;
+        font-size: 16px;
+        width:100%;
+        align-self:center
+    }
+
+    .forgotPasswordTextPhone:hover{
+        cursor: pointer;
+        text-decoration: underline;
     }
 
 }

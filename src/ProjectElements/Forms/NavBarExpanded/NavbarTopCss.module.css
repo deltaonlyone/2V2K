@@ -87,6 +87,7 @@ a {
         /* Layout for nav in desktop mode */
         grid-template-columns: 1fr 7fr;
         grid-template-areas: "brand collapsable collapsable";
+        position: fixed;
     }
 
     .nav__collapser {

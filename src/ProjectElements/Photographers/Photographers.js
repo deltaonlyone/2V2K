@@ -85,8 +85,11 @@ const Photographers = () => {
             {isOpenedSignIn && <MenuSignIn handleToggleSign = {handleToggleSignInBar} handleToggleSignUp = {handleToggleSignUpBar} handleToggleForgotPassword = {handleToggleForgotPasswordBar}></MenuSignIn>}
             {isOpenedSignUp && <MenuSignUp handleToggleSignUp = {handleToggleSignUpBar} handleToggleSign = {handleToggleSignInBar}></MenuSignUp>}
             {isOpenedForgotPassword && <MenuForgotPassword handleToggleForgotPassword = {handleToggleForgotPasswordBar}></MenuForgotPassword>}
+
+
+
+            <NavbarExpanded handleToggleSign = {handleToggleSignInBar}></NavbarExpanded>
             <div id='photographersContainer' className={`${styles['photographersContainer']} ${currentTheme.backgroundColor}`}>
-                <NavbarExpanded handleToggleSign = {handleToggleSignInBar}></NavbarExpanded>
                 <div className={`${styles['textPageInfo']}`}>
                     <a className={`${styles['textPageInfoHeader']} ${currentTheme.textColor}`}>Find your photographer</a>
                     <a className={`${styles['textPageInfoBottom']} ${currentTheme.textGreyColorThird}`}>from us the list - from you the choice</a>

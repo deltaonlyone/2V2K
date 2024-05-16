@@ -63,8 +63,9 @@ const Map = () => {
             {isOpenedSignUp && <MenuSignUp handleToggleSignUp = {handleToggleSignUpBar} handleToggleSign = {handleToggleSignInBar}></MenuSignUp>}
             {isOpenedForgotPassword && <MenuForgotPassword handleToggleForgotPassword = {handleToggleForgotPasswordBar}></MenuForgotPassword>}
 
+            <NavbarExpanded handleToggleSign = {handleToggleSignInBar}></NavbarExpanded>
+
             <div id = 'mapContainer' className = {`${styles['mapContainer']}`}>
-                <NavbarExpanded handleToggleSign = {handleToggleSignInBar}></NavbarExpanded>
 
                 <FormSmallLocationInfoLeft
                     name="Location's name"

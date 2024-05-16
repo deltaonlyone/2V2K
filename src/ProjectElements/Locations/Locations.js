@@ -77,8 +77,9 @@ const Locations = () => {
             {isOpenedSignUp && <MenuSignUp handleToggleSignUp = {handleToggleSignUpBar} handleToggleSign = {handleToggleSignInBar}></MenuSignUp>}
             {isOpenedForgotPassword && <MenuForgotPassword handleToggleForgotPassword = {handleToggleForgotPasswordBar}></MenuForgotPassword>}
 
+            <NavbarExpanded handleToggleSign = {handleToggleSignInBar}></NavbarExpanded>
+
             <div id='locationsContainer' className={`${styles['locationsContainer']} ${currentTheme.backgroundColor}`}>
-                <NavbarExpanded handleToggleSign = {handleToggleSignInBar}></NavbarExpanded>
                 <div className={`${styles['infoDiv']} ${currentTheme.backgroundColor}`}>
                     <div className={`${styles['infoTextDiv']} ${currentTheme.backgroundColor}`}>
                         <a className={`${styles['nameText']} ${currentTheme.textColor}`}>
