@@ -10,6 +10,19 @@ import {FormButtonReverse} from "../FormButtonReverse/FormButtonReverse";
 export function FormPhotographerSearchInfo(props) {
     const currentTheme = useSelector(state => state.currentTheme);
 
+    const handleSave = () => {
+        // Викликаємо API-функцію для збереження даних
+        axios.post(`http://localhost:8080/api/save/user/${userId}`)
+            .then(response => {
+                // Обробка успішної відповіді
+                console.log('User data saved successfully:', response.data);
+            })
+            .catch(error => {
+                // Обробка помилки
+                console.error('Error saving user data:', error);
+            });
+    };
+
     const photos = props.photos; // Деструктуризація пропс
 
     return (
@@ -92,7 +105,7 @@ export function FormPhotographerSearchInfo(props) {
                                     text={'See profile'}
                         ></FormButton>
                     </div>
-                    <a className={`${styles['saveTextButton']} ${currentTheme.textColor}`}>
+                    <a className={`${styles['saveTextButton']} ${currentTheme.textColor}`} onClick={handleSave}>
                         save
                     </a>
                 </div>
