@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from './FormSortPhotosTypes.module.css';
 import { FormButton } from "../FormButton/FormButton";
-
-export function FormSortPhotosTypes({ words, onCategoryChange }) {
+import { useSelector } from 'react-redux';
+export function FormSortPhotosTypes({ words, onCategoryChange, selectedCategory }) {
+    const currentTheme = useSelector(state => state.currentTheme);
     return (
         <div className={styles.buttonsDiv}>
             {words.map((word, index) => (
@@ -12,7 +13,6 @@ export function FormSortPhotosTypes({ words, onCategoryChange }) {
                         width={'180px'}
                         text={word}
                         onClick={() => {
-                            console.log(`Category changed to: ${word}`);
                             onCategoryChange(word);}
                     }
                     />
