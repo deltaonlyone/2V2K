@@ -38,9 +38,8 @@ export function MenuSignUp(props) {
                 throw new Error('Something went wrong');
             }
 
-            const result = await response.json();
-            console.log('Registration successful:', result);
-            // Handle successful registration (e.g., redirect to login)
+            props.handleToggleSignUp();
+            props.handleToggleSign();
         } catch (error) {
             console.error('Error during registration:', error);
             setError('Registration failed. Please try again.');
@@ -56,8 +55,8 @@ export function MenuSignUp(props) {
                         onClick={props.handleToggleSignUp}></button>
 
                 <div className={`${styles["logo"]}`}>
-                    <SvgLogo color={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
-                             stroke={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                    <SvgLogo color={currentTheme.textColor.includes('DarkTheme_textColor') ? "white" : "black"}
+                             stroke={currentTheme.textColor.includes('DarkTheme_textColor') ? "white" : "black"}
                     />
                 </div>
 

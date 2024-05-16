@@ -160,6 +160,7 @@ export const SvgPencil = ({ className = "svg-text", color = "#33363F", stroke = 
             viewBox="0 0 32 32"
             fill={color}
             xmlns="http://www.w3.org/2000/svg"
+            className={className}
         >
             <title>pencil</title>
             <path d="M0 32l12-4 20-20-8-8-20 20zM4 28l2.016-5.984 4 4zM8 20l12-12 4 4-12 12z"></path>
@@ -176,8 +177,28 @@ export const SvgPlus = ({ className = "svg-text", color = "#33363F", stroke = "#
             height="17px"
             viewBox="0 0 32 32"
             xmlns="http://www.w3.org/2000/svg"
+            className={className}
         >
             <path d="M16 0c-8.836 0-16 7.163-16 16s7.163 16 16 16c8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 30.032c-7.72 0-14-6.312-14-14.032s6.28-14 14-14 14 6.28 14 14-6.28 14.032-14 14.032zM23 15h-6v-6c0-0.552-0.448-1-1-1s-1 0.448-1 1v6h-6c-0.552 0-1 0.448-1 1s0.448 1 1 1h6v6c0 0.552 0.448 1 1 1s1-0.448 1-1v-6h6c0.552 0 1-0.448 1-1s-0.448-1-1-1z"></path>
         </svg>
     );
 };
+
+export const SvgHeart = ({ className = "svg-text", color = "#33363F", stroke = "#33363F",colorReverse="#33363F",heartColor = "none", strokeWidth = 2 }) => {
+
+    const fillValue = heartColor === "red" ? heartColor : color;
+
+    return (
+        <svg
+            width="40px"
+            height="40px"
+            viewBox="0 0 24 24"
+            fill={fillValue}
+            xmlns="http://www.w3.org/2000/svg"
+            className={className}
+        >
+            <path d="M8.10627 18.2468C5.29819 16.0833 2 13.5422 2 9.1371C2 4.27416 7.50016 0.825464 12 5.50063L14 7.49928C14.2929 7.79212 14.7678 7.79203 15.0607 7.49908C15.3535 7.20614 15.3534 6.73127 15.0605 6.43843L13.1285 4.50712C17.3685 1.40309 22 4.67465 22 9.1371C22 13.5422 18.7018 16.0833 15.8937 18.2468C15.6019 18.4717 15.3153 18.6925 15.0383 18.9109C14 19.7294 13 20.5 12 20.5C11 20.5 10 19.7294 8.96173 18.9109C8.68471 18.6925 8.39814 18.4717 8.10627 18.2468Z" />
+        </svg>
+    );
+};
+

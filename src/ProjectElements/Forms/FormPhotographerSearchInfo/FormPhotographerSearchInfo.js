@@ -6,9 +6,25 @@ import {bindTrigger} from "material-ui-popup-state";
 import Button from "@mui/material/Button";
 import {FormButton} from "../FormButton/FormButton";
 import {FormButtonReverse} from "../FormButtonReverse/FormButtonReverse";
+import {SvgBookmark} from "../FormSvg/FormSvg";
+
+import axios from "axios";
 
 export function FormPhotographerSearchInfo(props) {
     const currentTheme = useSelector(state => state.currentTheme);
+
+    // const handleSave = () => {
+    //     // Викликаємо API-функцію для збереження даних
+    //     axios.post(`http://localhost:8080/api/save/user/${userId}`)
+    //         .then(response => {
+    //             // Обробка успішної відповіді
+    //             console.log('User data saved successfully:', response.data);
+    //         })
+    //         .catch(error => {
+    //             // Обробка помилки
+    //             console.error('Error saving user data:', error);
+    //         });
+    // };
 
     const photos = props.photos; // Деструктуризація пропс
 
@@ -26,18 +42,25 @@ export function FormPhotographerSearchInfo(props) {
 
             <div className={`${styles['mainElements']} `}>
                 <div className={`${styles['firstElements']} `}>
-                    <img src={props.avatar}
+                    {props.avatar.id ?(
+                    <img src={'http://localhost:8080/api/photos/'+props.avatar.id}
                          alt={`AvatarUser`}
                          className={`${styles['userAvatar']} `}
-                    />
+                    />): (
+                        <img src={props.avatar}
+                             alt={`AvatarUser`}
+                             className={`${styles['userAvatar']} `}
+                        />
+                    )
+                    }
                 </div>
 
                 <div className={`${styles['secondElements']} ${currentTheme.secondElementsColor}`}>
-                    <div className={`${styles['scrollContainer']} `}>
+                <div className={`${styles['scrollContainer']} `}>
                         {photos.map((photo, index) => (
                             <img
                                 key={index}
-                                src={photo}
+                                src={'http://localhost:8080/api/photos/'+photo.id}
                                 alt={`Photo ${index}`}
                                 className={styles['photosStyle']}
                             />
@@ -86,6 +109,13 @@ export function FormPhotographerSearchInfo(props) {
                         ></FormButton>
                     </div>
                     <a className={`${styles['saveTextButton']} ${currentTheme.textColor}`}>
+                        <SvgBookmark
+                            color={currentTheme.textColor.includes('DarkTheme_textColor') ? "white" : "black"}
+                            stroke={currentTheme.textColor.includes('DarkTheme_textColor') ? "white" : "black"}
+                            className={`${styles["svgTextLeft"]}`}
+                        />
+
+
                         save
                     </a>
                 </div>

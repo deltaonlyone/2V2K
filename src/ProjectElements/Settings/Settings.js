@@ -5,9 +5,9 @@ import {FormFooter} from "../Forms/FormFooter/FormFooter";
 import {MenuSignIn} from "../Registration/MenuSignIn/MenuSignIn";
 
 import {useSelector} from 'react-redux';
+import avatarExample from "../../photos/User_cicrle_light.svg";
 import {FormButton} from "../Forms/FormButton/FormButton";
 import publicProfile from "./PublicProfile.svg";
-import avatarExample from "../Settings/PublicProfile.svg";
 import Account from "../Settings/Account.svg";
 import PasswordSecurity from "../Settings/PasswordSecurity.svg";
 import LogOut from "../Settings/LogOut.svg";
@@ -21,6 +21,7 @@ const Settings = () => {
     const currentTheme = useSelector(state => state.currentTheme);
 
     const [isOpened, setIsOpened] = useState(false);
+
     const [activeItem, setActiveItem] = useState('PublicProfile');
 
     const [user, setUser] = useState(null);
@@ -152,13 +153,21 @@ const Settings = () => {
                             </div>
                             <span
                                 className={`${styles['settingsTextHeader2']} ${currentTheme.textColor}`}></span>
-                            <div className={styles['formInformationInput']}>
-                                {userUserName ? (
-                                    <FormInput height={'40px'} width={'15%'} text={`${userUserName}`}/>
-                                ) : (
-                                    <FormInput height={'40px'} width={'15%'}/>
-                                )
-                                }
+                            <div className={`${styles['divRow']}`}>
+                                <div className={styles['formInformationInput']}>
+                                    {userUserName ? (
+                                        <FormInput height={'40px'} width={'163%'} text={`${userUserName}`}/>
+                                    ) : (
+                                        <FormInput height={'40px'} width={'163%'}/>
+                                    )
+                                    }
+                                </div>
+                                <div className={styles['formButton']}>
+                                    <FormButtonReverse height={'40px'}
+                                                       width={'165px'}
+                                                       text={'Update username'}
+                                    ></FormButtonReverse>
+                                </div>
                             </div>
                             <span className={`${styles['settingsTextDescription']} ${currentTheme.textGreyColor}`}>
                                     Your name may appear around Snavvy where you contribute or are mentioned. You can remove it at any time.
@@ -179,12 +188,6 @@ const Settings = () => {
                                     ):(
                                         <FormInput height={'40px'} width={'163%'} text={""}/>
                                     )}
-                                </div>
-                                <div className={styles['formButton']}>
-                                    <FormButtonReverse height={'40px'}
-                                                       width={'60px'}
-                                                       text={'Add'}
-                                    ></FormButtonReverse>
                                 </div>
                             </div>
 
@@ -221,12 +224,12 @@ const Settings = () => {
                             <span
                                 className={`${styles['settingsTextHeader2']} ${currentTheme.textColor}`}>New password</span>
                             <div className={styles['formInformationInput']}>
-                                <FormInput height={'40px'} width={'500px'} text={''}/>
+                                <FormInput height={'40px'} width={'500px'} text={''} type="password"/>
                             </div>
                             <span
                                 className={`${styles['settingsTextHeader2']} ${currentTheme.textColor}`}>Confirm new password</span>
                             <div className={styles['formInformationInput']}>
-                                <FormInput height={'40px'} width={'500px'} text={''}/>
+                                <FormInput height={'40px'} width={'500px'} text={''} type="password"/>
                             </div>
                             <span className={`${styles['settingsTextDescription']} ${currentTheme.textGreyColor}`}>
                                     Make sure it's at least 15 characters OR at least 8 characters including a number and a lowercase letter.
@@ -296,7 +299,8 @@ const Settings = () => {
                                 <li className={`${styles['item']}  ${activeItem === 'PublicProfile' ? currentTheme.textColorWhite : currentTheme.textColor} ${activeItem === 'PublicProfile' ? styles['active'] : ''}`}
                                     onClick={() => handleClick('PublicProfile')}
                                 >
-                                        <img className={styles['icon']} src={publicProfile} alt=""/>
+                                    <img className={`${currentTheme.svgColor} ${styles['icon']}`} src={PublicProfile}
+                                         alt=""/>
                                     <span
                                         className={`${styles['userInfoTextBottom']}`}
                                         // style={{ color: activeItem === 'PublicProfile' ? 'white' : currentTheme.textColor }}

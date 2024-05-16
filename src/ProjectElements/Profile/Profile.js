@@ -1,20 +1,23 @@
-import React, {useEffect, useState} from "react";
-import {useSelector} from 'react-redux';
-import {useLocation} from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import axios from "axios";
 import styles from './Profile.module.css';
 import {NavbarExpanded} from "../Forms/NavBarExpanded/NavbarExpanded";
 import {FormFooter} from "../Forms/FormFooter/FormFooter";
 import {MenuSignIn} from "../Registration/MenuSignIn/MenuSignIn";
 import MyInfiniteScroll from "./InfinityScroll/InfinityScroll";
-import avatarExample from "./User_cicrle_light.svg";
+import avatarExample from "../../photos/User_cicrle_light.svg";
 import {FormButton} from "../Forms/FormButton/FormButton";
 import {FormSortPhotosTypes} from "../Forms/FormSortPhotosTypes/FormSortPhotosTypes";
+import {AddPhotos} from "../AddPhotos/AddPhotos";
+
 
 const Profile = () => {
     const currentTheme = useSelector(state => state.currentTheme);
     const location = useLocation();
     const [isOpened, setIsOpened] = useState(false);
+    const [isPhotoModalOpened, setIsPhotoModalOpened] = useState(false);
     const [user, setUser] = useState(null);
     const [currentUser, setCurrentUser] = useState(null);
     const [selectedCategory, setSelectedCategory] = useState("All");
@@ -33,7 +36,7 @@ const Profile = () => {
                         }
                     })
                     setCurrentUser((await responseCurrentUser).data);
-                    if(user===currentUser){
+                    if (user === currentUser) {
                         setCheck(true);
                     }
                 }
@@ -51,6 +54,12 @@ const Profile = () => {
         setIsOpened(!isOpened);
     };
 
+    const handleTogglePhotoModal = () => {
+        const appRoot = document.getElementById('profileContainer');
+        appRoot.style.filter = isPhotoModalOpened ? 'blur(0px)' : 'blur(12px)';
+        setIsPhotoModalOpened(!isPhotoModalOpened);
+    };
+
     const words = ["Wedding", "Portrait", "Couple", "Landscape", "Kids"];
 
     const onCategoryChange = (category) => {
@@ -61,6 +70,7 @@ const Profile = () => {
     return (
         <div className={`${styles['profilePage']} ${currentTheme.backgroundColor}`}>
             {isOpened && <MenuSignIn handleToggleSign={handleToggleSingBar}/>}
+            {isPhotoModalOpened && <AddPhotos handleToggleSign={handleTogglePhotoModal}/>}
             <div id='profileContainer' className={`${styles['profileContainer']}`}>
                 <NavbarExpanded handleToggleSign={handleToggleSingBar}/>
                 {user && (
@@ -92,16 +102,17 @@ const Profile = () => {
                                 )}
                             </div>
                         </div>
-                        {check ?(
-                        <div className={`${styles['profileButtonDiv']}`}>
-                            <div className={`${styles['profileButton']}`}>
-                                <FormButton height={'60px'} width={'200px'} text={'EDIT PROFILE'}/>
+                        {check ? (
+                            <div className={`${styles['profileButtonDiv']}`}>
+                                <div className={`${styles['profileButton']}`}>
+                                    <FormButton height={'60px'} width={'200px'} text={'EDIT PROFILE'}/>
+                                </div>
+                                <div className={`${styles['profileButton']}`}>
+                                    <FormButton height={'60px'} width={'200px'} text={'ADD PHOTOS'}
+                                                onClick={handleTogglePhotoModal}/>
+                                </div>
                             </div>
-                            <div className={`${styles['profileButton']}`}>
-                                <FormButton height={'60px'} width={'200px'} text={'ADD PHOTOS'}/>
-                            </div>
-                        </div>
-                        ): (
+                        ) : (
                             <div className={`${styles['profileButtonDiv']}`}>
                                 <div className={`${styles['profileButton']}`}>
                                     <FormButton height={'60px'} width={'200px'} text={'SEND MESSAGE'}/>
@@ -114,7 +125,7 @@ const Profile = () => {
                         <div className={`${styles['profileLine']} ${currentTheme.backgroundReverseColor}`}></div>
                     </div>
                 )}
-                <FormSortPhotosTypes words={words} onCategoryChange={onCategoryChange}/>
+                <FormSortPhotosTypes words={words} onCategoryChange={onCategoryChange} selectedCategory={selectedCategory}/>
                 <MyInfiniteScroll user={user} category={selectedCategory}/>
                 <FormFooter/>
             </div>

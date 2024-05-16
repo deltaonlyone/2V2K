@@ -1,12 +1,13 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styles from './FormTextArea.module.css';
 
 import {useSelector} from 'react-redux';
 
 export function FormTextArea({maxLength, height, width, innerText, editText}) {
-    const [text, setText] = useState(innerText);
+    const [text, setText] = useState('');
     const remainingChars = maxLength - text.length;
     const currentTheme = useSelector(state => state.currentTheme);
+
     const handleChange = (e) => {
         if (e.target.value.length <= maxLength) {
             setText(e.target.value);

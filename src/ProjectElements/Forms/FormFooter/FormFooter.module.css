@@ -343,3 +343,17 @@ ul {
         width:80%;
     }
 }
+
+
+.svgTextLeft{
+    width: 200px;
+}
+
+.svgTextSmall{
+    width: 20px;
+}
+
+.svgContainerMessage{
+    width:20px;
+    height: 20px;
+}
