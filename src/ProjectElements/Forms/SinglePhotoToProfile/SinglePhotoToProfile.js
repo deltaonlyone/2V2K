@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styles from './SinglePhotoToProfile.module.css';
 
 import {useSelector} from 'react-redux';
-import {FormButtonLink} from "../../Forms/FormButtonLink/FormButtonLink";
+import {FormButtonLink} from "../FormButtonLink/FormButtonLink";
 
 export function SinglePhotoToProfile(props) {
     const currentTheme = useSelector(state => state.currentTheme);

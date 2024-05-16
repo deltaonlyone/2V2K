@@ -8,7 +8,7 @@ import {FormButton} from "../FormButton/FormButton";
 import {FormButtonLink} from "../FormButtonLink/FormButtonLink";
 import {SinglePhoto} from "../../Profile/InfinityScroll/PhotoElements/SinglePhoto/SinglePhoto";
 
-import {SinglePhotoToProfile} from "../../Map/SinglePhotoToProfile/SinglePhotoToProfile";
+import {SinglePhotoToProfile} from "../SinglePhotoToProfile/SinglePhotoToProfile";
 
 export function FormPlacePhotoPhotographer(props) {
     const currentTheme = useSelector(state => state.currentTheme);
