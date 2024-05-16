@@ -5,7 +5,6 @@ import {connect} from 'react-redux';
 import {toggleTheme} from '../../../store/actions/action_1';
 import {Link, BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import avatarExample from "../../../photos/User_cicrle_light.svg";
-import axios from "axios";
 
 
 
