@@ -289,7 +289,11 @@ ul {
     }
 
     .informationAboutUs{
-        height:500px;
+        height:100%;
+    }
+
+    .footerBottomTextDiv{
+        height: 45px;
     }
 
     .informationAboutUsMiddleRight{
@@ -316,16 +320,17 @@ ul {
     }
 
     .informationAboutUsMiddle{
-        height: 30%;
+        height: 130px;
         display:flex;
         justify-content: space-between;
     }
 
     .informationAboutUsBottom{
-        height: 45%;
+        height:200px;
         display:flex;
         flex-direction: column;
         align-items: center;
+
     }
 
     .formInformationInput{
