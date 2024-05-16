@@ -22,6 +22,7 @@
     display:flex;
     justify-content: space-between;
     align-items: center;
+    padding:20px 0 20px 0;
 }
 
 .footerBottomText{
@@ -276,21 +277,22 @@ ul {
         display:none;
     }
 
+    .informationAboutUs{
+        height: 100%;
+
+    }
+
     .footerContainerSecond{
         width:100%;
         height: 86%;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
     }
 
     .informationTextHead{
         font-size:27px;
     }
 
-    .informationAboutUs{
-        height:500px;
-    }
 
     .informationAboutUsMiddleRight{
         height:100%;
@@ -319,6 +321,7 @@ ul {
         height: 30%;
         display:flex;
         justify-content: space-between;
+        margin-bottom:30px;
     }
 
     .informationAboutUsBottom{

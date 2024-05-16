@@ -1,0 +1,38 @@
+
+
+.container{
+    display: flex;
+    flex-direction: row;
+}
+
+.avatarUserDiv{
+    height: 50px;
+    width: 50px;
+    margin-right: 20px;
+}
+
+.avatarUser{
+    width: 50px; /* Встановлюємо ширину */
+    height: 50px; /* Встановлюємо висоту */
+    border-radius: 50%; /* Встановлюємо радіус кутів, щоб зробити круглий елемент */
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.avatarUser:hover{
+    cursor: pointer;
+}
+
+.textUserDiv{
+
+}
+
+.textUserMiddle{
+    font-size: 20px;
+}
+
+.textUserRight{
+    font-size: 20px;
+    margin-left:15px;
+
+}

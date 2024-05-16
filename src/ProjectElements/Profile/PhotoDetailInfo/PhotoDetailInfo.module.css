@@ -29,8 +29,8 @@
 }
 
 .avatarUser{
-    width: 100%; /* Встановлюємо ширину */
-    height: 100%; /* Встановлюємо висоту */
+    width: 50px; /* Встановлюємо ширину */
+    height: 50px; /* Встановлюємо висоту */
     border-radius: 50%; /* Встановлюємо радіус кутів, щоб зробити круглий елемент */
     overflow: hidden;
     object-fit: cover;
@@ -65,7 +65,7 @@
 .currentPhoto{
     max-height: 720px;
     max-width:100%;
-    min-height: 300px;
+    min-width: 300px;
 }
 
 
@@ -103,4 +103,8 @@
 
 .commentsDiv{
     width:100%;
+}
+
+.comment{
+    margin-top:25px;
 }

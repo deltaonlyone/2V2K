@@ -19,17 +19,16 @@ export function FormComments(props) {
                      alt="User Avatar"/>
             </div>
 
-            <a className={`${styles['textUser']} ${currentTheme.textColor}`}>
-                {props.name}
-            </a>
 
-            <a className={`${styles['textUsername']} ${currentTheme.textColor}`}>
-                {props.username}
-            </a>
+            <div className={`${styles['textUserDiv']}`}>
 
+                <b><a className={`${styles['textUserMiddle']} ${currentTheme.textColor}`}>
 
-            <div className={`${styles['avatarUserDiv']}`}>
-                <a className={`${styles['textComment']} ${currentTheme.textColor}`}>
+                    {props.username}
+
+                </a></b>
+
+                <a className={`${styles['textUserRight']} ${currentTheme.textColorTransparency}`}>
                     {props.comment}
                 </a>
             </div>
