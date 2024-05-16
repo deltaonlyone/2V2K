@@ -8,6 +8,8 @@ import {FormButton} from "../FormButton/FormButton";
 import {FormButtonLink} from "../FormButtonLink/FormButtonLink";
 import {SinglePhoto} from "../../Profile/InfinityScroll/PhotoElements/SinglePhoto/SinglePhoto";
 
+import {SinglePhotoToProfile} from "../SinglePhotoToProfile/SinglePhotoToProfile";
+
 export function FormPlacePhotoPhotographer(props) {
     const currentTheme = useSelector(state => state.currentTheme);
 
@@ -16,40 +18,27 @@ export function FormPlacePhotoPhotographer(props) {
     return (
         <div className={`${styles['container']} ${currentTheme.backgroundColor}`}>
 
-            <div className={`${styles['firstElements']} `}>
-                <img src={props.avatar}
-                     alt={`AvatarUser`}
-                     className={`${styles['userAvatar']} `}
-                />
+            {photos.map((photo, index) => (
+                // <img
+                //     key={index}
+                //     src={photo}
+                //     alt={`Photo ${index}`}
+                //     className={styles['photosStyle']}
+                // />
 
-                <a className={`${styles['userName']} ${currentTheme.textColor}`}>
-                    Photo by {props.name}
-                </a>
-
-                <a className={`${styles['userName']} ${currentTheme.textColor}`}>
-                    {props.username}
-                </a>
-
-                <div className={`${styles['buttonsStyle']} `}>
-                    <FormButtonLink
-                                link = {'/profile'}
-                                height={'33px'}
-                                width={'117px'}
-                                text={'Get in touch'}
-                    ></FormButtonLink>
-                </div>
-            </div>
-
-            <div className={`${styles['secondElements']} `}>
-                {photos.map((photo, index) => (
-                    <img
+                <div className={`${styles['containerPhotoDiv']}`} >
+                    <SinglePhotoToProfile
                         key={index}
-                        src={photo}
+                        img={photo}
                         alt={`Photo ${index}`}
                         className={styles['photosStyle']}
+                        name={'Anton'}
+                        avatar={photo}
                     />
-                ))}
-            </div>
+                </div>
+
+
+            ))}
 
 
         </div>

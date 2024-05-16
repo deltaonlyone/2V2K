@@ -108,13 +108,6 @@ const Locations = () => {
                         avatar='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTousHbMHE9y6ZaMX9GcxFGJRfxq8aWGYcIV_dPgWOwqQ&s'
                         photos={randomPhotos}
                     />
-
-                    <FormPlacePhotoPhotographer
-                        name="Kyrylo Sydor"
-                        username="@kyrylosydor"
-                        avatar='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTousHbMHE9y6ZaMX9GcxFGJRfxq8aWGYcIV_dPgWOwqQ&s'
-                        photos={randomPhotos}
-                    />
                 </div>
                 <FormFooter></FormFooter>
             </div>

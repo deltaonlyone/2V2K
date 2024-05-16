@@ -6,6 +6,7 @@ import telephoneSvg from "./telephoneSvg.svg";
 import emailSvg from "./emailSvg.svg";
 import {FormButton} from "../FormButton/FormButton";
 import {FormInput} from "../FormInput/FormInput";
+import {SvgLogo, SvgMessage, SvgSettings, SvgTelephone} from "../FormSvg/FormSvg";
 
 
 export function FormFooter(props) {
@@ -17,7 +18,14 @@ export function FormFooter(props) {
         <footer className={`${styles['informationAboutUs']}`}>
             <div className={`${styles['footerContainer']}`}>
                 <div className={`${styles['informationAboutUsFirst']}`}>
-                    <img className={`${styles['logoSnavvy']} ${currentTheme.svgColor}`} src={logo} alt=""/>
+                    {/*<img className={`${styles['logoSnavvy']} ${currentTheme.svgColor}`} src={logo} alt=""/>*/}
+
+                    <SvgLogo
+                        color={currentTheme.textColor.includes('DarkTheme_textColor') ? "white" : "black"}
+                        stroke={currentTheme.textColor.includes('DarkTheme_textColor') ? "white" : "black"}
+                        className={`${styles["svgTextLeft"]}`}
+                    />
+
                     <a className={`${styles['informationText']} ${currentTheme.textColor}`}>
                         Nemo enim ipsam voluptatem quia
                         voluptas sit aspernatur aut odit
@@ -68,8 +76,11 @@ export function FormFooter(props) {
 
                     <div className={`${styles['informationContacts']}`}>
                         <div className={`${styles['informationContactsPhone']}`}>
-                            <img className={`${styles['telephoneSvg']} ${currentTheme.svgColor}`} src={telephoneSvg}
-                                 alt=""/>
+                            <SvgTelephone
+                                color={currentTheme.textColor.includes('DarkTheme_textColor') ? "white" : "black"}
+                                stroke={currentTheme.textColor.includes('DarkTheme_textColor') ? "white" : "black"}
+                                className={`${styles["svgTextSmall"]}`}
+                            />
 
                             <a className={`${styles['informationContactText']} ${currentTheme.textColor}`}>
                                 +380 00 000 00 00
@@ -77,7 +88,13 @@ export function FormFooter(props) {
                         </div>
 
                         <div className={`${styles['informationContactsEmail']}`}>
-                            <img className={`${styles['emailSvg']} ${currentTheme.svgColor}`} src={emailSvg} alt=""/>
+                            <div className={`${styles['svgContainerMessage']}`}>
+                                <SvgMessage
+                                    color={currentTheme.textColor.includes('DarkTheme_textColor') ? "white" : "black"}
+                                    stroke={currentTheme.textColor.includes('DarkTheme_textColor') ? "white" : "black"}
+                                    className={`${styles["svgTextSmall"]}`}
+                                />
+                            </div>
 
                             <a className={`${styles['informationContactText']} ${currentTheme.textColor}`}>
                                 snavvy_support@gmail.com
@@ -161,7 +178,11 @@ export function FormFooter(props) {
 
             <div className={`${styles['footerContainerSecond']}`}>
                 <div className={`${styles['informationAboutUsTop']}`}>
-                    <img className={`${styles['logoSnavvy']} ${currentTheme.svgColor}`} src={logo} alt=""/>
+                    <SvgLogo
+                        color={currentTheme.textColor.includes('DarkTheme_textColor') ? "white" : "black"}
+                        stroke={currentTheme.textColor.includes('DarkTheme_textColor') ? "white" : "black"}
+                        className={`${styles["svgTextLeft"]}`}
+                    />
                 </div>
 
                 <div className={`${styles['informationAboutUsMiddle']}`}>
@@ -173,8 +194,11 @@ export function FormFooter(props) {
 
                         <div className={`${styles['informationContacts']}`}>
                             <div className={`${styles['informationContactsPhone']}`}>
-                                <img className={`${styles['telephoneSvg']} ${currentTheme.svgColor}`} src={telephoneSvg}
-                                     alt=""/>
+                                <SvgTelephone
+                                    color={currentTheme.textColor.includes('DarkTheme_textColor') ? "white" : "black"}
+                                    stroke={currentTheme.textColor.includes('DarkTheme_textColor') ? "white" : "black"}
+                                    className={`${styles["svgTextSmall"]}`}
+                                />
 
                                 <a className={`${styles['informationContactText']} ${currentTheme.textColor}`}>
                                     +380 00 000 00 00
@@ -182,8 +206,13 @@ export function FormFooter(props) {
                             </div>
 
                             <div className={`${styles['informationContactsEmail']}`}>
-                                <img className={`${styles['emailSvg']} ${currentTheme.svgColor}`} src={emailSvg}
-                                     alt=""/>
+                                <div className={`${styles['svgContainerMessage']}`}>
+                                    <SvgMessage
+                                        color={currentTheme.textColor.includes('DarkTheme_textColor') ? "white" : "black"}
+                                        stroke={currentTheme.textColor.includes('DarkTheme_textColor') ? "white" : "black"}
+                                        className={`${styles["svgTextSmall"]}`}
+                                    />
+                                </div>
 
                                 <a className={`${styles['informationContactText']} ${currentTheme.textColor}`}>
                                     snavvy_support@gmail.com

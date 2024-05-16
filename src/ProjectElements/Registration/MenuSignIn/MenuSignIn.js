@@ -53,8 +53,8 @@ export function MenuSignIn(props) {
                         onClick={props.handleToggleSign}></button>
 
                 <div className={`${styles["logo"]}`}>
-                    <SvgLogo color={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
-                             stroke={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                    <SvgLogo color={currentTheme.textColor.includes('DarkTheme_textColor') ? "white" : "black"}
+                             stroke={currentTheme.textColor.includes('DarkTheme_textColor') ? "white" : "black"}
                     />
                 </div>
 
