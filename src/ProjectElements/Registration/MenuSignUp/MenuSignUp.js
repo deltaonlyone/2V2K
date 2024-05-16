@@ -4,6 +4,7 @@ import logo from "../../../photos/Snavvy_Logo/Snavvy_logo_White.svg";
 import {FormInputSign} from "../../Forms/FormInputSign/FormInputSign";
 
 import {useSelector} from 'react-redux';
+import {SvgLogo} from "../../Forms/FormSvg/FormSvg";
 
 export function MenuSignUp(props) {
 
@@ -54,7 +55,12 @@ export function MenuSignUp(props) {
                 <button className={`${styles['backButton']} ${currentTheme.backButtonColor}`}
                         onClick={props.handleToggleSignUp}></button>
 
-                <img className={`${styles['logo']} ${currentTheme.svgColor}`} src={logo} alt=""/>
+                <div className={`${styles["logo"]}`}>
+                    <SvgLogo color={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                             stroke={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                    />
+                </div>
+
 
                 <a className={`${styles['signInText']} ${currentTheme.textColor}`}>Sign up</a>
 

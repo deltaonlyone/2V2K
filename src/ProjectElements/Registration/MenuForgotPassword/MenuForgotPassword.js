@@ -5,6 +5,7 @@ import {FormInputSign} from "../../Forms/FormInputSign/FormInputSign";
 
 import {useSelector} from 'react-redux';
 import {FormInput} from "../../Forms/FormInput/FormInput";
+import {SvgLogo} from "../../Forms/FormSvg/FormSvg";
 
 export function MenuForgotPassword(props) {
     // const [usernameOrEmail, setUsernameOrEmail] = useState('');
@@ -47,7 +48,12 @@ export function MenuForgotPassword(props) {
                 <button className={`${styles['backButton']} ${currentTheme.backButtonColor}`}
                         onClick={props.handleToggleForgotPassword}></button>
 
-                <img className={`${styles['logo']} ${currentTheme.svgColor}`} src={logo} alt=""/>
+                <div className={`${styles["logo"]}`}>
+                    <SvgLogo color={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                             stroke={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                    />
+                </div>
+
 
                 <a className={`${styles['signInText']} ${currentTheme.textColor}`}>Forgot your password?</a>
                 <a className={`${styles['forgotPasswordHeadText']} ${currentTheme.textColor}`}>Enter your email address and we'll send you a link to restore access to your account</a>

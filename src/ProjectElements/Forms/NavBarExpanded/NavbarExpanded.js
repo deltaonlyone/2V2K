@@ -10,7 +10,7 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import PopupState, {bindTrigger, bindMenu} from 'material-ui-popup-state';
-import axios from "axios";
+import {SvgBookmark, SvgLogo, SvgSettings, SvgSignOut} from "../FormSvg/FormSvg";
 
 export function NavbarExpanded(props) {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -154,11 +154,25 @@ export function NavbarExpanded(props) {
                                         <ul>
                                             <Link to="/saved">
                                                 <li className={`${styles.textBurgerMenu}  ${currentTheme.textColor}`}>
+
+                                                    <SvgBookmark
+                                                        color={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                                                        stroke={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                                                        className={`${styles["svgTextLeft"]}`}
+                                                    />
+
                                                     Saved
                                                 </li>
                                             </Link>
                                             <Link to="/settings">
                                                 <li className={`${styles.textBurgerMenu}  ${currentTheme.textColor}`}>
+
+                                                    <SvgSettings
+                                                        color={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                                                        stroke={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                                                        className={`${styles["svgTextLeft"]}`}
+                                                    />
+
                                                     Settings
                                                 </li>
                                             </Link>
@@ -169,6 +183,13 @@ export function NavbarExpanded(props) {
 
                                             <li className={`${styles.textBurgerMenuSecond}  ${currentTheme.textColor}`}
                                                 onClick={handleSignOut}>
+
+                                                <SvgSignOut
+                                                    color={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                                                    stroke={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                                                    className={`${styles["svgTextLeft"]}`}
+                                                />
+
                                                 Log out
                                             </li>
                                         </ul>
