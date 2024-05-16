@@ -5,7 +5,7 @@ import {FormFooter} from "../Forms/FormFooter/FormFooter";
 import {MenuSignIn} from "../Registration/MenuSignIn/MenuSignIn";
 
 import {useSelector} from 'react-redux';
-import avatarExample from "../Profile/avatarExample.jpg";
+import avatarExample from "../../photos/User_cicrle_light.svg";
 import {FormButton} from "../Forms/FormButton/FormButton";
 import PublicProfile from "../Settings/PublicProfile.svg";
 import Account from "../Settings/Account.svg";
