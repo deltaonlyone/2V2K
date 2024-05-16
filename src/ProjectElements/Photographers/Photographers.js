@@ -8,6 +8,8 @@ import { NavbarExpanded } from "../Forms/NavBarExpanded/NavbarExpanded";
 import { FormFooter } from "../Forms/FormFooter/FormFooter";
 import { MenuSignIn } from "../Registration/MenuSignIn/MenuSignIn";
 import { FormPhotographerSearchInfo } from "../Forms/FormPhotographerSearchInfo/FormPhotographerSearchInfo";
+import {MenuSignUp} from "../Registration/MenuSignUp/MenuSignUp";
+import {MenuForgotPassword} from "../Registration/MenuForgotPassword/MenuForgotPassword";
 
 const Photographers = () => {
     const currentTheme = useSelector(state => state.currentTheme);
@@ -17,10 +19,47 @@ const Photographers = () => {
     const [page, setPage] = useState(0);
     const size = 3;
 
-    const handleToggleSingBar = () => {
+
+    const [isOpenedSignIn, setIsOpenedSignIn] = useState(false);
+    const handleToggleSignInBar = () => {
         const appRoot = document.getElementById('photographersContainer');
-        appRoot.style.filter = isOpened ? 'blur(0px)' : 'blur(12px)';
-        setIsOpened(!isOpened);
+
+        if(!isOpenedSignIn){
+            appRoot.style.filter = 'blur(12px)';
+        }
+        else{
+            appRoot.style.filter = 'blur(0px)';
+        }
+
+        setIsOpenedSignIn(!isOpenedSignIn);
+    };
+
+    const [isOpenedSignUp, setIsOpenedSignUp] = useState(false);
+    const handleToggleSignUpBar = () => {
+        const appRoot = document.getElementById('photographersContainer');
+
+        if(!isOpenedSignUp){
+            appRoot.style.filter = 'blur(12px)';
+        }
+        else{
+            appRoot.style.filter = 'blur(0px)';
+        }
+
+        setIsOpenedSignUp(!isOpenedSignUp);
+    };
+
+    const [isOpenedForgotPassword, setIsOpenedForgotPassword] = useState(false);
+    const handleToggleForgotPasswordBar = () => {
+        const appRoot = document.getElementById('photographersContainer');
+
+        if(!isOpenedForgotPassword){
+            appRoot.style.filter = 'blur(12px)';
+        }
+        else{
+            appRoot.style.filter = 'blur(0px)';
+        }
+
+        setIsOpenedForgotPassword(!isOpenedForgotPassword);
     };
 
     useEffect(() => {
@@ -43,9 +82,11 @@ const Photographers = () => {
 
     return (
         <div className={`${styles['photographersPage']} ${currentTheme.backgroundColor}`}>
-            {isOpened && <MenuSignIn handleToggleSign={handleToggleSingBar} />}
+            {isOpenedSignIn && <MenuSignIn handleToggleSign = {handleToggleSignInBar} handleToggleSignUp = {handleToggleSignUpBar} handleToggleForgotPassword = {handleToggleForgotPasswordBar}></MenuSignIn>}
+            {isOpenedSignUp && <MenuSignUp handleToggleSignUp = {handleToggleSignUpBar} handleToggleSign = {handleToggleSignInBar}></MenuSignUp>}
+            {isOpenedForgotPassword && <MenuForgotPassword handleToggleForgotPassword = {handleToggleForgotPasswordBar}></MenuForgotPassword>}
             <div id='photographersContainer' className={`${styles['photographersContainer']} ${currentTheme.backgroundColor}`}>
-                <NavbarExpanded handleToggleSign={handleToggleSingBar} />
+                <NavbarExpanded handleToggleSign = {handleToggleSignInBar}></NavbarExpanded>
                 <div className={`${styles['textPageInfo']}`}>
                     <a className={`${styles['textPageInfoHeader']} ${currentTheme.textColor}`}>Find your photographer</a>
                     <a className={`${styles['textPageInfoBottom']} ${currentTheme.textGreyColorThird}`}>from us the list - from you the choice</a>

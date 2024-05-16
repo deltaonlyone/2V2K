@@ -60,7 +60,7 @@ const Profile = () => {
         setIsPhotoModalOpened(!isPhotoModalOpened);
     };
 
-    const words = ["Wedding", "Portrait", "Couple", "Landscape", "Kids"];
+    const words = ["Wedding", "Portrait", "Couple", "Family", "Kids"];
 
     const onCategoryChange = (category) => {
         console.log(`Selected category: ${category}`);

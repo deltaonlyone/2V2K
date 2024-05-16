@@ -508,6 +508,7 @@ a {
 .textBurgerMenuSecond{
     margin: 10px 0 10px 20px;
     font-size: 20px;
+    cursor: pointer;
 }
 
 .textBurgerMenu:hover{

@@ -18,18 +18,18 @@ const MainPage = () => {
     const currentTheme = useSelector(state => state.currentTheme);
 
 
-    const [isOpened, setIsOpened] = useState(false);
+    const [isOpenedSignIn, setIsOpenedSignIn] = useState(false);
     const handleToggleSignInBar = () => {
         const appRoot = document.getElementById('mainPageContainer');
 
-        if(!isOpened){
+        if(!isOpenedSignIn){
             appRoot.style.filter = 'blur(12px)';
         }
         else{
             appRoot.style.filter = 'blur(0px)';
         }
 
-        setIsOpened(!isOpened);
+        setIsOpenedSignIn(!isOpenedSignIn);
     };
 
     const [isOpenedSignUp, setIsOpenedSignUp] = useState(false);
@@ -64,7 +64,7 @@ const MainPage = () => {
 
     return (
         <div className = {`${styles['mainPage']} ${currentTheme.backgroundColor}`}>
-            {isOpened && <MenuSignIn handleToggleSign = {handleToggleSignInBar} handleToggleSignUp = {handleToggleSignUpBar} handleToggleForgotPassword = {handleToggleForgotPasswordBar}></MenuSignIn>}
+            {isOpenedSignIn && <MenuSignIn handleToggleSign = {handleToggleSignInBar} handleToggleSignUp = {handleToggleSignUpBar} handleToggleForgotPassword = {handleToggleForgotPasswordBar}></MenuSignIn>}
             {isOpenedSignUp && <MenuSignUp handleToggleSignUp = {handleToggleSignUpBar} handleToggleSign = {handleToggleSignInBar}></MenuSignUp>}
             {isOpenedForgotPassword && <MenuForgotPassword handleToggleForgotPassword = {handleToggleForgotPasswordBar}></MenuForgotPassword>}
 

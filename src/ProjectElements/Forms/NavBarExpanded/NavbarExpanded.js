@@ -97,6 +97,8 @@ export function NavbarExpanded(props) {
         e.stopPropagation(); // Зупиняємо подальше розповсюдження події
     };
     fetchUser()
+
+
     return (
         <nav className={`${styles.nav} ${currentTheme.backgroundColor} ${isExpanded ? styles['nav--expanded'] : ''}`}>
             <Link className={`${styles.nav__brand} ${currentTheme.textColor} ${currentTheme.borderColor}`}
