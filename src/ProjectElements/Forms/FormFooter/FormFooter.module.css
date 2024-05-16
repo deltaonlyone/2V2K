@@ -352,3 +352,8 @@ ul {
 .svgTextSmall{
     width: 20px;
 }
+
+.svgContainerMessage{
+    width:20px;
+    height: 20px;
+}

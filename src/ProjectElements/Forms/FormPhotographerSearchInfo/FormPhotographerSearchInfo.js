@@ -6,6 +6,7 @@ import {bindTrigger} from "material-ui-popup-state";
 import Button from "@mui/material/Button";
 import {FormButton} from "../FormButton/FormButton";
 import {FormButtonReverse} from "../FormButtonReverse/FormButtonReverse";
+import {SvgBookmark} from "../FormSvg/FormSvg";
 
 export function FormPhotographerSearchInfo(props) {
     const currentTheme = useSelector(state => state.currentTheme);
@@ -86,6 +87,13 @@ export function FormPhotographerSearchInfo(props) {
                         ></FormButton>
                     </div>
                     <a className={`${styles['saveTextButton']} ${currentTheme.textColor}`}>
+                        <SvgBookmark
+                            color={currentTheme.textColor.includes('DarkTheme_textColor') ? "white" : "black"}
+                            stroke={currentTheme.textColor.includes('DarkTheme_textColor') ? "white" : "black"}
+                            className={`${styles["svgTextLeft"]}`}
+                        />
+
+
                         save
                     </a>
                 </div>
