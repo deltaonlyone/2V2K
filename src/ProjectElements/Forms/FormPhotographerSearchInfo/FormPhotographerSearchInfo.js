@@ -8,21 +8,23 @@ import {FormButton} from "../FormButton/FormButton";
 import {FormButtonReverse} from "../FormButtonReverse/FormButtonReverse";
 import {SvgBookmark} from "../FormSvg/FormSvg";
 
+import axios from "axios";
+
 export function FormPhotographerSearchInfo(props) {
     const currentTheme = useSelector(state => state.currentTheme);
 
-    const handleSave = () => {
-        // Викликаємо API-функцію для збереження даних
-        axios.post(`http://localhost:8080/api/save/user/${userId}`)
-            .then(response => {
-                // Обробка успішної відповіді
-                console.log('User data saved successfully:', response.data);
-            })
-            .catch(error => {
-                // Обробка помилки
-                console.error('Error saving user data:', error);
-            });
-    };
+    // const handleSave = () => {
+    //     // Викликаємо API-функцію для збереження даних
+    //     axios.post(`http://localhost:8080/api/save/user/${userId}`)
+    //         .then(response => {
+    //             // Обробка успішної відповіді
+    //             console.log('User data saved successfully:', response.data);
+    //         })
+    //         .catch(error => {
+    //             // Обробка помилки
+    //             console.error('Error saving user data:', error);
+    //         });
+    // };
 
     const photos = props.photos; // Деструктуризація пропс
 

@@ -11,6 +11,7 @@ import {FormButtonReverse} from "../../Forms/FormButtonReverse/FormButtonReverse
 import {FormPhotographerSearchInfo} from "../../Forms/FormPhotographerSearchInfo/FormPhotographerSearchInfo";
 import {FormPlacePhotoPhotographer} from "../../Forms/FormPlacePhotoPhotographer/FormPlacePhotoPhotographer";
 import {SvgHeart, SvgSignOut} from "../../Forms/FormSvg/FormSvg";
+import {FormComments} from "./FormComments/FormComments";
 
 const PhotoDetailInfo = () => {
 
@@ -78,11 +79,12 @@ const PhotoDetailInfo = () => {
                                 color={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
                                 stroke={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
                                 colorReverse={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "black" : "white"}
+                                heartColor = "none" //передати red або none
                                 className={`${styles["svgTextLeft"]}`}
                             />
 
                             <a className={`${styles['likeText']} ${currentTheme.textColor}`}>
-                                Like
+                                Likes : 1307
                             </a>
 
                         </div>
@@ -92,6 +94,14 @@ const PhotoDetailInfo = () => {
 
 
                     <div className={`${styles['commentsDiv']}`}>
+                        <FormComments
+                            avatar = 'https://images.pexels.com/photos/1308881/pexels-photo-1308881.jpeg?cs=srgb&dl=pexels-soldiervip-1308881.jpg&fm=jpg'
+                            name = "Kyrylo Sydor"
+                            username = "@kyrylo_sydor"
+                            comment = "Wow so good photo.Wow so good photo.Wow so good photo.Wow so good photo.Wow so good photo.Wow so good photo!!!!!!1"
+
+
+                        />
 
 
 
