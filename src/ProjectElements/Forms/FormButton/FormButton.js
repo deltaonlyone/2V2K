@@ -15,6 +15,7 @@ export function FormButton(props) {
     return (
         <button className={`${styles['formButton']} ${currentTheme.formButtonColor}`}
                 style={customStyle}
+                onClick={props.onClick}
         >
 
             {props.text}

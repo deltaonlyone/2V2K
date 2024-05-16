@@ -4,7 +4,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import {connect} from 'react-redux';
 import {toggleTheme} from '../../../store/actions/action_1';
 import {Link, BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import avatarExample from "../../Profile/avatarExample.jpg";
+import avatarExample from "../../Profile/User_cicrle_light.svg";
 
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
@@ -14,13 +14,39 @@ import {SvgBookmark, SvgLogo, SvgSettings, SvgSignOut} from "../FormSvg/FormSvg"
 
 export function NavbarExpanded(props) {
     const [isExpanded, setIsExpanded] = useState(false);
+    const [user, setUser] = useState(null);
+    const [profilePhoto, setProfilePhoto] = useState();
+    const [check, setCheck] = useState(true);
+
+
     const handleToggle = () => {
         setIsExpanded(!isExpanded);
 
         const x = document.querySelector(`.${styles.container_top}`);
         x.classList.toggle(styles.change); // Використовуємо styles.change
     };
-
+    const fetchUser = async () => {
+        if (localStorage.getItem("token") !== null) {
+            if (check === true) {
+                axios.get('http://localhost:8080/api/users/my', {
+                    headers: {
+                        'X-Authorization': `${localStorage.getItem("token")}`, // замініть 'your-token-here' на ваш токен або інший заголовок
+                        'Content-Type': 'application/json'
+                    }
+                })
+                    .then(response => {
+                        setUser(response.data);
+                        setProfilePhoto(user.profilePhoto)
+                        if(profilePhoto!==null){
+                            setCheck(false);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching users:', error);
+                    });
+            }
+        }
+    };
 
     const currentTheme = useSelector(state => state.currentTheme);
     const dispatch = useDispatch();
@@ -51,6 +77,7 @@ export function NavbarExpanded(props) {
     };
 
     useEffect(() => {
+
         document.addEventListener('click', handleClickOutside, true);
         return () => {
             document.removeEventListener('click', handleClickOutside, true);
@@ -67,7 +94,7 @@ export function NavbarExpanded(props) {
     const handleMenuClick = (e) => {
         e.stopPropagation(); // Зупиняємо подальше розповсюдження події
     };
-
+    fetchUser()
     return (
         <nav className={`${styles.nav} ${currentTheme.backgroundColor} ${isExpanded ? styles['nav--expanded'] : ''}`}>
             <Link className={`${styles.nav__brand} ${currentTheme.textColor} ${currentTheme.borderColor}`}
@@ -97,94 +124,101 @@ export function NavbarExpanded(props) {
                 </div>
 
 
-                {!localStorage.getItem("token") && (
+                {!localStorage.getItem("token") &&
                     <div className={styles.nav__cta}>
                         <button className={`${styles.buttonNavbar} ${currentTheme.buttonNavbarColor}`}
                                 onClick={props.handleToggleSign}>Sign in
                         </button>
                     </div>
-                )}
-                {/*{localStorage.getItem("token") && (*/}
-                <div className={`${styles['userButtonsDiv']} `}>
-                    <div className={`${styles['burgerMenuDiv']} `}>
-                        {/*<button onClick={toggleMenu}>*/}
-                        {/*    Відкрити меню*/}
-                        {/*</button>*/}
-
-                        <button className={styles.nav__collapserMenu} onClick={toggleMenu}>
-                            <div className={styles.container_top}>
-                                <div id={styles['bar4']}
-                                     className={`${styles.bars2}  ${currentTheme.backgroundReverseColor}`}></div>
-                                <div id={styles['bar4']}
-                                     className={`${styles.bars2}  ${currentTheme.backgroundReverseColor}`}></div>
-                                <div id={styles['bar4']}
-                                     className={`${styles.bars2}  ${currentTheme.backgroundReverseColor}`}></div>
-                            </div>
-
-                        </button>
-
-                        {isOpen && (
-                            <div className={styles.burgerMenuOverlay}>
-                                <div
-                                    className={`${styles.burgerMenu} ${currentTheme.borderColor} ${currentTheme.greyBackgroundColor}`}
-                                    onClick={handleMenuClick}>
-                                    {/* Ваше бургер меню тут */}
-                                    <ul>
-                                        <Link to="/saved">
-                                            <li className={`${styles.textBurgerMenu}  ${currentTheme.textColor}`}>
-
-                                                <SvgBookmark
-                                                    color={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
-                                                    stroke={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
-                                                    className={`${styles["svgTextLeft"]}`}
-                                                />
-
-                                                Saved
-                                            </li>
-                                        </Link>
-                                        <Link to="/settings">
-                                            <li className={`${styles.textBurgerMenu}  ${currentTheme.textColor}`}>
-
-                                                <SvgSettings
-                                                    color={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
-                                                    stroke={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
-                                                    className={`${styles["svgTextLeft"]}`}
-                                                />
-
-                                                Settings
-                                            </li>
-                                        </Link>
-                                        <div className={`${styles.lineStyle}  ${currentTheme.backgroundReverseColor}`}>
-
-                                        </div>
-
-                                        <li className={`${styles.textBurgerMenuSecond}  ${currentTheme.textColor}`}
-                                            onClick={handleSignOut}>
-
-                                            <SvgSignOut
-                                                color={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
-                                                stroke={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
-                                                className={`${styles["svgTextLeft"]}`}
-                                            />
-
-                                            Log out
-                                        </li>
-                                    </ul>
+                }
+                {localStorage.getItem("token") && (
+                    <div className={`${styles['userButtonsDiv']} `}>
+                        <div className={`${styles['burgerMenuDiv']} `}>
+                            <button className={styles.nav__collapserMenu} onClick={toggleMenu}>
+                                <div className={styles.container_top}>
+                                    <div id={styles['bar4']}
+                                         className={`${styles.bars2}  ${currentTheme.backgroundReverseColor}`}></div>
+                                    <div id={styles['bar4']}
+                                         className={`${styles.bars2}  ${currentTheme.backgroundReverseColor}`}></div>
+                                    <div id={styles['bar4']}
+                                         className={`${styles.bars2}  ${currentTheme.backgroundReverseColor}`}></div>
                                 </div>
-                            </div>
-                        )}
-                    </div>
 
+                            </button>
 
-                    <Link to="/profile">
-                        <div className={`${styles['avatarUserDiv']}`}>
-                            <img className={styles['avatarUser']} src={avatarExample} alt=""/>
+                            {isOpen && (
+                                <div className={styles.burgerMenuOverlay}>
+                                    <div
+                                        className={`${styles.burgerMenu} ${currentTheme.borderColor} ${currentTheme.greyBackgroundColor}`}
+                                        onClick={handleMenuClick}>
+                                        <ul>
+                                            <Link to="/saved">
+                                                <li className={`${styles.textBurgerMenu}  ${currentTheme.textColor}`}>
+
+                                                    <SvgBookmark
+                                                        color={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                                                        stroke={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                                                        className={`${styles["svgTextLeft"]}`}
+                                                    />
+
+                                                    Saved
+                                                </li>
+                                            </Link>
+                                            <Link to="/settings">
+                                                <li className={`${styles.textBurgerMenu}  ${currentTheme.textColor}`}>
+
+                                                    <SvgSettings
+                                                        color={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                                                        stroke={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                                                        className={`${styles["svgTextLeft"]}`}
+                                                    />
+
+                                                    Settings
+                                                </li>
+                                            </Link>
+                                            <div
+                                                className={`${styles.lineStyle}  ${currentTheme.backgroundReverseColor}`}>
+
+                                            </div>
+
+                                            <li className={`${styles.textBurgerMenuSecond}  ${currentTheme.textColor}`}
+                                                onClick={handleSignOut}>
+
+                                                <SvgSignOut
+                                                    color={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                                                    stroke={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                                                    className={`${styles["svgTextLeft"]}`}
+                                                />
+
+                                                Log out
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            )}
                         </div>
-                    </Link>
-                </div>
-                {/*)}*/}
 
+                        {user &&
+                            <Link to="/profile" state={user.id}>
+                                {profilePhoto ? (
+                                    <div className={`${styles['avatarUserDiv']}`}>
+                                        <img className={styles['avatarUser']}
+                                             src={`http://localhost:8080/api/photos/` + profilePhoto.id}
+                                             alt="User Avatar"/>
+                                    </div>
+                                ) : (
+                                    <div className={`${styles['avatarUserDiv']}`}>
+                                        <img className={styles['avatarUser']}
+                                             src={avatarExample}
+                                             alt="User Avatar"/>
+                                    </div>
+                                )}
+                            </Link>
+                        }
+                    </div>
+                )}
 
+                {localStorage.getItem("token") && (
                 <div className={`${styles['userButtonsDivPhone']} `}>
                     <div className={`${styles['whiteLineNavbar']} ${currentTheme.backgroundReverseColor}`}>
 
@@ -204,7 +238,7 @@ export function NavbarExpanded(props) {
                     </a>
 
                 </div>
-
+                    )}
             </div>
 
             <button className={styles.nav__collapser} onClick={handleToggle}>

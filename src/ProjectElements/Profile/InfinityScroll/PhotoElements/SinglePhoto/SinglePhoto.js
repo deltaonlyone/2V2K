@@ -11,8 +11,8 @@ export function SinglePhoto(props) {
 
         <div className={styles.photoContainer}>
             <img
-                // src={'http://localhost:8080/api/photos/'+props.img}
-                src={props.img}
+                src={'http://localhost:8080/api/photos/'+props.img}
+                // src={props.img}
                 alt="Photo"
                 className={styles.photoImg}
             />
