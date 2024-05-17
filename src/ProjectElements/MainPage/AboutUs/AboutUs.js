@@ -62,12 +62,10 @@ export function AboutUs(props) {
 
 
                     <a className={`${styles['textUnderAboutUs']} ${currentTheme.textColor}`}>
-                        Nemo enim ipsam voluptatem quia
-                        voluptas sit aspernatur aut odit
-                        aut fugit, sed quia consequuntur
-                        magni dolores eos qui ratione voluptatem
-                        sequi nesciunt. Neque porro quisquam est,
-                        qui dolorem.
+                        Welcome to Snavvy - your reliable assistant in finding
+                        photographers and locations for unforgettable photo shoots!
+                        We understand how important it is to find the perfect professional
+                        and the best place to shoot, so we offer you a convenient and fast way to do it.
 
 
                     </a>
@@ -110,12 +108,8 @@ export function AboutUs(props) {
 
                 <div className={styles['textUnderServicesDiv']}>
                     <a className={`${styles['textUnderServices']} ${currentTheme.textColor}`}>
-                        Nemo enim ipsam voluptatem quia voluptas
-                        sit aspernatur aut odit aut fugit, sed quia
-                        consequuntur magni dolores eos qui ratione
-                        voluptatem sequi nesciunt. Neque porro quisquam
-                        est, qui dolorem.
-
+                        Check out Snavvy's core capabilities for finding photographers and locations for
+                        photoshoots. Our tools will help you find the perfect professional and the perfect shooting location.
                     </a>
                 </div>
 
@@ -128,11 +122,9 @@ export function AboutUs(props) {
                         <img className={styles['photoServices']} src={photoServices1} alt=""/>
 
                         <a className={`${styles['textInServices']} ${currentTheme.textColor}`}>
-                            Nemo enim ipsam voluptatem quia voluptas
-                            sit aspernatur aut odit aut fugit, sed quia
-                            consequuntur magni dolores eos qui ratione
-                            voluptatem sequi nesciunt. Neque porro quisquam
-                            est, qui dolorem.
+                            Locations is where you will find detailed information about each available photo shoot location. With
+                            the help of our service, you can learn about the features of each location, view photos taken at this
+                            location, and get advice on the best time for filming.
 
                         </a>
 
@@ -145,11 +137,9 @@ export function AboutUs(props) {
                         <img className={styles['photoServices']} src={photoServices2} alt=""/>
 
                         <a className={`${styles['textInServices']} ${currentTheme.textColor}`}>
-                            Nemo enim ipsam voluptatem quia voluptas
-                            sit aspernatur aut odit aut fugit, sed quia
-                            consequuntur magni dolores eos qui ratione
-                            voluptatem sequi nesciunt. Neque porro quisquam
-                            est, qui dolorem.
+                            The map is your navigator in the world of the best locations
+                            for photo sessions. Use our interactive map with labels to quickly
+                            and easily find the perfect spots.
 
                         </a>
 
@@ -162,11 +152,10 @@ export function AboutUs(props) {
                         <img className={styles['photoServices']} src={photoServices3} alt=""/>
 
                         <a className={`${styles['textInServices']} ${currentTheme.textColor}`}>
-                            Nemo enim ipsam voluptatem quia
-                            voluptas sit aspernatur aut odit aut
-                            fugit, sed quia consequuntur magni dolores
-                            eos qui ratione voluptatem sequi nesciunt.
-                            Neque porro quisquam est, qui dolorem.
+                            Finding a photographer is your key to the best photography
+                            professionals. We provide the opportunity to view the portfolio
+                            of photographers, read customer reviews and choose the best ones
+                            for your event or project.
 
                         </a>
 
@@ -190,9 +179,9 @@ export function AboutUs(props) {
                                 <div className={`${styles['flip-card-back']} ${currentTheme.greyBackgroundColor}`}>
 
                                     <p className={`${styles['textServicesPhone']} ${currentTheme.textColor}`}>
-                                        Nemo enim ipsam voluptatem quia voluptas sit
-                                        aspernatur aut odit aut fugit, sed quia consequuntur
-                                        magni dolores eos qui ratione voluptatem
+                                        Locations is where you will find detailed information about each available photo shoot location. With
+                                        the help of our service, you can learn about the features of each location, view photos taken at this
+                                        location, and get advice on the best time for filming.
                                     </p>
 
                                 </div>
@@ -215,9 +204,9 @@ export function AboutUs(props) {
                                 <div className={`${styles['flip-card-back']} ${currentTheme.greyBackgroundColor}`}>
 
                                     <p className={`${styles['textServicesPhone']} ${currentTheme.textColor}`}>
-                                        Nemo enim ipsam voluptatem quia voluptas sit
-                                        aspernatur aut odit aut fugit, sed quia consequuntur
-                                        magni dolores eos qui ratione voluptatem
+                                        The map is your navigator in the world of the best locations
+                                        for photo sessions. Use our interactive map with labels to quickly
+                                        and easily find the perfect spots.
                                     </p>
 
                                 </div>
@@ -238,9 +227,10 @@ export function AboutUs(props) {
                                 <div className={`${styles['flip-card-back']} ${currentTheme.greyBackgroundColor}`}>
 
                                     <p className={`${styles['textServicesPhone']} ${currentTheme.textColor}`}>
-                                        Nemo enim ipsam voluptatem quia voluptas sit
-                                        aspernatur aut odit aut fugit, sed quia consequuntur
-                                        magni dolores eos qui ratione voluptatem
+                                        Finding a photographer is your key to the best photography
+                                        professionals. We provide the opportunity to view the portfolio
+                                        of photographers, read customer reviews and choose the best ones
+                                        for your event or project.
                                     </p>
 
                                 </div>
@@ -305,11 +295,10 @@ export function AboutUs(props) {
                     </h1>
 
                     <a className={`${styles['mapTextMain']} ${currentTheme.textColor}`}>
-                        Nemo enim ipsam voluptatem quia voluptas
-                        sit aspernatur aut odit aut fugit, sed quia
-                        consequuntur magni dolores eos qui ratione
-                        voluptatem sequi nesciunt. Neque porro quisquam
-                        est, qui dolorem.
+                        The map is the heart of our service, created for the most convenient
+                        search for ideal locations for your photo shoots. Our interactive map
+                        provides a visual overview of all available locations, allowing you to
+                         easily find a location that meets your needs and desires.
                     </a>
 
                     {/*<button className={`${styles['buttonMap']} ${currentTheme.buttonMapColor}`}>EXPLORE</button>*/}

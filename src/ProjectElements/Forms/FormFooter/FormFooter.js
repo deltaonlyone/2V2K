@@ -28,12 +28,10 @@ export function FormFooter(props) {
                     />
 
                     <a className={`${styles['informationText']} ${currentTheme.textColor}`}>
-                        Nemo enim ipsam voluptatem quia
-                        voluptas sit aspernatur aut odit
-                        aut fugit, sed quia consequuntur magni
-                        dolores eos qui ratione voluptatem sequi
-                        nesciunt. Neque porro quisquam est, qui
-                        dolorem.
+                        Let us help you make your photo session unforgettable.
+                        Thanks to our platform, you can easily find professional
+                        photographers and great locations that meet your requirements.
+                        Snavvy is your reliable assistant in the world of photography.
                     </a>
                 </div>
 
