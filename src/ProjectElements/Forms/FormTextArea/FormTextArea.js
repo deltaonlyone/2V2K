@@ -3,7 +3,7 @@ import styles from './FormTextArea.module.css';
 
 import {useSelector} from 'react-redux';
 
-export function FormTextArea({ maxLength, height, width }) {
+export function FormTextArea({maxLength, height, width, innerText, editText,onChange}) {
     const [text, setText] = useState('');
     const remainingChars = maxLength - text.length;
     const currentTheme = useSelector(state => state.currentTheme);
@@ -11,18 +11,24 @@ export function FormTextArea({ maxLength, height, width }) {
     const handleChange = (e) => {
         if (e.target.value.length <= maxLength) {
             setText(e.target.value);
+            if (onChange) {
+                onChange(e.target.value);
+            }
         }
     };
 
     return (
-        <div className={styles['textAreaContainer']} style={{ height, width }}>
-            <textarea
-                className={`${styles['textArea']} ${currentTheme.formInputColor}`}
-                value={text}
-                onChange={handleChange}
-                maxLength={maxLength}
-                style={{ height: '100%', width: '100%' }}
-            />
+        <div className={styles['textAreaContainer']} style={{height, width}}>
+            {innerText &&
+                <textarea
+                    className={`${styles['textArea']} ${currentTheme.formInputColor}`}
+                    value={text}
+                    onChange={handleChange}
+                    maxLength={maxLength}
+                    style={{height: '100%', width: '100%'}}
+                    placeholder={innerText}>    {editText}
+                    </textarea>
+            }
             <div className={styles['charCount']}>
                 {remainingChars}/{maxLength}
             </div>

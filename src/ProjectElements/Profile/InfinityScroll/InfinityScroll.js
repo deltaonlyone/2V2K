@@ -1,36 +1,31 @@
-import styles from './InfinityScroll.module.css';
-import React, {useEffect, useState} from "react";
-import {codeSharp} from "ionicons/icons";
+import React, { useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-import {NavbarExpanded} from "../../Forms/NavBarExpanded/NavbarExpanded";
-
-import randomPhoto from "../../../photos/randomPhoto.jpg";
-import {SinglePhoto} from "./PhotoElements/SinglePhoto/SinglePhoto";
+import styles from './InfinityScroll.module.css';
+import { SinglePhoto } from "./PhotoElements/SinglePhoto/SinglePhoto";
 import axios from "axios";
 
-function MyInfiniteScroll(props) {
+function MyInfiniteScroll({ user, category }) {
     const [items, setItems] = useState([]);
     const [hasMore, setHasMore] = useState(true);
     const [page, setPage] = useState(0);
-    const [size, setSize] = useState(12);
-    const {user} = props
+    const size = 12;
 
     useEffect(() => {
         if (user && user.id) {
-            fetchData();
+            fetchData(true);
         }
-    }, [user]);
+    }, [user, category]);
 
-    const fetchData = async () => {
+    const fetchData = async (isNewCategory = false) => {
         try {
-            if (hasMore){
-                const response = await axios.get(`http://localhost:8080/api/portfolio/${user.id}/paged?page=${page}&size=${size}`);
+            if (hasMore || isNewCategory) {
+                const response = await axios.get(`http://localhost:8080/api/portfolio/${user.id}/paged`, {
+                    params: { page: isNewCategory ? 0 : page, size, category: category === "All" ? undefined : category }
+                });
                 const data = response.data;
-                setItems([...items, ...data]);
-                if (data.length === 0) {
-                    setHasMore(false);
-                }
-                setPage(page + size);
+                setItems(isNewCategory ? data : [...items, ...data]);
+                setHasMore(data.length === size);
+                setPage(prevPage => (isNewCategory ? 0 : prevPage + 12));
             }
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -41,18 +36,18 @@ function MyInfiniteScroll(props) {
         <div className={`${styles['infinityScrollDiv']}`}>
             <InfiniteScroll
                 className={`${styles['infinityScrollElement']}`}
-                dataLength={items.length} //This is important field to render the next data
-                next={fetchData}
+                dataLength={items.length}
+                next={() => fetchData()}
                 hasMore={hasMore}
                 loader={<h4>Loading...</h4>}
-                endMessage={
-                    <p style={{textAlign: "center"}}>
-                        <b>Yay! You have seen it all</b>
-                    </p>
-                }
+                // endMessage={
+                //     <p style={{ textAlign: "center" }}>
+                //         <b>Yay! You have seen it all</b>
+                //     </p>
+                // }
             >
                 {items.map((item, index) => (
-                    <SinglePhoto img={item}></SinglePhoto>
+                    <SinglePhoto key={index} img={item} />
                 ))}
             </InfiniteScroll>
         </div>

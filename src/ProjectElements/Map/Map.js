@@ -6,32 +6,66 @@ import {MenuSignIn} from "../Registration/MenuSignIn/MenuSignIn";
 import MapContainer from './MapContainer/MapContainer';
 import { useSelector} from 'react-redux';
 import {FormSmallLocationInfoLeft} from "../Forms/FormSmallLocationInfoLeft/FormSmallLocationInfoLeft";
+import {MenuSignUp} from "../Registration/MenuSignUp/MenuSignUp";
+import {MenuForgotPassword} from "../Registration/MenuForgotPassword/MenuForgotPassword";
 
 const Map = () => {
 
     const currentTheme = useSelector(state => state.currentTheme);
 
-    const [isOpened, setIsOpened] = useState(false);
-
-    const handleToggleSingBar = () => {
+    const [isOpenedSignIn, setIsOpenedSignIn] = useState(false);
+    const handleToggleSignInBar = () => {
         const appRoot = document.getElementById('mapContainer');
 
-        if(!isOpened){
+        if(!isOpenedSignIn){
             appRoot.style.filter = 'blur(12px)';
         }
         else{
             appRoot.style.filter = 'blur(0px)';
         }
 
-        setIsOpened(!isOpened);
+        setIsOpenedSignIn(!isOpenedSignIn);
     };
+
+    const [isOpenedSignUp, setIsOpenedSignUp] = useState(false);
+    const handleToggleSignUpBar = () => {
+        const appRoot = document.getElementById('mapContainer');
+
+        if(!isOpenedSignUp){
+            appRoot.style.filter = 'blur(12px)';
+        }
+        else{
+            appRoot.style.filter = 'blur(0px)';
+        }
+
+        setIsOpenedSignUp(!isOpenedSignUp);
+    };
+
+    const [isOpenedForgotPassword, setIsOpenedForgotPassword] = useState(false);
+    const handleToggleForgotPasswordBar = () => {
+        const appRoot = document.getElementById('mapContainer');
+
+        if(!isOpenedForgotPassword){
+            appRoot.style.filter = 'blur(12px)';
+        }
+        else{
+            appRoot.style.filter = 'blur(0px)';
+        }
+
+        setIsOpenedForgotPassword(!isOpenedForgotPassword);
+    };
+
+
 
     return (
         <div className = {`${styles['mapPage']} ${currentTheme.backgroundColor}`}>
-            {isOpened && <MenuSignIn handleToggleSign = {handleToggleSingBar}></MenuSignIn>}
+            {isOpenedSignIn && <MenuSignIn handleToggleSign = {handleToggleSignInBar} handleToggleSignUp = {handleToggleSignUpBar} handleToggleForgotPassword = {handleToggleForgotPasswordBar}></MenuSignIn>}
+            {isOpenedSignUp && <MenuSignUp handleToggleSignUp = {handleToggleSignUpBar} handleToggleSign = {handleToggleSignInBar}></MenuSignUp>}
+            {isOpenedForgotPassword && <MenuForgotPassword handleToggleForgotPassword = {handleToggleForgotPasswordBar}></MenuForgotPassword>}
+
+            <NavbarExpanded handleToggleSign = {handleToggleSignInBar}></NavbarExpanded>
 
             <div id = 'mapContainer' className = {`${styles['mapContainer']}`}>
-                <NavbarExpanded handleToggleSign = {handleToggleSingBar}></NavbarExpanded>
 
                 <FormSmallLocationInfoLeft
                     name="Location's name"

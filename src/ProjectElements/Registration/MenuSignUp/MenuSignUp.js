@@ -4,6 +4,8 @@ import logo from "../../../photos/Snavvy_Logo/Snavvy_logo_White.svg";
 import {FormInputSign} from "../../Forms/FormInputSign/FormInputSign";
 
 import {useSelector} from 'react-redux';
+import {SvgLogo} from "../../Forms/FormSvg/FormSvg";
+import {Link} from "react-router-dom";
 
 export function MenuSignUp(props) {
 
@@ -37,9 +39,8 @@ export function MenuSignUp(props) {
                 throw new Error('Something went wrong');
             }
 
-            const result = await response.json();
-            console.log('Registration successful:', result);
-            // Handle successful registration (e.g., redirect to login)
+            props.handleToggleSignUp();
+            props.handleToggleSign();
         } catch (error) {
             console.error('Error during registration:', error);
             setError('Registration failed. Please try again.');
@@ -54,7 +55,12 @@ export function MenuSignUp(props) {
                 <button className={`${styles['backButton']} ${currentTheme.backButtonColor}`}
                         onClick={props.handleToggleSignUp}></button>
 
-                <img className={`${styles['logo']} ${currentTheme.svgColor}`} src={logo} alt=""/>
+                <div className={`${styles["logo"]}`}>
+                    <SvgLogo color={currentTheme.textColor.includes('DarkTheme_textColor') ? "white" : "black"}
+                             stroke={currentTheme.textColor.includes('DarkTheme_textColor') ? "white" : "black"}
+                    />
+                </div>
+
 
                 <a className={`${styles['signInText']} ${currentTheme.textColor}`}>Sign up</a>
 
@@ -113,13 +119,16 @@ export function MenuSignUp(props) {
 
                 </div>
                 <div className={styles['informationText']}>
-                    <a className={styles['textBottom']}>
-                        Privacy Policy
-                    </a>
-
-                    <a className={styles['textBottom']}>
-                        Terms of Use
-                    </a>
+                    <Link to="/privacy_policy">
+                        <a className={styles['textBottom']}>
+                            Privacy Policy
+                        </a>
+                    </Link>
+                    <Link to="/terms_of_use">
+                        <a className={styles['textBottom']}>
+                            Terms of Use
+                        </a>
+                    </Link>
                 </div>
             </div>
         </nav>

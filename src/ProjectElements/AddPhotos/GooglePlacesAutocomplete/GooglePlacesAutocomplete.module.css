@@ -1,0 +1,18 @@
+.searchLocationInput {
+    position: relative;
+    width: 100%;
+}
+
+.label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}

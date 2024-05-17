@@ -22,6 +22,7 @@
     display:flex;
     justify-content: space-between;
     align-items: center;
+    padding:20px 0 20px 0;
 }
 
 .footerBottomText{
@@ -276,25 +277,22 @@ ul {
         display:none;
     }
 
+    .informationAboutUs{
+        height: 100%;
+
+    }
+
     .footerContainerSecond{
         width:100%;
         height: 86%;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
     }
 
     .informationTextHead{
         font-size:27px;
     }
 
-    .informationAboutUs{
-        height:100%;
-    }
-
-    .footerBottomTextDiv{
-        height: 45px;
-    }
 
     .informationAboutUsMiddleRight{
         height:100%;
@@ -320,17 +318,17 @@ ul {
     }
 
     .informationAboutUsMiddle{
-        height: 130px;
+        height: 30%;
         display:flex;
         justify-content: space-between;
+        margin-bottom:30px;
     }
 
     .informationAboutUsBottom{
-        height:200px;
+        height: 45%;
         display:flex;
         flex-direction: column;
         align-items: center;
-
     }
 
     .formInformationInput{
@@ -347,4 +345,18 @@ ul {
     .inputEmail{
         width:80%;
     }
+}
+
+
+.svgTextLeft{
+    width: 200px;
+}
+
+.svgTextSmall{
+    width: 20px;
+}
+
+.svgContainerMessage{
+    width:20px;
+    height: 20px;
 }

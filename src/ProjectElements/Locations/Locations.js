@@ -12,23 +12,53 @@ import photoServices1 from "../MainPage/AboutUs/photo-1-services.jpg";
 import {FormPhotographerSearchInfo} from "../Forms/FormPhotographerSearchInfo/FormPhotographerSearchInfo";
 import {FormPlacePhotoPhotographer} from "../Forms/FormPlacePhotoPhotographer/FormPlacePhotoPhotographer";
 import {SinglePhoto} from "../Profile/InfinityScroll/PhotoElements/SinglePhoto/SinglePhoto";
+import {MenuSignUp} from "../Registration/MenuSignUp/MenuSignUp";
+import {MenuForgotPassword} from "../Registration/MenuForgotPassword/MenuForgotPassword";
 
 const Locations = () => {
 
     const currentTheme = useSelector(state => state.currentTheme);
 
-    const [isOpened, setIsOpened] = useState(false);
-
-    const handleToggleSingBar = () => {
+    const [isOpenedSignIn, setIsOpenedSignIn] = useState(false);
+    const handleToggleSignInBar = () => {
         const appRoot = document.getElementById('locationsContainer');
 
-        if (!isOpened) {
+        if(!isOpenedSignIn){
             appRoot.style.filter = 'blur(12px)';
-        } else {
+        }
+        else{
             appRoot.style.filter = 'blur(0px)';
         }
 
-        setIsOpened(!isOpened);
+        setIsOpenedSignIn(!isOpenedSignIn);
+    };
+
+    const [isOpenedSignUp, setIsOpenedSignUp] = useState(false);
+    const handleToggleSignUpBar = () => {
+        const appRoot = document.getElementById('locationsContainer');
+
+        if(!isOpenedSignUp){
+            appRoot.style.filter = 'blur(12px)';
+        }
+        else{
+            appRoot.style.filter = 'blur(0px)';
+        }
+
+        setIsOpenedSignUp(!isOpenedSignUp);
+    };
+
+    const [isOpenedForgotPassword, setIsOpenedForgotPassword] = useState(false);
+    const handleToggleForgotPasswordBar = () => {
+        const appRoot = document.getElementById('locationsContainer');
+
+        if(!isOpenedForgotPassword){
+            appRoot.style.filter = 'blur(12px)';
+        }
+        else{
+            appRoot.style.filter = 'blur(0px)';
+        }
+
+        setIsOpenedForgotPassword(!isOpenedForgotPassword);
     };
 
     const randomPhotos = [
@@ -43,10 +73,13 @@ const Locations = () => {
     return (
         <div className={`${styles['locationsPage']} ${currentTheme.backgroundColor}`}>
 
-            {isOpened && <MenuSignIn handleToggleSign={handleToggleSingBar}></MenuSignIn>}
+            {isOpenedSignIn && <MenuSignIn handleToggleSign = {handleToggleSignInBar} handleToggleSignUp = {handleToggleSignUpBar} handleToggleForgotPassword = {handleToggleForgotPasswordBar}></MenuSignIn>}
+            {isOpenedSignUp && <MenuSignUp handleToggleSignUp = {handleToggleSignUpBar} handleToggleSign = {handleToggleSignInBar}></MenuSignUp>}
+            {isOpenedForgotPassword && <MenuForgotPassword handleToggleForgotPassword = {handleToggleForgotPasswordBar}></MenuForgotPassword>}
+
+            <NavbarExpanded handleToggleSign = {handleToggleSignInBar}></NavbarExpanded>
 
             <div id='locationsContainer' className={`${styles['locationsContainer']} ${currentTheme.backgroundColor}`}>
-                <NavbarExpanded handleToggleSign={handleToggleSingBar}></NavbarExpanded>
                 <div className={`${styles['infoDiv']} ${currentTheme.backgroundColor}`}>
                     <div className={`${styles['infoTextDiv']} ${currentTheme.backgroundColor}`}>
                         <a className={`${styles['nameText']} ${currentTheme.textColor}`}>
@@ -101,13 +134,6 @@ const Locations = () => {
                     </a>
                 </div>
                 <div className={`${styles['containerSomePhotoPlace']}`}>
-
-                    <FormPlacePhotoPhotographer
-                        name="Kyrylo Sydor"
-                        username="@kyrylosydor"
-                        avatar='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTousHbMHE9y6ZaMX9GcxFGJRfxq8aWGYcIV_dPgWOwqQ&s'
-                        photos={randomPhotos}
-                    />
 
                     <FormPlacePhotoPhotographer
                         name="Kyrylo Sydor"

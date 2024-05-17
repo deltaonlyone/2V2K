@@ -55,7 +55,7 @@
 
 
 .logo{
-    width: 100%;
+    width: 270px;
     height: 16%;
     margin-top: 10px;
 }
@@ -155,7 +155,7 @@
 
     .menu{
         position: fixed;
-        height: 95%;
+        height: 85%;
         width: 95%;
         border-radius: 15px;
         border: 1px solid grey;

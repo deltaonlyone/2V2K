@@ -4,13 +4,15 @@ import {useSelector, useDispatch} from 'react-redux';
 import {connect} from 'react-redux';
 import {toggleTheme} from '../../../store/actions/action_1';
 import {Link, BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import avatarExample from "../../Profile/User_cicrle_light.svg";
+import avatarExample from "../../../photos/User_cicrle_light.svg";
+import axios from "axios";
+
 
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import PopupState, {bindTrigger, bindMenu} from 'material-ui-popup-state';
-import axios from "axios";
+import {SvgBookmark, SvgLogo, SvgSettings, SvgSignOut} from "../FormSvg/FormSvg";
 
 export function NavbarExpanded(props) {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -95,6 +97,8 @@ export function NavbarExpanded(props) {
         e.stopPropagation(); // Зупиняємо подальше розповсюдження події
     };
     fetchUser()
+
+
     return (
         <nav className={`${styles.nav} ${currentTheme.backgroundColor} ${isExpanded ? styles['nav--expanded'] : ''}`}>
             <Link className={`${styles.nav__brand} ${currentTheme.textColor} ${currentTheme.borderColor}`}
@@ -124,13 +128,13 @@ export function NavbarExpanded(props) {
                 </div>
 
 
-                {!localStorage.getItem("token") && (
+                {!localStorage.getItem("token") &&
                     <div className={styles.nav__cta}>
                         <button className={`${styles.buttonNavbar} ${currentTheme.buttonNavbarColor}`}
                                 onClick={props.handleToggleSign}>Sign in
                         </button>
                     </div>
-                )}
+                }
                 {localStorage.getItem("token") && (
                     <div className={`${styles['userButtonsDiv']} `}>
                         <div className={`${styles['burgerMenuDiv']} `}>
@@ -154,11 +158,25 @@ export function NavbarExpanded(props) {
                                         <ul>
                                             <Link to="/saved">
                                                 <li className={`${styles.textBurgerMenu}  ${currentTheme.textColor}`}>
+
+                                                    <SvgBookmark
+                                                        color={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                                                        stroke={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                                                        className={`${styles["svgTextLeft"]}`}
+                                                    />
+
                                                     Saved
                                                 </li>
                                             </Link>
                                             <Link to="/settings">
                                                 <li className={`${styles.textBurgerMenu}  ${currentTheme.textColor}`}>
+
+                                                    <SvgSettings
+                                                        color={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                                                        stroke={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                                                        className={`${styles["svgTextLeft"]}`}
+                                                    />
+
                                                     Settings
                                                 </li>
                                             </Link>
@@ -169,6 +187,13 @@ export function NavbarExpanded(props) {
 
                                             <li className={`${styles.textBurgerMenuSecond}  ${currentTheme.textColor}`}
                                                 onClick={handleSignOut}>
+
+                                                <SvgSignOut
+                                                    color={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                                                    stroke={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
+                                                    className={`${styles["svgTextLeft"]}`}
+                                                />
+
                                                 Log out
                                             </li>
                                         </ul>
@@ -197,7 +222,7 @@ export function NavbarExpanded(props) {
                     </div>
                 )}
 
-
+                {localStorage.getItem("token") && (
                 <div className={`${styles['userButtonsDivPhone']} `}>
                     <div className={`${styles['whiteLineNavbar']} ${currentTheme.backgroundReverseColor}`}>
 
@@ -217,7 +242,7 @@ export function NavbarExpanded(props) {
                     </a>
 
                 </div>
-
+                    )}
             </div>
 
             <button className={styles.nav__collapser} onClick={handleToggle}>

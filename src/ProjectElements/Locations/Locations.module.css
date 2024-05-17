@@ -81,5 +81,10 @@
 }
 
 .containerSomePhotoPlace{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
     padding: 0 13% 0 13%;
 }
