@@ -1,8 +1,11 @@
 npm install
-npm install firebase --force
 npm install react-redux --force
 npm install react-router-dom --force
 npm install --save google-maps-react --force
 npm install @mui/material @emotion/react @emotion/styled --force
 npm install --save react-infinite-scroll-component --force
 npm install --save material-ui-popup-state --force
+npm install --save use-places-autocomplete --force
+npm install --save react-cool-onclickoutside
+
+npm install --save react-redux react-router-dom google-maps-react @mui/material @emotion/react @emotion/styled react-infinite-scroll-component material-ui-popup-state --force

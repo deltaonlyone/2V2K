@@ -10,9 +10,15 @@ export function FormDropdown(props) {
         height: props.height,
         width: props.width,
     };
-
+    const handleChange = (event) => {
+        // Викликаємо функцію, яку передано через props.onChange і передаємо нове значення випадаючого списку
+        if (props.onChange) {
+            props.onChange(event.target.value);
+        }
+    };
     return (
         <select
+            onChange={handleChange}
             className={`${styles['formInput']} ${currentTheme.formInputColor}`}
             style={customStyle}>
             <option value="" disabled selected hidden>{props.placeholder}</option>

@@ -8,6 +8,7 @@ import {FormTextArea} from "../Forms/FormTextArea/FormTextArea";
 import avatarExample from "../../photos/User_cicrle_light.svg";
 import {FormDropdown} from "../Forms/FormDropdown/FormDropdown";
 import {FormButtonReverse} from "../Forms/FormButtonReverse/FormButtonReverse";
+import SearchLocationInput from "./GooglePlacesAutocomplete/GooglePlacesAutocomplete";
 
 export function AddPhotos(props) {
     const [description, setDescription] = useState('');
@@ -15,7 +16,7 @@ export function AddPhotos(props) {
     const [file, setFile] = useState(null);
     const [previewUrl, setPreviewUrl] = useState(null);
     const [selectedCategory, setSelectedCategory] = useState('');
-
+    const [status, setStatus] = useState("");
     const currentTheme = useSelector(state => state.currentTheme);
 
     const options = [
@@ -37,8 +38,37 @@ export function AddPhotos(props) {
         reader.readAsDataURL(selectedFile);
     };
 
-    const handleSubmit = () => {
-        // Handle the submit logic, e.g., upload file and save description/location
+    const handleSubmit = async () => {
+        try {
+            setStatus("");
+            console.log(file)
+            console.log(description)
+            console.log(location)
+            console.log(selectedCategory)
+
+            if (!file) {
+                console.error("Please fill in all fields");
+                return;
+            }
+            event.preventDefault();
+            const formData = new FormData();
+            formData.append('myfile', file);
+            formData.append('category', selectedCategory);
+            formData.append('location', location);
+            formData.append('description', description);
+
+            const response = await axios.post('http://localhost:8080/api/photos/upload',
+                formData,{
+                headers: {
+                    'Content-Type': 'multipart/form-data;',
+                    'X-Authentication': `${localStorage.getItem("token")}`
+                }
+            });
+
+            setStatus(response.status === 200 ? "Thank you!" : "Error.");
+        } catch (error) {
+            console.error('Error:', error);
+        }
     };
 
     return (
@@ -92,15 +122,15 @@ export function AddPhotos(props) {
                             </div>
                         </div>
                         <div className={`${styles['elements']}`}>
-                            <FormTextArea maxLength={200} height="100px" width="100%" innerText={"Write a caption..."}/>
+                            <FormTextArea onChange={setDescription} maxLength={200} height="100px" width="100%" innerText={"Write a caption..."}/>
                         </div>
                         <span className={`${styles['textHeader']} ${currentTheme.textColor}`}>Add location</span>
                         <div className={`${styles['elements']}`}>
-                            <FormInput height={'45px'} width={'100%'}/>
+                            <SearchLocationInput setSelectedLocation={setLocation} />
                         </div>
                         <span className={`${styles['textHeader']} ${currentTheme.textColor}`}>Choose category</span>
                         <div className={`${styles['elements']}`}>
-                            <FormDropdown height={'45px'} width={'100%'} placeholder="Select an option"
+                            <FormDropdown onChange={setSelectedCategory} height={'45px'} width={'100%'} placeholder="Select an option"
                                           options={options}/>
                         </div>
 

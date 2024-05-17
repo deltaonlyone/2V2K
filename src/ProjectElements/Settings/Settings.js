@@ -299,7 +299,7 @@ const Settings = () => {
                                 <li className={`${styles['item']}  ${activeItem === 'PublicProfile' ? currentTheme.textColorWhite : currentTheme.textColor} ${activeItem === 'PublicProfile' ? styles['active'] : ''}`}
                                     onClick={() => handleClick('PublicProfile')}
                                 >
-                                    <img className={`${currentTheme.svgColor} ${styles['icon']}`} src={PublicProfile}
+                                    <img className={`${currentTheme.svgColor} ${styles['icon']}`} src={publicProfile}
                                          alt=""/>
                                     <span
                                         className={`${styles['userInfoTextBottom']}`}

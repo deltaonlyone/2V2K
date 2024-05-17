@@ -12,7 +12,7 @@ export function FormButtonReverse(props) {
     };
 
     return (
-        <button className={`${styles['formButton']} ${currentTheme.formButtonColorReverse}`}
+        <button onClick={props.onClick} className={`${styles['formButton']} ${currentTheme.formButtonColorReverse}`}
                 style={customStyle}
         >
             {props.text}
