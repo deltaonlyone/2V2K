@@ -9,6 +9,7 @@ import avatarExample from "../../photos/User_cicrle_light.svg";
 import {FormDropdown} from "../Forms/FormDropdown/FormDropdown";
 import {FormButtonReverse} from "../Forms/FormButtonReverse/FormButtonReverse";
 import SearchLocationInput from "./GooglePlacesAutocomplete/GooglePlacesAutocomplete";
+import axios from "axios";
 
 export function AddPhotos(props) {
     const [description, setDescription] = useState('');
@@ -50,11 +51,12 @@ export function AddPhotos(props) {
                 console.error("Please fill in all fields");
                 return;
             }
-            event.preventDefault();
+            // event.preventDefault();
             const formData = new FormData();
             formData.append('myfile', file);
             formData.append('category', selectedCategory);
-            formData.append('location', location);
+            formData.append('lat', location.lat);
+            formData.append('lng', location.lng);
             formData.append('description', description);
 
             const response = await axios.post('http://localhost:8080/api/photos/upload',

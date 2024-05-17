@@ -25,7 +25,7 @@ function MyInfiniteScroll({ user, category }) {
                 const data = response.data;
                 setItems(isNewCategory ? data : [...items, ...data]);
                 setHasMore(data.length === size);
-                setPage(prevPage => (isNewCategory ? 1 : prevPage + 1));
+                setPage(prevPage => (isNewCategory ? 0 : prevPage + 12));
             }
         } catch (error) {
             console.error('Error fetching data:', error);
