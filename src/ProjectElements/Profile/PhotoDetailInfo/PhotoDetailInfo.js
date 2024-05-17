@@ -32,13 +32,13 @@ const PhotoDetailInfo = () => {
     };
 
 
-
     return (
         <div className={`${styles['photoDetailInfoPage']} ${currentTheme.backgroundColor}`}>
 
             {isOpened && <MenuSignIn handleToggleSign={handleToggleSingBar}></MenuSignIn>}
 
-            <div id='photoDetailInfoContainer' className={`${styles['photoDetailInfoContainer']} ${currentTheme.backgroundColor}`}>
+            <div id='photoDetailInfoContainer'
+                 className={`${styles['photoDetailInfoContainer']} ${currentTheme.backgroundColor}`}>
                 <NavbarExpanded handleToggleSign={handleToggleSingBar}></NavbarExpanded>
 
 
@@ -57,7 +57,6 @@ const PhotoDetailInfo = () => {
                         <a className={`${styles['userInfoTextUsername']} ${currentTheme.textColor}`}>
                             @kyrylo_sydor
                         </a>
-
 
 
                     </div>
@@ -79,7 +78,7 @@ const PhotoDetailInfo = () => {
                                 color={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
                                 stroke={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "white" : "black"}
                                 colorReverse={currentTheme.textColor === 'DarkTheme_textColor__65lH+' ? "black" : "white"}
-                                heartColor = "none" //передати red або none
+                                heartColor="none" //передати red або none
                                 className={`${styles["svgTextLeft"]}`}
                             />
 
@@ -94,23 +93,41 @@ const PhotoDetailInfo = () => {
 
 
                     <div className={`${styles['commentsDiv']}`}>
-                        <FormComments
-                            avatar = 'https://images.pexels.com/photos/1308881/pexels-photo-1308881.jpeg?cs=srgb&dl=pexels-soldiervip-1308881.jpg&fm=jpg'
-                            name = "Kyrylo Sydor"
-                            username = "@kyrylo_sydor"
-                            comment = "Wow so good photo.Wow so good photo.Wow so good photo.Wow so good photo.Wow so good photo.Wow so good photo!!!!!!1"
+                        <div className={`${styles['comment']}`}>
+                            <FormComments
+                                avatar='https://images.pexels.com/photos/1308881/pexels-photo-1308881.jpeg?cs=srgb&dl=pexels-soldiervip-1308881.jpg&fm=jpg'
+                                username="kyrylo_sydor"
+                                comment="Wow so good photo.Wow so good photo.Wow so good photo.Wow so good photo.Wow so good photo.Wow so good photo!!!!!!1"
 
 
-                        />
+                            />
+                        </div>
+
+                        <div className={`${styles['comment']}`}>
+                            <FormComments
+                                avatar='https://images.pexels.com/photos/1308881/pexels-photo-1308881.jpeg?cs=srgb&dl=pexels-soldiervip-1308881.jpg&fm=jpg'
+                                username="kyrylo_sydor"
+                                comment="Wow so good photo.Wow so good photo.Wow so good photo.Wow so good photo.Wow so good photo.Wow so good photo!!!!!!1"
 
 
+                            />
+                        </div>
+
+                        <div className={`${styles['comment']}`}>
+                            <FormComments
+                                avatar='https://images.pexels.com/photos/1308881/pexels-photo-1308881.jpeg?cs=srgb&dl=pexels-soldiervip-1308881.jpg&fm=jpg'
+                                username="kyrylo_sydor"
+                                comment="Wow so good photo.Wow so good photo.Wow so good photo.Wow so good photo.Wow so good photo.Wow so good photo!!!!!!1"
+
+
+                            />
+                        </div>
 
 
                     </div>
 
 
                 </div>
-
 
 
                 <FormFooter></FormFooter>

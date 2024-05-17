@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import {toggleTheme} from '../../../store/actions/action_1';
 import {Link, BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import avatarExample from "../../../photos/User_cicrle_light.svg";
-
+import axios from "axios";
 
 
 import Button from '@mui/material/Button';
@@ -97,6 +97,8 @@ export function NavbarExpanded(props) {
         e.stopPropagation(); // Зупиняємо подальше розповсюдження події
     };
     fetchUser()
+
+
     return (
         <nav className={`${styles.nav} ${currentTheme.backgroundColor} ${isExpanded ? styles['nav--expanded'] : ''}`}>
             <Link className={`${styles.nav__brand} ${currentTheme.textColor} ${currentTheme.borderColor}`}

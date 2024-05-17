@@ -6,6 +6,8 @@ import PhotographersPage from "./ProjectElements/Photographers/Photographers";
 import SettingsPage from "./ProjectElements/Settings/Settings";
 import LocationsPage from "./ProjectElements/Locations/Locations";
 import PhotoDetailInfoPage from "./ProjectElements/Profile/PhotoDetailInfo/PhotoDetailInfo";
+import PrivacyPolicyPage from "./ProjectElements/InfoPages/PrivacyPolicy/PrivacyPolicy";
+import TermsOfUsePage from "./ProjectElements/InfoPages/TermsOfUse/TermsOfUse";
 import UsersList from './UsersList';
 import AllUsersPhotos from "./AllUsersPhotos";
 import faviconLogo from './photos/Snavvy_Logo/favicon.svg';
@@ -36,6 +38,8 @@ const App = () => {
                     <Route path="/settings" element={<SettingsPage></SettingsPage>}></Route>
                     <Route path="/map/locations" element={<LocationsPage></LocationsPage>}></Route>
                     <Route path="/profile/photo_detail_info" element={<PhotoDetailInfoPage></PhotoDetailInfoPage>}></Route>
+                    <Route path="/privacy_policy" element={<PrivacyPolicyPage></PrivacyPolicyPage>}></Route>
+                    <Route path="/terms_of_use" element={<TermsOfUsePage></TermsOfUsePage>}></Route>
                 </Routes>
             </Router>
         </div>

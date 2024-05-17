@@ -15,8 +15,17 @@ import {FormInput} from "../Forms/FormInput/FormInput";
 import {FormTextArea} from "../Forms/FormTextArea/FormTextArea";
 import {FormButtonReverse} from "../Forms/FormButtonReverse/FormButtonReverse";
 import axios from "axios";
+import {MenuSignUp} from "../Registration/MenuSignUp/MenuSignUp";
+import {MenuForgotPassword} from "../Registration/MenuForgotPassword/MenuForgotPassword";
 
 const Settings = () => {
+
+
+
+
+
+
+
 
     const currentTheme = useSelector(state => state.currentTheme);
 
@@ -41,16 +50,46 @@ const Settings = () => {
         setActiveItem(item);
     };
 
-    const handleToggleSingBar = () => {
+    const [isOpenedSignIn, setIsOpenedSignIn] = useState(false);
+    const handleToggleSignInBar = () => {
         const appRoot = document.getElementById('settingsContainer');
 
-        if (!isOpened) {
+        if(!isOpenedSignIn){
             appRoot.style.filter = 'blur(12px)';
-        } else {
+        }
+        else{
             appRoot.style.filter = 'blur(0px)';
         }
 
-        setIsOpened(!isOpened);
+        setIsOpenedSignIn(!isOpenedSignIn);
+    };
+
+    const [isOpenedSignUp, setIsOpenedSignUp] = useState(false);
+    const handleToggleSignUpBar = () => {
+        const appRoot = document.getElementById('settingsContainer');
+
+        if(!isOpenedSignUp){
+            appRoot.style.filter = 'blur(12px)';
+        }
+        else{
+            appRoot.style.filter = 'blur(0px)';
+        }
+
+        setIsOpenedSignUp(!isOpenedSignUp);
+    };
+
+    const [isOpenedForgotPassword, setIsOpenedForgotPassword] = useState(false);
+    const handleToggleForgotPasswordBar = () => {
+        const appRoot = document.getElementById('settingsContainer');
+
+        if(!isOpenedForgotPassword){
+            appRoot.style.filter = 'blur(12px)';
+        }
+        else{
+            appRoot.style.filter = 'blur(0px)';
+        }
+
+        setIsOpenedForgotPassword(!isOpenedForgotPassword);
     };
 
     const fetchUser = async () => {
@@ -265,13 +304,19 @@ const Settings = () => {
         }
     };
 
+
+
+
+
     return (
         <div className={`${styles['settingsPage']} ${currentTheme.backgroundColor}`}>
 
-            {isOpened && <MenuSignIn handleToggleSign={handleToggleSingBar}></MenuSignIn>}
+            {isOpenedSignIn && <MenuSignIn handleToggleSign = {handleToggleSignInBar} handleToggleSignUp = {handleToggleSignUpBar} handleToggleForgotPassword = {handleToggleForgotPasswordBar}></MenuSignIn>}
+            {isOpenedSignUp && <MenuSignUp handleToggleSignUp = {handleToggleSignUpBar} handleToggleSign = {handleToggleSignInBar}></MenuSignUp>}
+            {isOpenedForgotPassword && <MenuForgotPassword handleToggleForgotPassword = {handleToggleForgotPasswordBar}></MenuForgotPassword>}
 
             <div id='settingsContainer' className={`${styles['settingsContainer']}`}>
-                <NavbarExpanded handleToggleSign={handleToggleSingBar}></NavbarExpanded>
+                <NavbarExpanded handleToggleSign = {handleToggleSignInBar}></NavbarExpanded>
 
                 <div className={`${styles['settingsListContainer']}`}>
                     <div className={`${styles['settingsListContainerLeft']}`}>
