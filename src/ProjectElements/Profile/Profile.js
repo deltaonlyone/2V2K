@@ -23,6 +23,7 @@ const Profile = () => {
     const [selectedCategory, setSelectedCategory] = useState("All");
     const [check, setCheck] = useState(false);
 
+
     useEffect(() => {
         const fetchUser = async () => {
             try {

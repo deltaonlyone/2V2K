@@ -9,6 +9,7 @@ import {FormButtonReverse} from "../FormButtonReverse/FormButtonReverse";
 import {SvgBookmark} from "../FormSvg/FormSvg";
 
 import axios from "axios";
+import {FormButtonLinkVariable} from "../FormButtonLinkVariable/FormButtonLinkVariable";
 
 export function FormPhotographerSearchInfo(props) {
     const currentTheme = useSelector(state => state.currentTheme);
@@ -42,11 +43,11 @@ export function FormPhotographerSearchInfo(props) {
 
             <div className={`${styles['mainElements']} `}>
                 <div className={`${styles['firstElements']} `}>
-                    {props.avatar.id ?(
-                    <img src={'http://localhost:8080/api/photos/'+props.avatar.id}
-                         alt={`AvatarUser`}
-                         className={`${styles['userAvatar']} `}
-                    />): (
+                    {props.avatar.id ? (
+                        <img src={'http://localhost:8080/api/photos/' + props.avatar.id}
+                             alt={`AvatarUser`}
+                             className={`${styles['userAvatar']} `}
+                        />) : (
                         <img src={props.avatar}
                              alt={`AvatarUser`}
                              className={`${styles['userAvatar']} `}
@@ -56,11 +57,11 @@ export function FormPhotographerSearchInfo(props) {
                 </div>
 
                 <div className={`${styles['secondElements']} ${currentTheme.secondElementsColor}`}>
-                <div className={`${styles['scrollContainer']} `}>
+                    <div className={`${styles['scrollContainer']} `}>
                         {photos.map((photo, index) => (
                             <img
                                 key={index}
-                                src={'http://localhost:8080/api/photos/'+photo.id}
+                                src={'http://localhost:8080/api/photos/' + photo.id}
                                 alt={`Photo ${index}`}
                                 className={styles['photosStyle']}
                             />
@@ -90,8 +91,8 @@ export function FormPhotographerSearchInfo(props) {
                 <div className={`${styles['thirdElements']} `}>
                     <div className={`${styles['buttonsStyle']} `}>
                         <FormButtonReverse height={'53px'}
-                                    width={'198px'}
-                                    text={'Send request'}
+                                           width={'198px'}
+                                           text={'Send request'}
                         ></FormButtonReverse>
                     </div>
 
@@ -103,10 +104,13 @@ export function FormPhotographerSearchInfo(props) {
                     </div>
 
                     <div className={`${styles['buttonsStyle']} `}>
-                        <FormButton height={'53px'}
-                                    width={'198px'}
-                                    text={'See profile'}
-                        ></FormButton>
+                        <FormButtonLinkVariable
+                            height={'53px'}
+                            width={'198px'}
+                            text={'See profile'}
+                            key={'key'}
+                            link ={'/profile'}
+                        ></FormButtonLinkVariable>
                     </div>
                     <a className={`${styles['saveTextButton']} ${currentTheme.textColor}`}>
                         <SvgBookmark
