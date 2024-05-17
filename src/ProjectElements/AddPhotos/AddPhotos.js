@@ -114,12 +114,20 @@ export function AddPhotos(props) {
                     <div className={styles.rightSection}>
                         <div className={`${styles['userInfoContainer']}`}>
                             <div className={`${styles['avatarUserDiv']}`}>
-                                <img className={styles['avatarUser']} src={avatarExample} alt=""/>
+                                {props.user.profilePhoto?(
+                                    <img className={styles['avatarUser']}
+                                         src={`http://localhost:8080/api/photos/` + props.user.profilePhoto.id} alt=""/>
+
+                                ) : (
+                                    <img className={styles['avatarUser']} src={avatarExample} alt=""/>
+
+                                )}
+
                             </div>
 
                             <div className={`${styles['userInfoDiv']}`}>
                                 <h1 className={`${styles['userInfoTextTop']} ${currentTheme.textColor}`}>
-                                    Kyrylo Sydor (kyrylo_sydor)
+                                    {props.user.name} ({props.user.username})
                                 </h1>
                             </div>
                         </div>

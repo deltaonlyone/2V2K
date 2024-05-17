@@ -6,9 +6,10 @@ import axios from "axios";
 
 function MyInfiniteScroll({ user, category }) {
     const [items, setItems] = useState([]);
+
     const [hasMore, setHasMore] = useState(true);
     const [page, setPage] = useState(0);
-    const size = 12;
+    const [size, setSize] = useState(12);
 
     useEffect(() => {
         if (user && user.id) {
@@ -23,9 +24,11 @@ function MyInfiniteScroll({ user, category }) {
                     params: { page: isNewCategory ? 0 : page, size, category: category === "All" ? undefined : category }
                 });
                 const data = response.data;
-                setItems(isNewCategory ? data : [...items, ...data]);
-                setHasMore(data.length === size);
-                setPage(prevPage => (isNewCategory ? 0 : prevPage + 12));
+                setItems(data);
+                if (data.length === 0) {
+                    setHasMore(false);
+                }
+                setPage(page => (isNewCategory ? 0 : page + size));
             }
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -39,7 +42,7 @@ function MyInfiniteScroll({ user, category }) {
                 dataLength={items.length}
                 next={() => fetchData()}
                 hasMore={hasMore}
-                loader={<h4>Loading...</h4>}
+                // loader={}
                 // endMessage={
                 //     <p style={{ textAlign: "center" }}>
                 //         <b>Yay! You have seen it all</b>

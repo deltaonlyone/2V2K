@@ -70,7 +70,7 @@ const Profile = () => {
     return (
         <div className={`${styles['profilePage']} ${currentTheme.backgroundColor}`}>
             {isOpened && <MenuSignIn handleToggleSign={handleToggleSingBar}/>}
-            {isPhotoModalOpened && <AddPhotos handleToggleSign={handleTogglePhotoModal}/>}
+            {isPhotoModalOpened && <AddPhotos handleToggleSign={handleTogglePhotoModal} user={user}/>}
             <div id='profileContainer' className={`${styles['profileContainer']}`}>
                 <NavbarExpanded handleToggleSign={handleToggleSingBar}/>
                 {user && (

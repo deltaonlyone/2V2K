@@ -148,9 +148,9 @@ const Settings = () => {
                                     className={`${styles['settingsTextHeader2']} ${currentTheme.textColor}`}>Bio</span>
                                 <div className={styles['formInformationInput']}>
                                     {userBio ? (
-                                    <FormTextArea maxLength={200} height="100px" width="75%" innerText={`${userBio}`}/>
+                                    <FormTextArea maxLength={200} height="100px" width="75%" editText={`${userBio}`}/>
                                     ):(
-                                        <FormTextArea maxLength={200} height="100px" width="75%" innerText=""/>
+                                        <FormTextArea maxLength={200} height="100px" width="75%" innerText={"  "}/>
                                     )
                                     }
                                 </div>
@@ -331,7 +331,7 @@ const Settings = () => {
 
                             <div className={`${styles['userInfoDiv']}`}>
                                 <h1 className={`${styles['userInfoTextTop']} ${currentTheme.textColor}`}>
-                                    Kyrylo Sydor (kyrylo_sydor)
+                                    {userName} ({userUserName})
                                 </h1>
                                 <p className={`${styles['userInfoTextBottom']} ${currentTheme.textGreyColor}`}>
                                     Your personal account
